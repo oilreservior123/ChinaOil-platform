@@ -1,0 +1,37 @@
+/* Explicit surface colors prevent dark-theme remnants inheriting light-theme ink. */
+:root{--muted:#625b53;--dim:#70665b}
+.workspace-select,.panel-note,.launch,.feature-mini,.relation-row,.retrieval-result,.page-source,.placeholder-btn,.pipeline-overview span,.page-chips button,.pill-nav button{background:#faf6ef;color:#403a34;border-color:#d8ccbc}
+.workspace-select .squared{background:#fff0ed;color:#a51b23;border-color:#d6a7a5}
+.workspace-select .dim,.panel-note .dim,.panel-note .muted{color:#62584d}
+.launch:hover,.feature-card:hover,.model-card:hover,.placeholder-btn:hover,.page-chips button.active,.pill-nav button.active{background:#fcece6;color:#8e1620;border-color:#c7957b}
+.sidebar .nav button{color:#5b6168}.sidebar .nav button:hover{background:#f8ebe4;color:#8e1620}.sidebar .nav button.active{background:#fce9e7;color:#a51b23}
+.sidebar .nav-section,.brand .sub,.page-footer{color:#70665b}
+.kpi .kpi-label,.kpi .foot,.card-subtitle,.model-card p,.scope-card p{color:#625b53}
+.search input,.field,select,textarea{background:#fff;color:#29292c}.search input::placeholder,input::placeholder,textarea::placeholder{color:#71685d;opacity:1}
+.avatar,.well-item .well-symbol,.well-item .well-symbol.production{background:#f8e6df;color:#982029;border-color:#d7b3a3}
+.group-card .well-tag{background:#f6eee3;color:#644b32}
+.scene-wrap,.graph-wrap,.sim-viewport,.graph-inspector,.entity-text,.playbar,.dag-node,.log-console,.chart-tooltip,#toast{
+ --text:#f4f7fb;--muted:#d0dbe6;--dim:#c1cedb;--teal:#ffb4ac;--blue:#a9d4ff;--amber:#ffdc94;--red:#ffafb4;--purple:#dfc7ff;
+ color:var(--text)
+}
+.graph-wrap,.sim-viewport{background:#15212e}.graph-inspector,.entity-text,.playbar,.dag-node{background:#172535;border-color:#53687b}
+.scene-wrap .eyebrow,.scene-wrap .micro,.scene-wrap .dim,.scene-meta small,.scene-legend,.sim-overlay small,.sim-colorbar,.graph-legend{color:#e2eaf2}
+.scene-wrap .btn,.playbar .btn,.graph-inspector .btn{background:#253a4d;color:#f4f7fb;border-color:#70869a}
+.graph-inspector :is(p,small,label,.muted,.dim,.micro,.description),.entity-text,.dag-node small,.dag-node .node-number{color:#dbe5ef}
+.graph-inspector table th,.graph-inspector table td{background:#172535!important;color:#edf3f9!important;border-color:#53687b}
+.graph-inspector code,.graph-inspector pre{background:#0e1927;color:#e6edf5;border-color:#53687b}
+.entity-text mark{color:#b5fff1;background:#20584c}.entity-text mark.type2{color:#d7e5ff;background:#30466c}.entity-text mark.type3{color:#ffe2b3;background:#634b2e}
+.dag-node.completed{background:#183e34;color:#f1fff9;border-color:#6fc7aa}.dag-node.blocked{background:#4f2630;color:#fff0f2;border-color:#ffafb4}
+.log-console{color:#e2eaf2;font-size:12px}.log-console .timestamp{color:#b7c8d9}.log-console .ok{color:#9fefd3}.log-console .warn{color:#ffdc94}.log-console .error{color:#ffb6bc}
+.chart-tooltip{background:#132231;color:#f4f7fb;border-color:#657d92;font-size:12px}.chart-wrap svg text{fill:#4f6072;font-size:11px}
+#toast{background:#173c34;color:#e3fff3;border-color:#76b59e}
+.panel-note{font-size:12px;line-height:1.8}.scene-legend,.scene-meta small,.sim-overlay small,.graph-legend,.dag-node small{font-size:11px}
+.studio-model-strip small,.upload-card p,.upload-filename,.split-controls label,.service-config label,.run-controls label,.time-card span,.studio-metric span{color:#725b43}
+.unit-legend,.theory-symbols,.theory-boundary{color:#66513b}.unit-legend p,.unit-legend-grid span{font-size:12px}.unit-legend-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.unit-legend-grid>div{overflow-wrap:anywhere}.unit-legend-grid code{font-size:11px;min-width:72px}
+/* Text that previously used fixed pale colors on the light theme. */
+.tabs button,.form-label,.model-banner p,.identity-grid label,.retrieval-result p,.evidence p,.evidence small,.param-row output,.modal-body,.modal .close,.boot p,.reading,.scope-label,.drop-zone p,.toggle-list label,.status-line,.experiment-badge,.fit-parameters,.top-icon,.nav .count{color:#5c554d}
+.metric{background:#faf6ef}.metric label{color:#675c50}.metric strong,.group-card h3,.retrieval-result .title{color:#35312d}
+.data-table td{color:#403b35}.relation-row .rel{color:#69449b}.badge-count{background:#f3e9da;color:#604a32}.chip.purple{background:#f2eafa;color:#69449b;border-color:#d6c7e6}
+.graph-legend{background:#172535;color:#e2eaf2;padding:12px}.graph-legend :is(span,small){color:inherit}
+.playbar output{color:#f4f7fb}.graph-inspector .stat-row span{color:#d0dbe6}.scene-meta .title{color:#f4f7fb}.scene-meta small{font-size:11px}
+.param-row output{min-width:112px;line-height:1.7}.param-row{gap:10px;flex-wrap:wrap}
