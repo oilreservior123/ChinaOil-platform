@@ -1,0 +1,3515 @@
+{
+  "document_title": "智慧油藏开发决策关键技术研究与集成应用",
+  "source_pages": [
+    1,
+    25
+  ],
+  "scope_contract": "All visible first25 functionality gets navigation or a button. Only user-specified model and core demonstration paths are operational. target_status is planned scope, not a claim of current implementation.",
+  "modules": [
+    {
+      "id": "overview",
+      "name": "决策总览",
+      "pages": [
+        1,
+        2,
+        11,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "data",
+      "name": "数据资源与治理",
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "quality",
+      "name": "清洗与联合质控",
+      "pages": [
+        3,
+        5,
+        6,
+        17,
+        20,
+        24
+      ]
+    },
+    {
+      "id": "knowledge",
+      "name": "知识抽取与关联图谱",
+      "pages": [
+        2,
+        4,
+        8,
+        9,
+        10,
+        25
+      ]
+    },
+    {
+      "id": "well",
+      "name": "单井与井组主数据",
+      "pages": [
+        3,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "simulation",
+      "name": "裂缝与数值模拟",
+      "pages": [
+        14,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "diagnosis",
+      "name": "生产动态与异常诊断",
+      "pages": [
+        8,
+        9,
+        14,
+        16,
+        17,
+        25
+      ]
+    },
+    {
+      "id": "workflow",
+      "name": "智能工作流",
+      "pages": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "权限、任务与闭环管理",
+      "pages": [
+        3,
+        7,
+        14,
+        16,
+        18,
+        19,
+        21,
+        22,
+        23,
+        25
+      ]
+    },
+    {
+      "id": "models",
+      "name": "模型实验与数据测评",
+      "pages": [
+        4,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "overview-001",
+      "module": "overview",
+      "name": "智慧油藏开发决策平台总览",
+      "source_pages": [
+        1,
+        2
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "overview-002",
+      "module": "overview",
+      "name": "数据清洗集成—知识图谱—智能工作流三域导航",
+      "source_pages": [
+        1,
+        2
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "data-001",
+      "module": "data",
+      "name": "地质库：岩心、录井、地层、相",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-002",
+      "module": "data",
+      "name": "测井库：常规、成像曲线、解释",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-003",
+      "module": "data",
+      "name": "实验库：化验、物性、流体",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "well-001",
+      "module": "well",
+      "name": "统一井码／一井一码",
+      "source_pages": [
+        3,
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "实际井层或井组缺失时，补充生成映射须显著标记为演示关系，禁止表述为已验证地质连通。"
+    },
+    {
+      "id": "well-002",
+      "module": "well",
+      "name": "以井唯一编码建立“一井一档”",
+      "source_pages": [
+        3,
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "实际井层或井组缺失时，补充生成映射须显著标记为演示关系，禁止表述为已验证地质连通。"
+    },
+    {
+      "id": "well-003",
+      "module": "well",
+      "name": "单井生产、压力、注采时序综合视图",
+      "source_pages": [
+        3,
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "实际井层或井组缺失时，补充生成映射须显著标记为演示关系，禁止表述为已验证地质连通。"
+    },
+    {
+      "id": "well-004",
+      "module": "well",
+      "name": "按日／月对齐多源记录",
+      "source_pages": [
+        3,
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "实际井层或井组缺失时，补充生成映射须显著标记为演示关系，禁止表述为已验证地质连通。"
+    },
+    {
+      "id": "well-005",
+      "module": "well",
+      "name": "井—井层—井组关联查询与可视化",
+      "source_pages": [
+        3,
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "实际井层或井组缺失时，补充生成映射须显著标记为演示关系，禁止表述为已验证地质连通。"
+    },
+    {
+      "id": "data-004",
+      "module": "data",
+      "name": "统一数据模型与元字典",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-005",
+      "module": "data",
+      "name": "编码与术语规则",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-006",
+      "module": "data",
+      "name": "存量映射与标准化",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-007",
+      "module": "data",
+      "name": "一数一源责任到岗",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "quality-001",
+      "module": "quality",
+      "name": "本地样本接入与数据预览",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-002",
+      "module": "quality",
+      "name": "字段完整性、重复与数值边界检查",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-003",
+      "module": "quality",
+      "name": "孤立森林异常检测",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-004",
+      "module": "quality",
+      "name": "GRIN图循环插补",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-005",
+      "module": "quality",
+      "name": "短缺口补全与长缺口保留标记",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-006",
+      "module": "quality",
+      "name": "跨字段油水液一致性规则",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-007",
+      "module": "quality",
+      "name": "原始／处理后对比",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-008",
+      "module": "quality",
+      "name": "数据处理留痕与质量结果导出",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-009",
+      "module": "quality",
+      "name": "异常证据保留与待核查标记",
+      "source_pages": [
+        3,
+        5,
+        6
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "quality-010",
+      "module": "quality",
+      "name": "专业软件端注入工具",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only",
+      "scope_note": "可实现已具备字段的规则检查；完整专业验证缺少跨专业配对观测，入口保留。"
+    },
+    {
+      "id": "quality-011",
+      "module": "quality",
+      "name": "地质—测井—实验跨专业校验",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only",
+      "scope_note": "可实现已具备字段的规则检查；完整专业验证缺少跨专业配对观测，入口保留。"
+    },
+    {
+      "id": "quality-012",
+      "module": "quality",
+      "name": "动静态专业互证",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only",
+      "scope_note": "可实现已具备字段的规则检查；完整专业验证缺少跨专业配对观测，入口保留。"
+    },
+    {
+      "id": "data-008",
+      "module": "data",
+      "name": "标准数据服务接口／按需订阅",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-009",
+      "module": "data",
+      "name": "跨软件平台直载",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-010",
+      "module": "data",
+      "name": "成果双向回写同步",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-011",
+      "module": "data",
+      "name": "一体化协同研究",
+      "source_pages": [
+        3
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-012",
+      "module": "data",
+      "name": "数据采集与更新规范",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-013",
+      "module": "data",
+      "name": "质量现状评估报告",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-014",
+      "module": "data",
+      "name": "完整性评估",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-015",
+      "module": "data",
+      "name": "一致性评估",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-016",
+      "module": "data",
+      "name": "准确性评估",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-017",
+      "module": "data",
+      "name": "时效性评估",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-018",
+      "module": "data",
+      "name": "可利用率与治理优先级",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-019",
+      "module": "data",
+      "name": "采集频率与入库规范",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-020",
+      "module": "data",
+      "name": "单位／坐标系／时间戳标准化规范",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-021",
+      "module": "data",
+      "name": "冲突数据业务确认",
+      "source_pages": [
+        4,
+        5
+      ],
+      "target_status": "button_only",
+      "scope_note": "质量工作台可显示可从样本计算的统计值；规范管理、报告业务与标准化管理入口保留。"
+    },
+    {
+      "id": "data-022",
+      "module": "data",
+      "name": "SCADA／A2抽取与同步",
+      "source_pages": [
+        6
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-023",
+      "module": "data",
+      "name": "纸质档案数字化补录",
+      "source_pages": [
+        6
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-024",
+      "module": "data",
+      "name": "历史测井曲线补录",
+      "source_pages": [
+        6
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-025",
+      "module": "data",
+      "name": "业务专家复核",
+      "source_pages": [
+        6
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-026",
+      "module": "data",
+      "name": "敏感数据脱敏审批与访问控制",
+      "source_pages": [
+        6
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-027",
+      "module": "data",
+      "name": "标注与测评样本入集管理",
+      "source_pages": [
+        6
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-028",
+      "module": "data",
+      "name": "三层业务标签体系管理",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-029",
+      "module": "data",
+      "name": "一级标签：地质属性／生产状态／工况状态／监测结果／措施效果",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-030",
+      "module": "data",
+      "name": "二级标签：产量趋势／含水变化／能量保持／注水响应",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-031",
+      "module": "data",
+      "name": "三级标签：上升／稳定／递减／波动",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-032",
+      "module": "data",
+      "name": "含水阶段标签：低含水稳产／中含水快速上升／高含水递减",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-033",
+      "module": "data",
+      "name": "储层类型／油藏类型／沉积微相标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-034",
+      "module": "data",
+      "name": "驱动类型／储层非均质性／含油层系标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-035",
+      "module": "data",
+      "name": "原始地层压力系数标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-036",
+      "module": "data",
+      "name": "井筒完整性／生产稳定性标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-037",
+      "module": "data",
+      "name": "正常／供液不足／气体影响工况标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-038",
+      "module": "data",
+      "name": "高效／中效／低效泵效标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-039",
+      "module": "data",
+      "name": "正常／预警／故障设备健康标签",
+      "source_pages": [
+        7
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "knowledge-001",
+      "module": "knowledge",
+      "name": "本体约束UIE实体／属性／关系抽取",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-002",
+      "module": "knowledge",
+      "name": "抽取结果原文位置高亮",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-003",
+      "module": "knowledge",
+      "name": "领域术语与语义实体对齐",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-004",
+      "module": "knowledge",
+      "name": "RotatE候选关系预测",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-005",
+      "module": "knowledge",
+      "name": "动态时序关联分析",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-006",
+      "module": "knowledge",
+      "name": "可追溯知识图谱可视化",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-007",
+      "module": "knowledge",
+      "name": "井／井组／层位关系查询",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-008",
+      "module": "knowledge",
+      "name": "业务语义检索",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "knowledge-009",
+      "module": "knowledge",
+      "name": "异常历史模式检索与证据追溯",
+      "source_pages": [
+        4,
+        25
+      ],
+      "target_status": "live",
+      "scope_note": "结构精简复现、离线训练推理或预计算结果应分别标明；候选关系不可显示为确认事实。"
+    },
+    {
+      "id": "well-006",
+      "module": "well",
+      "name": "注水井注入量—采油井产量响应联动",
+      "source_pages": [
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "公开数据无真实射孔小层与完整地质构造，假设映射与未校准CRM应标明。"
+    },
+    {
+      "id": "well-007",
+      "module": "well",
+      "name": "时滞参数与CRM注采响应分析",
+      "source_pages": [
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "公开数据无真实射孔小层与完整地质构造，假设映射与未校准CRM应标明。"
+    },
+    {
+      "id": "well-008",
+      "module": "well",
+      "name": "井组内小层纵向对应",
+      "source_pages": [
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "公开数据无真实射孔小层与完整地质构造，假设映射与未校准CRM应标明。"
+    },
+    {
+      "id": "well-009",
+      "module": "well",
+      "name": "井组关联数据表",
+      "source_pages": [
+        8
+      ],
+      "target_status": "live",
+      "scope_note": "公开数据无真实射孔小层与完整地质构造，假设映射与未校准CRM应标明。"
+    },
+    {
+      "id": "well-010",
+      "module": "well",
+      "name": "单井地质属性档案",
+      "source_pages": [
+        8
+      ],
+      "target_status": "button_only",
+      "scope_note": "仅有数据的字段可预览；无数据不得填造真实档案。"
+    },
+    {
+      "id": "well-011",
+      "module": "well",
+      "name": "单井工况状态档案",
+      "source_pages": [
+        8
+      ],
+      "target_status": "button_only",
+      "scope_note": "仅有数据的字段可预览；无数据不得填造真实档案。"
+    },
+    {
+      "id": "well-012",
+      "module": "well",
+      "name": "单井措施记录档案",
+      "source_pages": [
+        8
+      ],
+      "target_status": "button_only",
+      "scope_note": "仅有数据的字段可预览；无数据不得填造真实档案。"
+    },
+    {
+      "id": "well-013",
+      "module": "well",
+      "name": "单井监测数据档案",
+      "source_pages": [
+        8
+      ],
+      "target_status": "button_only",
+      "scope_note": "仅有数据的字段可预览；无数据不得填造真实档案。"
+    },
+    {
+      "id": "well-014",
+      "module": "well",
+      "name": "井组—区块关联管理",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "well-015",
+      "module": "well",
+      "name": "区块总产液／产油／注水视图",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "well-016",
+      "module": "well",
+      "name": "区块综合含水／注采比视图",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "well-017",
+      "module": "well",
+      "name": "区块地层压力保持水平",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "well-018",
+      "module": "well",
+      "name": "区块内井组横向对比",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "well-019",
+      "module": "well",
+      "name": "区块开发阶段标签",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "well-020",
+      "module": "well",
+      "name": "单井／井组／区块图谱生成与封装",
+      "source_pages": [
+        9
+      ],
+      "target_status": "button_only",
+      "scope_note": "层级导航可展示；真实区块边界、井组归属与PVT不足，不能声称物理区块关联完成。"
+    },
+    {
+      "id": "data-040",
+      "module": "data",
+      "name": "身份／空间／层位／时间有效性／口径／来源版本融合管理",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-041",
+      "module": "data",
+      "name": "异常预警场景样本库",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-042",
+      "module": "data",
+      "name": "间开制度场景样本库",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-043",
+      "module": "data",
+      "name": "措施效果场景样本库",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-044",
+      "module": "data",
+      "name": "井组分析场景样本库",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-045",
+      "module": "data",
+      "name": "监测方案场景样本库",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-046",
+      "module": "data",
+      "name": "原始数据层封装",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-047",
+      "module": "data",
+      "name": "标准化数据层封装",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-048",
+      "module": "data",
+      "name": "训练数据图谱层封装",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-049",
+      "module": "data",
+      "name": "元数据与标注规范文档层封装",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "data-050",
+      "module": "data",
+      "name": "加工日志／接口资料／版本台账",
+      "source_pages": [
+        9,
+        10
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "models-001",
+      "module": "models",
+      "name": "训练／验证／测试样例预览",
+      "source_pages": [
+        10
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "models-002",
+      "module": "models",
+      "name": "训练／验证／测试数量与比例",
+      "source_pages": [
+        10
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "models-003",
+      "module": "models",
+      "name": "按井及时间划分策略展示",
+      "source_pages": [
+        10
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "models-004",
+      "module": "models",
+      "name": "模型名称与结构／运行方式展示",
+      "source_pages": [
+        10
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "models-005",
+      "module": "models",
+      "name": "各类模型真实评价指标与评估范围",
+      "source_pages": [
+        10
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "models-006",
+      "module": "models",
+      "name": "样本来源、版本与生成标记",
+      "source_pages": [
+        10
+      ],
+      "target_status": "live"
+    },
+    {
+      "id": "simulation-001",
+      "module": "simulation",
+      "name": "DFN裂缝网络导入／生成与可视化",
+      "source_pages": [
+        14,
+        16,
+        17,
+        18
+      ],
+      "target_status": "live",
+      "scope_note": "缺失几何或物性可补充生成并标注；简化2D模型不可称完整三维现场预测。"
+    },
+    {
+      "id": "simulation-002",
+      "module": "simulation",
+      "name": "EDFM裂缝—基质耦合模拟",
+      "source_pages": [
+        14,
+        16,
+        17,
+        18
+      ],
+      "target_status": "live",
+      "scope_note": "缺失几何或物性可补充生成并标注；简化2D模型不可称完整三维现场预测。"
+    },
+    {
+      "id": "simulation-003",
+      "module": "simulation",
+      "name": "数值模拟输入、参数与结果查看",
+      "source_pages": [
+        14,
+        16,
+        17,
+        18
+      ],
+      "target_status": "live",
+      "scope_note": "缺失几何或物性可补充生成并标注；简化2D模型不可称完整三维现场预测。"
+    },
+    {
+      "id": "simulation-004",
+      "module": "simulation",
+      "name": "油水两相演示与产能／压力结果",
+      "source_pages": [
+        14,
+        16,
+        17,
+        18
+      ],
+      "target_status": "live",
+      "scope_note": "缺失几何或物性可补充生成并标注；简化2D模型不可称完整三维现场预测。"
+    },
+    {
+      "id": "simulation-005",
+      "module": "simulation",
+      "name": "机理模型计算结果与误差校验",
+      "source_pages": [
+        14,
+        16,
+        17,
+        18
+      ],
+      "target_status": "live",
+      "scope_note": "缺失几何或物性可补充生成并标注；简化2D模型不可称完整三维现场预测。"
+    },
+    {
+      "id": "simulation-006",
+      "module": "simulation",
+      "name": "物质平衡服务",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-007",
+      "module": "simulation",
+      "name": "注采平衡专业校核",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-008",
+      "module": "simulation",
+      "name": "测井解释服务",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-009",
+      "module": "simulation",
+      "name": "地震解释服务",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-010",
+      "module": "simulation",
+      "name": "小层对比",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-011",
+      "module": "simulation",
+      "name": "单砂体追踪",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-012",
+      "module": "simulation",
+      "name": "构造解释",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-013",
+      "module": "simulation",
+      "name": "储层解释",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-014",
+      "module": "simulation",
+      "name": "完整地质建模",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "simulation-015",
+      "module": "simulation",
+      "name": "专业成果版本冻结与下游只读",
+      "source_pages": [
+        14,
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "diagnosis-001",
+      "module": "diagnosis",
+      "name": "单井／井组／区块对象选择",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-002",
+      "module": "diagnosis",
+      "name": "生产、压力、注采曲线联动",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-003",
+      "module": "diagnosis",
+      "name": "Anomaly Transformer生产时序异常检测",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-004",
+      "module": "diagnosis",
+      "name": "产量递减／含水上升／注采失衡候选筛查",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-005",
+      "module": "diagnosis",
+      "name": "Arps递减基线拟合与偏离校验",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-006",
+      "module": "diagnosis",
+      "name": "调用CRM／递减等机理模型校验",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-007",
+      "module": "diagnosis",
+      "name": "知识图谱历史异常模式匹配",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-008",
+      "module": "diagnosis",
+      "name": "异常时段、相关指标与证据清单",
+      "source_pages": [
+        8,
+        9,
+        17
+      ],
+      "target_status": "live",
+      "scope_note": "正常递减不等于异常；注采比是地面比率时不能当作地下平衡；无专家根因标签则仅候选诊断。"
+    },
+    {
+      "id": "diagnosis-009",
+      "module": "diagnosis",
+      "name": "地质角色诊断会签",
+      "source_pages": [
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "diagnosis-010",
+      "module": "diagnosis",
+      "name": "诊断意见审核确认",
+      "source_pages": [
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "diagnosis-011",
+      "module": "diagnosis",
+      "name": "异常清单自动触发方案编制任务",
+      "source_pages": [
+        16,
+        17
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-001",
+      "module": "workflow",
+      "name": "DAG节点与依赖可视化",
+      "source_pages": [
+        13,
+        14,
+        20,
+        21,
+        24
+      ],
+      "target_status": "live",
+      "scope_note": "仅指定计算链路真实执行；其他业务节点不得假装已执行。"
+    },
+    {
+      "id": "workflow-002",
+      "module": "workflow",
+      "name": "数据质控—裂缝建模—数值模拟—产能评价DAG运行",
+      "source_pages": [
+        13,
+        14,
+        20,
+        21,
+        24
+      ],
+      "target_status": "live",
+      "scope_note": "仅指定计算链路真实执行；其他业务节点不得假装已执行。"
+    },
+    {
+      "id": "workflow-003",
+      "module": "workflow",
+      "name": "节点输入输出与运行日志",
+      "source_pages": [
+        13,
+        14,
+        20,
+        21,
+        24
+      ],
+      "target_status": "live",
+      "scope_note": "仅指定计算链路真实执行；其他业务节点不得假装已执行。"
+    },
+    {
+      "id": "workflow-004",
+      "module": "workflow",
+      "name": "质控规则闸门：阻断／警示／提示／通过",
+      "source_pages": [
+        13,
+        14,
+        20,
+        21,
+        24
+      ],
+      "target_status": "live",
+      "scope_note": "仅指定计算链路真实执行；其他业务节点不得假装已执行。"
+    },
+    {
+      "id": "workflow-005",
+      "module": "workflow",
+      "name": "节点运行状态与失败／阻断提示",
+      "source_pages": [
+        13,
+        14,
+        20,
+        21,
+        24
+      ],
+      "target_status": "live",
+      "scope_note": "仅指定计算链路真实执行；其他业务节点不得假装已执行。"
+    },
+    {
+      "id": "workflow-006",
+      "module": "workflow",
+      "name": "完整业务可视化编排",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-007",
+      "module": "workflow",
+      "name": "条件分支",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-008",
+      "module": "workflow",
+      "name": "并行执行管理",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-009",
+      "module": "workflow",
+      "name": "人工／自动／混合节点配置",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-010",
+      "module": "workflow",
+      "name": "任务分裂与合并",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-011",
+      "module": "workflow",
+      "name": "流程智能调度",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-012",
+      "module": "workflow",
+      "name": "数据依赖集声明",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-013",
+      "module": "workflow",
+      "name": "知识依赖集声明",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-014",
+      "module": "workflow",
+      "name": "节点权限要求配置",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-015",
+      "module": "workflow",
+      "name": "节点输出物与流转条件配置",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-016",
+      "module": "workflow",
+      "name": "语义层动态求值",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-017",
+      "module": "workflow",
+      "name": "整改子流程挂起与恢复",
+      "source_pages": [
+        14,
+        20,
+        21
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-018",
+      "module": "workflow",
+      "name": "报告生成技能",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-019",
+      "module": "workflow",
+      "name": "智能推送技能",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-020",
+      "module": "workflow",
+      "name": "审核表单技能",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-021",
+      "module": "workflow",
+      "name": "外部专业软件调用",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-022",
+      "module": "workflow",
+      "name": "任务下达技能",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-001",
+      "module": "governance",
+      "name": "AI意图解析",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-002",
+      "module": "governance",
+      "name": "AI资料摘要",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-003",
+      "module": "governance",
+      "name": "AI方案初稿",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-004",
+      "module": "governance",
+      "name": "AI比选说明",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-005",
+      "module": "governance",
+      "name": "AI审核辅助",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-006",
+      "module": "governance",
+      "name": "AI推送解释",
+      "source_pages": [
+        14
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-023",
+      "module": "workflow",
+      "name": "数据准备业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "live",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-024",
+      "module": "workflow",
+      "name": "静态地质研究业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-025",
+      "module": "workflow",
+      "name": "动态分析业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "live",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-026",
+      "module": "workflow",
+      "name": "异常诊断业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "live",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-027",
+      "module": "workflow",
+      "name": "方案编制业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-028",
+      "module": "workflow",
+      "name": "多方案比选业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-029",
+      "module": "workflow",
+      "name": "专业审核业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-030",
+      "module": "workflow",
+      "name": "综合审定业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-031",
+      "module": "workflow",
+      "name": "任务下达业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-032",
+      "module": "workflow",
+      "name": "执行跟踪业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-033",
+      "module": "workflow",
+      "name": "效果评估业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-034",
+      "module": "workflow",
+      "name": "知识沉淀业务节点",
+      "source_pages": [
+        15,
+        16
+      ],
+      "target_status": "button_only",
+      "scope_note": "DAG示范仅运行用户指定子链；静态研究中的裂缝／模拟功能由专用模块承载。"
+    },
+    {
+      "id": "workflow-035",
+      "module": "workflow",
+      "name": "数据分析链：数据接入→静态研究→动态分析→异常识别→初步诊断→诊断会签→异常清单",
+      "source_pages": [
+        17
+      ],
+      "target_status": "button_only",
+      "scope_note": "完整流程入口；用户指定的分析、异常、质控子步骤可用。"
+    },
+    {
+      "id": "workflow-036",
+      "module": "workflow",
+      "name": "诊断确认",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-037",
+      "module": "workflow",
+      "name": "方案初稿生成",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-038",
+      "module": "workflow",
+      "name": "方案数据依据链",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-039",
+      "module": "workflow",
+      "name": "依据链自动校验",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-040",
+      "module": "workflow",
+      "name": "多方案机理与经济比选",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-041",
+      "module": "workflow",
+      "name": "推荐方案输出",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-042",
+      "module": "workflow",
+      "name": "编制人确认",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-043",
+      "module": "workflow",
+      "name": "提交审核",
+      "source_pages": [
+        18
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-007",
+      "module": "governance",
+      "name": "审核中方案写权限冻结",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-008",
+      "module": "governance",
+      "name": "专业审核：通过／有条件通过／退回",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-009",
+      "module": "governance",
+      "name": "专业领域否决权",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-010",
+      "module": "governance",
+      "name": "会签汇总与分歧协调",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-011",
+      "module": "governance",
+      "name": "临时权限委托",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-012",
+      "module": "governance",
+      "name": "综合审定批准／驳回",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-013",
+      "module": "governance",
+      "name": "编制与审定分离",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-014",
+      "module": "governance",
+      "name": "批准后任务单下达",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-015",
+      "module": "governance",
+      "name": "驳回保留审核意见与版本差异",
+      "source_pages": [
+        18,
+        19
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "workflow-044",
+      "module": "workflow",
+      "name": "数据集查询接口",
+      "source_pages": [
+        20
+      ],
+      "target_status": "button_only",
+      "scope_note": "内部示范的质控状态可供DAG调用；对外业务接口管理入口保留。"
+    },
+    {
+      "id": "workflow-045",
+      "module": "workflow",
+      "name": "质控状态接口",
+      "source_pages": [
+        20
+      ],
+      "target_status": "button_only",
+      "scope_note": "内部示范的质控状态可供DAG调用；对外业务接口管理入口保留。"
+    },
+    {
+      "id": "workflow-046",
+      "module": "workflow",
+      "name": "整改工单接口",
+      "source_pages": [
+        20
+      ],
+      "target_status": "button_only",
+      "scope_note": "内部示范的质控状态可供DAG调用；对外业务接口管理入口保留。"
+    },
+    {
+      "id": "governance-016",
+      "module": "governance",
+      "name": "角色—对象—动作—条件动态权限",
+      "source_pages": [
+        22
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-017",
+      "module": "governance",
+      "name": "对象级权限继承",
+      "source_pages": [
+        22
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-018",
+      "module": "governance",
+      "name": "数据权限与流程权限联动",
+      "source_pages": [
+        22
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-019",
+      "module": "governance",
+      "name": "节点临时数据权限扩展与回收",
+      "source_pages": [
+        22
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-020",
+      "module": "governance",
+      "name": "跨专业会签权限委托",
+      "source_pages": [
+        22
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-021",
+      "module": "governance",
+      "name": "权限随流程实例结束失效",
+      "source_pages": [
+        22
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "governance-022",
+      "module": "governance",
+      "name": "质控联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "数据质控不通过 → 生成整改工单→主流程挂起→整改复核通过后恢复"
+    },
+    {
+      "id": "governance-023",
+      "module": "governance",
+      "name": "诊断联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "异常诊断确认 → 创建方案编制任务并指派编制人"
+    },
+    {
+      "id": "governance-024",
+      "module": "governance",
+      "name": "编制联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "初稿完成且依据链校验通过 → 激活比选节点"
+    },
+    {
+      "id": "governance-025",
+      "module": "governance",
+      "name": "比选联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "推荐方案确认 → 按图谱推荐路径激活专业审核"
+    },
+    {
+      "id": "governance-026",
+      "module": "governance",
+      "name": "审核联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "专业审核退回或会签分歧 → 回编制并保留差异，或触发协调"
+    },
+    {
+      "id": "governance-027",
+      "module": "governance",
+      "name": "审定联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "综合审定通过／驳回 → 生成执行单／返回编制"
+    },
+    {
+      "id": "governance-028",
+      "module": "governance",
+      "name": "执行联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "执行偏差超阈值 → 触发再评估或方案调整"
+    },
+    {
+      "id": "governance-029",
+      "module": "governance",
+      "name": "闭环联动",
+      "source_pages": [
+        23
+      ],
+      "target_status": "button_only",
+      "scope_note": "效果评估完成 → 生成知识候选，经质控确认回写图谱"
+    },
+    {
+      "id": "knowledge-010",
+      "module": "knowledge",
+      "name": "规范标准与版本条款查询",
+      "source_pages": [
+        25
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "knowledge-011",
+      "module": "knowledge",
+      "name": "知识条目写入与待质控生效",
+      "source_pages": [
+        25
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "knowledge-012",
+      "module": "knowledge",
+      "name": "编制节点知识推送",
+      "source_pages": [
+        25
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "knowledge-013",
+      "module": "knowledge",
+      "name": "审核节点知识推送",
+      "source_pages": [
+        25
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "knowledge-014",
+      "module": "knowledge",
+      "name": "执行评估节点知识推送",
+      "source_pages": [
+        25
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "knowledge-015",
+      "module": "knowledge",
+      "name": "推送忽略理由与图谱优化反馈",
+      "source_pages": [
+        25
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "id": "overview-003",
+      "module": "overview",
+      "name": "六大类／44标称小类与39列明目录统计",
+      "source_pages": [
+        11
+      ],
+      "target_status": "live",
+      "scope_note": "标称与枚举数量有差异，按源文列明。"
+    },
+    {
+      "id": "overview-004",
+      "module": "overview",
+      "name": "三层业务标签体系建设状态",
+      "source_pages": [
+        11
+      ],
+      "target_status": "button_only",
+      "scope_note": "PPT技术方案设计状态，只做来源说明，不宣称本平台已交付全部建设成果。"
+    },
+    {
+      "id": "overview-005",
+      "module": "overview",
+      "name": "三级关联模型建设状态",
+      "source_pages": [
+        11
+      ],
+      "target_status": "button_only",
+      "scope_note": "PPT技术方案设计状态，只做来源说明，不宣称本平台已交付全部建设成果。"
+    }
+  ],
+  "data_catalog": [
+    {
+      "code": "G-1",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "地层对比数据",
+      "display_name": "地层对比数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-2",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "油藏构造数据",
+      "display_name": "油藏构造数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-3",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "岩相/沉积相数据",
+      "display_name": "岩相/沉积相数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-4",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "储层物性数据",
+      "display_name": "储层物性数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-5",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "岩石力学数据",
+      "display_name": "岩石力学数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-6",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "流体性质数据",
+      "display_name": "流体性质数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-7",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "油藏温度压力数据",
+      "display_name": "油藏温度压力数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-8",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "开发层系数据",
+      "display_name": "开发层系数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "G-9",
+      "category": "地质静态类数据图谱",
+      "category_english": "Geological",
+      "source_name": "井身结构数据",
+      "display_name": "井身结构数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "P-1",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "单井日度生产数据",
+      "display_name": "单井日度生产数据",
+      "source_page": 12,
+      "target_status": "live_data_view",
+      "scope_note": "可展示本次公开数据／派生候选事件，非完整企业业务库。"
+    },
+    {
+      "code": "P-2",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "单井月度/季度累计数据",
+      "display_name": "单井月度/季度累计数据",
+      "source_page": 12,
+      "target_status": "live_data_view",
+      "scope_note": "可展示本次公开数据／派生候选事件，非完整企业业务库。"
+    },
+    {
+      "code": "P-3",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "注水井注入数据",
+      "display_name": "注水井注入数据",
+      "source_page": 12,
+      "target_status": "live_data_view",
+      "scope_note": "可展示本次公开数据／派生候选事件，非完整企业业务库。"
+    },
+    {
+      "code": "P-4",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "含水变化数据",
+      "display_name": "含水变化数据",
+      "source_page": 12,
+      "target_status": "live_data_view",
+      "scope_note": "可展示本次公开数据／派生候选事件，非完整企业业务库。"
+    },
+    {
+      "code": "P-5",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "工作制度变更数据",
+      "display_name": "工作制度变更数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "P-6",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "措施作业数据",
+      "display_name": "措施作业数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "P-7",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "检泵作业数据",
+      "display_name": "检泵作业数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "P-8",
+      "category": "生产动态数据图谱",
+      "category_english": "Production",
+      "source_name": "测试/试井数据",
+      "display_name": "测试/试井数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-1",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "吸水剖面数据",
+      "display_name": "吸水剖面数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-2",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "产液剖面数据",
+      "display_name": "产液剖面数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-3",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "压力测试数据",
+      "display_name": "压力测试数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-4",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "井间示踪剂数据",
+      "display_name": "井间示踪剂数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-5",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "四参数/碳氧比测井数据",
+      "display_name": "四参数/碳氧比测井数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-6",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "其他冬天监测数据",
+      "display_name": "其他动态监测数据",
+      "source_page": 12,
+      "target_status": "button_only",
+      "normalization_note": "PPT原文“其他冬天监测数据”，显示纠正为“其他动态监测数据”，原文保留备查。"
+    },
+    {
+      "code": "M-7",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "井筒监测数据",
+      "display_name": "井筒监测数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-8",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "监测历史计划与执行数据",
+      "display_name": "监测历史计划与执行数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "M-9",
+      "category": "动态监测类数据图谱",
+      "category_english": "Monitoring",
+      "source_name": "开发管理纲要/监测规范",
+      "display_name": "开发管理纲要/监测规范",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "T-1",
+      "category": "工艺措施数据图谱",
+      "category_english": "Technology",
+      "source_name": "增产措施数据",
+      "display_name": "增产措施数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "T-2",
+      "category": "工艺措施数据图谱",
+      "category_english": "Technology",
+      "source_name": "控水措施数据",
+      "display_name": "控水措施数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "T-3",
+      "category": "工艺措施数据图谱",
+      "category_english": "Technology",
+      "source_name": "维护作业数据",
+      "display_name": "维护作业数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "W-1",
+      "category": "井组/区块关联类数据图谱",
+      "category_english": "Well-group / Block",
+      "source_name": "井组拓扑数据",
+      "display_name": "井组拓扑数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "W-2",
+      "category": "井组/区块关联类数据图谱",
+      "category_english": "Well-group / Block",
+      "source_name": "区块开发指标数据",
+      "display_name": "区块开发指标数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "W-3",
+      "category": "井组/区块关联类数据图谱",
+      "category_english": "Well-group / Block",
+      "source_name": "历史动态分析记录",
+      "display_name": "历史动态分析记录",
+      "source_page": 12,
+      "target_status": "live_data_view",
+      "scope_note": "可展示本次公开数据／派生候选事件，非完整企业业务库。"
+    },
+    {
+      "code": "W-4",
+      "category": "井组/区块关联类数据图谱",
+      "category_english": "Well-group / Block",
+      "source_name": "水驱特征曲线数据",
+      "display_name": "水驱特征曲线数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "W-5",
+      "category": "井组/区块关联类数据图谱",
+      "category_english": "Well-group / Block",
+      "source_name": "注采不平衡数据",
+      "display_name": "注采不平衡数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "K-1",
+      "category": "开发管理数据图谱",
+      "category_english": "Knowledge",
+      "source_name": "异常工况处置知识库",
+      "display_name": "异常工况处置知识库",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "K-2",
+      "category": "开发管理数据图谱",
+      "category_english": "Knowledge",
+      "source_name": "标准操作规程/SOP",
+      "display_name": "标准操作规程/SOP",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "K-3",
+      "category": "开发管理数据图谱",
+      "category_english": "Knowledge",
+      "source_name": "管理规范数据",
+      "display_name": "管理规范数据",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "K-4",
+      "category": "开发管理数据图谱",
+      "category_english": "Knowledge",
+      "source_name": "行业技术经济参数",
+      "display_name": "行业技术经济参数",
+      "source_page": 12,
+      "target_status": "button_only"
+    },
+    {
+      "code": "K-5",
+      "category": "开发管理数据图谱",
+      "category_english": "Knowledge",
+      "source_name": "报告模板库",
+      "display_name": "报告模板库",
+      "source_page": 12,
+      "target_status": "button_only"
+    }
+  ],
+  "catalog_discrepancy": {
+    "slide11_claimed_subclasses": 44,
+    "slide12_enumerated_subclasses": 39,
+    "missing_enumeration": 5,
+    "slide11_categories": [
+      "地质",
+      "生产",
+      "示功图",
+      "监测",
+      "工艺",
+      "管理"
+    ],
+    "slide12_categories": [
+      "地质静态类数据图谱",
+      "生产动态数据图谱",
+      "动态监测类数据图谱",
+      "工艺措施数据图谱",
+      "井组/区块关联类数据图谱",
+      "开发管理数据图谱"
+    ],
+    "recommended_display": "PPT标称44小类；本页列明39项，另5项待补充。分类差异保留说明，不能编造缺失目录。"
+  },
+  "business_nodes": [
+    "数据准备",
+    "静态地质研究",
+    "动态分析",
+    "异常诊断",
+    "方案编制",
+    "多方案比选",
+    "专业审核",
+    "综合审定",
+    "任务下达",
+    "执行跟踪",
+    "效果评估",
+    "知识沉淀"
+  ],
+  "task_linkages": [
+    {
+      "name": "质控联动",
+      "trigger": "数据质控不通过",
+      "action": "生成整改工单→主流程挂起→整改复核通过后恢复"
+    },
+    {
+      "name": "诊断联动",
+      "trigger": "异常诊断确认",
+      "action": "创建方案编制任务并指派编制人"
+    },
+    {
+      "name": "编制联动",
+      "trigger": "初稿完成且依据链校验通过",
+      "action": "激活比选节点"
+    },
+    {
+      "name": "比选联动",
+      "trigger": "推荐方案确认",
+      "action": "按图谱推荐路径激活专业审核"
+    },
+    {
+      "name": "审核联动",
+      "trigger": "专业审核退回或会签分歧",
+      "action": "回编制并保留差异，或触发协调"
+    },
+    {
+      "name": "审定联动",
+      "trigger": "综合审定通过／驳回",
+      "action": "生成执行单／返回编制"
+    },
+    {
+      "name": "执行联动",
+      "trigger": "执行偏差超阈值",
+      "action": "触发再评估或方案调整"
+    },
+    {
+      "name": "闭环联动",
+      "trigger": "效果评估完成",
+      "action": "生成知识候选，经质控确认回写图谱"
+    }
+  ],
+  "quality_levels": [
+    {
+      "code": "L0",
+      "name": "阻断",
+      "condition": "关键字段缺失、逻辑矛盾、违反强约束",
+      "flow": "节点不能激活；挂起主流程，触发整改子流程",
+      "owner": "数据管理员 + 责任专业"
+    },
+    {
+      "code": "L1",
+      "name": "警示",
+      "condition": "数据异常但不致命、统计偏差超阈",
+      "flow": "不阻断，节点激活时附数据质量标签",
+      "owner": "专业岗自行判断"
+    },
+    {
+      "code": "L2",
+      "name": "提示",
+      "condition": "与历史趋势偏离、需要关注",
+      "flow": "仅在项目空间提示，不打断当前流程",
+      "owner": "油藏工程师等"
+    },
+    {
+      "code": "L3",
+      "name": "通过",
+      "condition": "全部规则通过",
+      "flow": "正常流转，无附加标签",
+      "owner": "—"
+    }
+  ],
+  "knowledge_interfaces": [
+    {
+      "name": "关系查询",
+      "input": "井／井组／区块／小层对象",
+      "output": "关联小层、砂体、裂缝、断层、历史方案、异常案例",
+      "nodes": [
+        "静态研究",
+        "异常诊断"
+      ],
+      "target_status": "live"
+    },
+    {
+      "name": "相似案例检索",
+      "input": "当前诊断／方案特征向量",
+      "output": "相似历史案例及处置结果",
+      "nodes": [
+        "异常诊断",
+        "方案编制"
+      ],
+      "target_status": "live",
+      "scope_note": "仅源数据确有的历史候选事件可检索；无处置效果则显示缺失。"
+    },
+    {
+      "name": "规范标准查询",
+      "input": "业务对象类型、业务环节",
+      "output": "适用标准规范版本与条款",
+      "nodes": [
+        "方案编制",
+        "审核"
+      ],
+      "target_status": "button_only"
+    },
+    {
+      "name": "知识条目写入",
+      "input": "已评估结论、已沉淀经验",
+      "output": "待质控确认后生效的知识条目",
+      "nodes": [
+        "闭环反馈"
+      ],
+      "target_status": "button_only"
+    }
+  ],
+  "knowledge_push": [
+    {
+      "node": "编制节点激活时",
+      "content": "历史同类方案、邻井类似措施案例、裂缝预测多证据提示、参考分析结论",
+      "recipient": "编制人",
+      "target_status": "button_only"
+    },
+    {
+      "node": "审核节点激活时",
+      "content": "引用数据质控摘要、历史争议点与退回原因、关联在途方案",
+      "recipient": "各专业审核人",
+      "target_status": "button_only"
+    },
+    {
+      "node": "异常诊断节点激活时",
+      "content": "本井／井组历史异常模式、措施与效果、当前模式匹配度",
+      "recipient": "油藏工程师",
+      "target_status": "live",
+      "scope_note": "历史候选模式和匹配证据可用；缺失措施效果不生成虚构结论。"
+    },
+    {
+      "node": "执行评估节点激活时",
+      "content": "同类执行偏差、试采效果对比、可复用知识",
+      "recipient": "生产管理岗、编制人",
+      "target_status": "button_only"
+    }
+  ],
+  "evaluation_metric_requirements": {
+    "Isolation Forest": [
+      "Precision",
+      "Recall",
+      "F1",
+      "ROC-AUC／PR-AUC（仅有标签时）",
+      "受控注入标签与真实异常标签区分"
+    ],
+    "GRIN": [
+      "MAE",
+      "RMSE",
+      "MAPE（零值规避）",
+      "按变量／缺口长度分层误差",
+      "仅对遮蔽观测真值评价"
+    ],
+    "UIE": [
+      "实体Precision／Recall／F1",
+      "关系Precision／Recall／F1",
+      "exact-span准确率",
+      "本体约束通过率",
+      "证据引用覆盖率"
+    ],
+    "RotatE": [
+      "MRR",
+      "Hits@1",
+      "Hits@3",
+      "Hits@10",
+      "filtered排名及全已知正例过滤"
+    ],
+    "CRM": [
+      "MAE",
+      "RMSE",
+      "R²",
+      "响应参数与约束检查",
+      "仅可用于校准条件内的响应解释"
+    ],
+    "DFN": [
+      "几何统计一致性",
+      "裂缝密度／方位／长度分布误差（有参考时）",
+      "独立实现而非同一几何重复拆分"
+    ],
+    "EDFM": [
+      "压力／饱和度MAE与RMSE（有参考时）",
+      "质量守恒残差",
+      "线性／非线性求解残差",
+      "网格／时间步收敛性",
+      "井产量／含水率曲线对比"
+    ],
+    "Anomaly Transformer": [
+      "Precision",
+      "Recall",
+      "F1",
+      "ROC-AUC",
+      "PR-AUC",
+      "事件级检测延迟（有真值时）",
+      "阈值仅验证集选择"
+    ],
+    "Arps": [
+      "MAE",
+      "RMSE",
+      "R²",
+      "递减参数qi／Di／b及适用条件",
+      "稳定制度分段、正常递减与异常偏离区分"
+    ],
+    "实体对齐／语义检索": [
+      "实体对齐准确率",
+      "Recall@k",
+      "MRR／nDCG@k",
+      "来源证据可追溯率"
+    ],
+    "DAG": [
+      "任务成功率",
+      "运行耗时",
+      "节点阻断／恢复行为",
+      "日志与输入输出版本完整性"
+    ]
+  },
+  "page_coverage": [
+    {
+      "page": 1,
+      "title": "智慧油藏开发决策关键技术研究与集成应用",
+      "feature_ids": [
+        "overview-001",
+        "overview-002"
+      ],
+      "catalog_codes": [],
+      "source_text": "智慧油藏开发决策关键技术研究与集成应用"
+    },
+    {
+      "page": 2,
+      "title": "一、油藏开发数据治理与知识图谱构建",
+      "feature_ids": [
+        "overview-001",
+        "overview-002"
+      ],
+      "catalog_codes": [],
+      "source_text": "一、油藏开发数据治理与知识图谱构建\n源异构数据智能\n清洗集成与联合质控\n 数据清洗集成\n数据可信：解决“数据通不通、准不准”，产出统一数据底座、质控规则库、质控通过的数据集。\n油藏开发数据知识抽取与关联图谱构建\n 知识图谱构建\n数据可理解：解决“数据能不能被机器理解、能不能关联”，产出业务本体、知识图谱、实体关系、专业解释知识。\n油藏开数据与业务协同智能工作流实现\n 智能工作流实现\n业务可智能流转：解决“数据和知识如何在业务流程中流转、协同、调度”，产出智能工作流引擎、节点权限与任务联动、质控嵌入流程、知识按节点推送、跨域协同、流程智能调度管控。"
+    },
+    {
+      "page": 3,
+      "title": "（一）多源异构数据智能清洗集成与联合质控",
+      "feature_ids": [
+        "data-001",
+        "data-002",
+        "data-003",
+        "well-001",
+        "well-002",
+        "well-003",
+        "well-004",
+        "well-005",
+        "data-004",
+        "data-005",
+        "data-006",
+        "data-007",
+        "quality-001",
+        "quality-002",
+        "quality-003",
+        "quality-004",
+        "quality-005",
+        "quality-006",
+        "quality-007",
+        "quality-008",
+        "quality-009",
+        "quality-010",
+        "quality-011",
+        "quality-012",
+        "data-008",
+        "data-009",
+        "data-010",
+        "data-011"
+      ],
+      "catalog_codes": [],
+      "source_text": "（一）多源异构数据智能清洗集成与联合质控\n完善地质、测井、实验检测等多源异构专业数据库，搭建基于统一数据标准的数据服务平台，通过软件注入工具、集成平台完成跨专业、动静态交叉联合质控，支持跨软件平台数据服务，夯实一体化应用基础。\n01\n数据资源层\n地质库\n岩心·录井·地层·相\n测井库\n常规·成像曲线·解释\n实验库\n化验·物性·流体\n主数据\n统一井码·一井一码\n02\n标准规范层\n数据模型\n统一模型与元字典\n编码规则\n编码与术语统一\n存量治理\n映射清洗标准化\n责任机制\n一数一源到岗\n03\n联合质控层\n注入工具\n嵌入专业软件端\n集成平台\n调度与规则引擎\n跨专业\n地质—测井—实验校验\n动静态\n动态与静态互证\n04\n数据服务层\n服务接口\n标准按需订阅\n跨平台\n主流软件直载\n成果回写\n双向同步不落地\n一体化\n协同研究与规模应用\n数据全 · 标准一 · 质控严 · 服务通 —— 夯实一体化应用基础"
+    },
+    {
+      "page": 4,
+      "title": "2.1 建设思路",
+      "feature_ids": [
+        "data-012",
+        "data-013",
+        "data-014",
+        "data-015",
+        "data-016",
+        "data-017",
+        "data-018",
+        "data-019",
+        "data-020",
+        "data-021",
+        "knowledge-001",
+        "knowledge-002",
+        "knowledge-003",
+        "knowledge-004",
+        "knowledge-005",
+        "knowledge-006",
+        "knowledge-007",
+        "knowledge-008",
+        "knowledge-009"
+      ],
+      "catalog_codes": [],
+      "source_text": "2.1 建设思路\n系统梳理地质静态、生产动态、动态监测、示功图及工艺等多源数据，重点开展数据业务标签体系构建与多源数据关联融合，形成标准化标注样本库。\n1\n多源数据梳理与采集规范制定\n明确各类型数据的来源、采集频率、格式标准及入库规范\n形成数据采集与更新标准文档\n2\n数据业务标签体系设计与标注\n统一数据业务含义\n建立标签判定规则与标注流程规范\n完成历史数据的标签标注工作\n3\n多级关联模型构建与图谱建设\n建立井—井组—区块多级数据关联模型\n构建面向智能分析的标准数据图谱\n形成标准化标注样本库，为后续模型训练与方案推荐提供高质量数据底座\n（二）油藏开发数据知识抽取与关联图谱构建\n围绕油藏开发多源异构文本、报表及动态数据，开展实体、属性、关系知识抽取；规范井位、层系、生产措施等领域术语与本体建模；挖掘井间、层间、措施与产能间关联关系，搭建油藏开发知识关联图谱，实现知识结构化关联、可视化展示与业务语义检索应用。"
+    },
+    {
+      "page": 5,
+      "title": "2.2 多源数据梳理与采集规范制定：数据质量现状评估与采集规范",
+      "feature_ids": [
+        "quality-001",
+        "quality-002",
+        "quality-003",
+        "quality-004",
+        "quality-005",
+        "quality-006",
+        "quality-007",
+        "quality-008",
+        "quality-009",
+        "data-012",
+        "data-013",
+        "data-014",
+        "data-015",
+        "data-016",
+        "data-017",
+        "data-018",
+        "data-019",
+        "data-020",
+        "data-021"
+      ],
+      "catalog_codes": [],
+      "source_text": "2.2 多源数据梳理与采集规范制定：数据质量现状评估与采集规范\n从完整性、一致性、准确性、时效性四个维度开展质量评估，并参照中石油数据管理规范制定采集标准、数据格式和入库接口规范。\n数据质量现状评估\n完整性\n识别数据缺失字段，统计时间覆盖、缺失情况。\n一致性\n识别数据格式不统一，核查跨表关联情况。\n准确性\n统计唯一性、重复、异常分布，建立质量基线。\n时效性\n识别数据延迟，核查更新频率和时间范围。\n形成《数据质量评估报告》，明确每类数据的“可利用率”和“治理优先级”。\n采集规范与入库标准制定\n采集标准\n参照中石油数据管理规范，结合本油田实际情况制定。\n标准内容\n字段定义、采集频率、结构化表/标准时序格式、入库接口规范。\n标准复用\n复用主数据贯标及格式、单位、坐标系和时间戳标准化成果。\n冲突处理\n对标准、口径或来源冲突的数据先行标记并提交业务确认。\n梳理成果：形成《数据采集与入库规范》标准文档。\n（二）油藏开发数据知识抽取与关联图谱构建"
+    },
+    {
+      "page": 6,
+      "title": "2.2 多源数据梳理与采集规范制定：数据源接入与自动化采集通道建设",
+      "feature_ids": [
+        "quality-001",
+        "quality-002",
+        "quality-003",
+        "quality-004",
+        "quality-005",
+        "quality-006",
+        "quality-007",
+        "quality-008",
+        "quality-009",
+        "data-022",
+        "data-023",
+        "data-024",
+        "data-025",
+        "data-026",
+        "data-027"
+      ],
+      "catalog_codes": [],
+      "source_text": "2.2 多源数据梳理与采集规范制定：数据源接入与自动化采集通道建设\n对已有数字化系统建立数据抽取/同步机制，对尚未数字化的数据制定补录计划；通过自动校验和加工留痕，形成可追溯的数据问题处理与复核资料。\n1\n数据抽取/同步\n对 SCADA、A2 等已有数字化系统建立数据抽取/同步机制。\n2\n数字化补录\n对历史纸质档案、老井测井曲线等制定补录计划。\n3\n自动质量校验\n自动检查字段完整性、数值合理性、时间连续性。\n4\n数据处理与复核\n去重、噪声识别、无效记录处理、缺失值标记和异常识别。\n5\n可追溯留痕\n保留原始数据、处理规则、处理结果、检查记录和执行日志。\n1\n清洗去重\n重复记录、无效零值、\n物理越界与错误单位\n保留原始记录与处理规则\n2\n缺失处置\n短时缺失按规则补全，\n长时缺失保留缺失标记\n记录补全方法、来源与置信度\n3\n异常判别\n区分采集噪声、制度变化\n与真实生产工况异常\n真实异常保留并绑定证据\n4\n时空语义对齐\n按井号、层位、生产日、\n措施日和测试日关联\n统一语义模型校验\n5\n样本入集\n脱敏、封装、\n元数据留痕\n进入标注与测评\nB\n无法判定的数据不强行补全\n标记“数据不可用 / 待核查”，由业务专家确认；涉及井位、生产经营等敏感内容同步执行脱敏审批和访问控制。\nA\n真实异常不平滑、不改写\n如产量突降、含水突升、注压异常、泵效恶化等，保留原始时序、事件证据和专家复核结果，作为模型训练样本。\nB\n（二）油藏开发数据知识抽取与关联图谱构建\n数据清洗入库流程规范"
+    },
+    {
+      "page": 7,
+      "title": "从业务分析需求出发，设计“三层标签架构”，为每口井和每日/每月生产数据赋予可判定、可追溯的业务标签。",
+      "feature_ids": [
+        "data-028",
+        "data-029",
+        "data-030",
+        "data-031",
+        "data-032",
+        "data-033",
+        "data-034",
+        "data-035",
+        "data-036",
+        "data-037",
+        "data-038",
+        "data-039"
+      ],
+      "catalog_codes": [],
+      "source_text": "从业务分析需求出发，设计“三层标签架构”，为每口井和每日/每月生产数据赋予可判定、可追溯的业务标签。\n一级标签（数据分类层）\n地质属性\n生产状态\n工况状态\n监测结果\n措施效果\n二级标签（业务含义层）\n产量趋势类型\n含水变化类型\n能量保持等级\n注水响应\n三级标签（量化/枚举值层）\n上升 / 稳定 / 递减 / 波动\n低含水稳产 / 中含水快速上升\n高含水递减\n地质静态数据业务标签\n储层类型、油藏类型、沉积微相\n驱动类型、储层非均质性、含油层系\n生产动态数据业务标签\n产量趋势、含水阶段、能量保持\n注水响应、井筒完整性、生产稳定性\n工况状态标签\n工况标签：正常/供液不足/气体影响/。。。\n泵效等级标签：高效/中效/低效\n2.3 数据业务标签体系设计与标注：业务标签体系框架设计\n（二）油藏开发数据知识抽取与关联图谱构建\n原始地层压力系数标签\n设备健康标签：正常/预警/故障"
+    },
+    {
+      "page": 8,
+      "title": "2.4 多级关联模型构建与数据图谱建设：单井数据模型与井—井组关联",
+      "feature_ids": [
+        "well-001",
+        "well-002",
+        "well-003",
+        "well-004",
+        "well-005",
+        "well-006",
+        "well-007",
+        "well-008",
+        "well-009",
+        "well-010",
+        "well-011",
+        "well-012",
+        "well-013",
+        "diagnosis-001",
+        "diagnosis-002",
+        "diagnosis-003",
+        "diagnosis-004",
+        "diagnosis-005",
+        "diagnosis-006",
+        "diagnosis-007",
+        "diagnosis-008"
+      ],
+      "catalog_codes": [],
+      "source_text": "2.4 多级关联模型构建与数据图谱建设：单井数据模型与井—井组关联\n以“井号”为唯一标识建立单井综合数据视图；基于地质构造图和注采关系，建立井—井组内部数据关联。\n第一步：单井数据模型构建\n井号\n“一井一档”\n地质属性\n生产动态\n工况状态\n措施记录\n监测数据\n按“日”或“月”对齐\n从时间标准、有效时间、采样频率和业务周期四个层面对齐多源数据。\n第二步：井—井组关联构建\n注水井注入量\n关联采油井产量响应，加入时滞参数。\n采油井产量/含水变化\n关联邻井注水变化。\n井组内各井的射孔层位\n按小层建立纵向对应关系。\n形成“井组关联数据表”：井组编号、井号、井别、关联井号列表、各井对应小层。\n（二）油藏开发数据知识抽取与关联图谱构建"
+    },
+    {
+      "page": 9,
+      "title": "2.4 多级关联模型构建与数据图谱建设井组：区块关联与多级数据图谱生成",
+      "feature_ids": [
+        "well-014",
+        "well-015",
+        "well-016",
+        "well-017",
+        "well-018",
+        "well-019",
+        "well-020",
+        "data-040",
+        "data-041",
+        "data-042",
+        "data-043",
+        "data-044",
+        "data-045",
+        "data-046",
+        "data-047",
+        "data-048",
+        "data-049",
+        "data-050",
+        "diagnosis-001",
+        "diagnosis-002",
+        "diagnosis-003",
+        "diagnosis-004",
+        "diagnosis-005",
+        "diagnosis-006",
+        "diagnosis-007",
+        "diagnosis-008"
+      ],
+      "catalog_codes": [],
+      "source_text": "2.4 多级关联模型构建与数据图谱建设井组：区块关联与多级数据图谱生成\n将各井组汇总至区块尺度，建立区块级数据视图；输出单井、井组、区块三个层级的标准数据图谱。\n第三步：井组—区块关联构建\n区块级数据视图\n总产液 / 产油 / 注水\n综合含水 / 注采比\n地层压力保持水平\n区块内井组横向对比\n区块开发阶段标签\n按对象身份、空间位置、层位、时间有效性、指标口径和来源版本融合多源数据。\n第四步：多级关联数据图谱生成\n1\n单井数据图谱\n面向单井分析模型训练\n基础数据字段\n业务标签\n关联关系字段\n时间窗口字段\n2\n井组数据图谱\n面向井组注采调控模型训练\n基础数据字段\n业务标签\n关联关系字段\n时间窗口字段\n3\n区块数据图谱\n面向区块级决策支持\n基础数据字段\n业务标签\n关联关系字段\n时间窗口字段\n（二）油藏开发数据知识抽取与关联图谱构建"
+    },
+    {
+      "page": 10,
+      "title": "2.4 多级关联模型构建与数据图谱建设：场景样本构建与数据图谱封装",
+      "feature_ids": [
+        "data-040",
+        "data-041",
+        "data-042",
+        "data-043",
+        "data-044",
+        "data-045",
+        "data-046",
+        "data-047",
+        "data-048",
+        "data-049",
+        "data-050",
+        "models-001",
+        "models-002",
+        "models-003",
+        "models-004",
+        "models-005",
+        "models-006"
+      ],
+      "catalog_codes": [],
+      "source_text": "2.4 多级关联模型构建与数据图谱建设：场景样本构建与数据图谱封装\n围绕异常预警、间开制度、措施效果、井组分析和监测方案等任务组织样本，并按照四级目录封装数据图谱。\n第五步：场景样本构建\n异常预警\n正常 / 异常\n数据不可用\n措施效果样本\n间开制度\n标签绑定原始数据\n业务事件\n措施效果\n措施效果样本\n规则或专家审核证据\n井组分析\n训练、验证和测试数据\n按井及时间隔离\n监测方案\n防止同一井或相邻时段\n交叉影响模型效果评价\n标签绑定原始数据、业务事件、规则或专家审核证据\n训练、验证和测试数据按井及时间隔离\n数据图谱封装\n原始数据层\n原始数据留存\n标准化数据层\n标准化处理成果\n训练数据图谱层\n训练、验证、测试数据\n文档层\n元数据、说明文档、标注规范\n配套元数据、说明文档、标注规范、加工日志、接口资料和版本台账。\n（二）油藏开发数据知识抽取与关联图谱构建"
+    },
+    {
+      "page": 11,
+      "title": "项目状态：技术方案设计阶段  |  已初步完成数据图谱梳理、标签体系设计",
+      "feature_ids": [
+        "overview-003",
+        "overview-004",
+        "overview-005"
+      ],
+      "catalog_codes": [],
+      "source_text": "项目状态：技术方案设计阶段  |  已初步完成数据图谱梳理、标签体系设计\n6\n大类\n数据图谱分类\n地质/生产/示功图/监测/工艺/管理\n44\n小类\n数据图谱梳理\n覆盖全维度油藏生产数据\n3\n层\n业务标签体系\n分类层/含义层/量化层\n3\n级\n关联模型\n单井-井组-区块多级联动\n多源数据图谱梳理完成\n系统梳理地质静态、生产动态、动态监测及工艺等多源数据\n三层业务标签体系设计\n一级标签：数据分类层（5类）\n二级标签：业务含义层（细分维度）\n三级标签：量化/枚举值层\n三级关联模型构建\n以单井为基本单元建立综合视图\n井-井组-区块多级数据关联\n形成标准化标注样本库\n已梳理形成数据图谱体系\n（二）油藏开发数据知识抽取与关联图谱构建"
+    },
+    {
+      "page": 12,
+      "title": "编号",
+      "feature_ids": [],
+      "catalog_codes": [
+        "G-1",
+        "G-2",
+        "G-3",
+        "G-4",
+        "G-5",
+        "G-6",
+        "G-7",
+        "G-8",
+        "G-9",
+        "P-1",
+        "P-2",
+        "P-3",
+        "P-4",
+        "P-5",
+        "P-6",
+        "P-7",
+        "P-8",
+        "M-1",
+        "M-2",
+        "M-3",
+        "M-4",
+        "M-5",
+        "M-6",
+        "M-7",
+        "M-8",
+        "M-9",
+        "T-1",
+        "T-2",
+        "T-3",
+        "W-1",
+        "W-2",
+        "W-3",
+        "W-4",
+        "W-5",
+        "K-1",
+        "K-2",
+        "K-3",
+        "K-4",
+        "K-5"
+      ],
+      "source_text": "编号\n地质静态类数据图谱Geological\nG-1\n地层对比数据\nG-2\n油藏构造数据\nG-3\n岩相/沉积相数据\nG-4\n储层物性数据\nG-5\n岩石力学数据\nG-6\n流体性质数据\nG-7\n油藏温度压力数据\nG-8\n开发层系数据\nG-9\n井身结构数据\n各类数据图谱统计表\n（二）油藏开发数据知识抽取与关联图谱构建\n编号\n生产动态数据图谱Production\nP-1\n单井日度生产数据\nP-2\n单井月度/季度累计数据\nP-3\n注水井注入数据\nP-4\n含水变化数据\nP-5\n工作制度变更数据\nP-6\n措施作业数据\nP-7\n检泵作业数据\nP-8\n测试/试井数据\n编号\n动态监测类数据图谱Monitoring\nM-1\n吸水剖面数据\nM-2\n产液剖面数据\nM-3\n压力测试数据\nM-4\n井间示踪剂数据\nM-5\n四参数/碳氧比测井数据\nM-6\n其他冬天监测数据\nM-7\n井筒监测数据\nM-8\n监测历史计划与执行数据\nM-9\n开发管理纲要/监测规范\n编号\n工艺措施数据图谱Technology\nT-1\n增产措施数据\nT-2\n控水措施数据\nT-3\n维护作业数据\n编号\n井组/区块关联类数据图谱Well-group / Block\nW-1\n井组拓扑数据\nW-2\n区块开发指标数据\nW-3\n历史动态分析记录\nW-4\n水驱特征曲线数据\nW-5\n注采不平衡数据\n编号\n开发管理数据图谱Knowledge\nK-1\n异常工况处置知识库\nK-2\n标准操作规程/SOP\nK-3\n管理规范数据\nK-4\n行业技术经济参数\nK-5\n报告模板库"
+    },
+    {
+      "page": 13,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "workflow-001",
+        "workflow-002",
+        "workflow-003",
+        "workflow-004",
+        "workflow-005"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n以油藏开发业务场景为基础，以数据服务平台为依托，梳理数据分析、方案编制、审核流转等业务流程；构建适配多源数据接入的智能工作流引擎，设计流程节点、权限分工与任务联动机制；融合数据质控、知识图谱与智能推送，实现油藏开发业务自动化流转、跨域协同与流程智能调度管控。\n聚焦三项研究内容，让智能体嵌入业务流程，以机理模型约束结果输出。\n01\n业务流程梳理\n以油藏开发业务场景为基础，以数据服务平台为依托，梳理数据分析、方案编制、审核流转等业务流程。\n02\n智能工作流引擎构建\n构建适配多源数据接入的智能工作流引擎，设计流程节点、权限分工与任务联动机制。\n03\n质控、图谱与推送融合\n融合数据质控、知识图谱与智能推送，实现业务自动化流转、跨域协同与流程智能调度管控。\n核心定位\n形成\"感知—分析—决策—执行—再评估\"的自适应体系，最终实现\"数据同源—知识可用—业务协同—智能编排—闭环反馈\"。\n3.1 建设思路"
+    },
+    {
+      "page": 14,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "simulation-001",
+        "simulation-002",
+        "simulation-003",
+        "simulation-004",
+        "simulation-005",
+        "simulation-006",
+        "simulation-007",
+        "simulation-008",
+        "simulation-009",
+        "simulation-010",
+        "simulation-011",
+        "simulation-012",
+        "simulation-013",
+        "simulation-014",
+        "simulation-015",
+        "workflow-001",
+        "workflow-002",
+        "workflow-003",
+        "workflow-004",
+        "workflow-005",
+        "workflow-006",
+        "workflow-007",
+        "workflow-008",
+        "workflow-009",
+        "workflow-010",
+        "workflow-011",
+        "workflow-012",
+        "workflow-013",
+        "workflow-014",
+        "workflow-015",
+        "workflow-016",
+        "workflow-017",
+        "workflow-018",
+        "workflow-019",
+        "workflow-020",
+        "workflow-021",
+        "workflow-022",
+        "governance-001",
+        "governance-002",
+        "governance-003",
+        "governance-004",
+        "governance-005",
+        "governance-006"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n3.2 总体架构\n闭环反馈层　　监测 → 分析 → 决策 → 执行 → 再评估 → 知识回流与规则优化\n执行层（自建）    　技能化任务执行\n质控闸门技能 · 分析计算技能 · 报告生成技能 · 推送技能 · 审核表单 · 专业软件调用 · 任务下达\n编排层（自建）   　流程定义与智能调度\n可视化编排 · 条件分支 · 并行执行 · 人工/自动混合节点 · 任务分裂合并 ·  流程智能调度\n语义层（依托）      业务本体与知识底座\n油藏业务本体 · 知识图谱 · 实体关系 · 专业解释知识\n数据层（依托）      统一数据底座与质控规则\n统一数据模型 · 质控规则库 · 质控通过的数据集 · 数据依据链\n机理模型服务（支撑）\n物质平衡 · 注采平衡 ·  数值模拟 · 裂缝预测 · 测井/地震解释等\nAI 智能体服务（支撑）\n意图解析 · 资料摘要 · 方案初稿 · 比选说明· 审核辅助 · 推送解释等"
+    },
+    {
+      "page": 15,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "workflow-023",
+        "workflow-024",
+        "workflow-025",
+        "workflow-026",
+        "workflow-027",
+        "workflow-028",
+        "workflow-029",
+        "workflow-030",
+        "workflow-031",
+        "workflow-032",
+        "workflow-033",
+        "workflow-034"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n3.3 业务流程梳理\n业务链路（12 节点）\n数据准备\n静态地质研究\n动态分析\n异常诊断\n方案编制\n多方案比选\n专业审核\n综合审定\n任务下达\n执行跟踪\n效果评估\n知识沉淀\n对应智能闭环（5 环节）\n感知\n数据接入与监测\n分析\n动态分析 / 机理模型\n决策\n方案生成与比选\n执行\n任务下达与跨系统执行\n再评估\n效果回流与知识更新\n梳理重点：每个流程节点依赖前序数据方案的哪些数据成果、依赖前序知识方案的哪些知识成果、节点之间的任务联动关系以及权限边界。\n以油藏开发业务场景为基础，以数据服务平台为依托，梳理数据分析、方案编制、审核流转等业务流程。以\"数据—分析—方案—审核—执行—反馈\"为主轴的闭环链路。"
+    },
+    {
+      "page": 16,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "simulation-001",
+        "simulation-002",
+        "simulation-003",
+        "simulation-004",
+        "simulation-005",
+        "simulation-006",
+        "simulation-007",
+        "simulation-008",
+        "simulation-009",
+        "simulation-010",
+        "simulation-011",
+        "simulation-012",
+        "simulation-013",
+        "simulation-014",
+        "simulation-015",
+        "diagnosis-009",
+        "diagnosis-010",
+        "diagnosis-011",
+        "workflow-023",
+        "workflow-024",
+        "workflow-025",
+        "workflow-026",
+        "workflow-027",
+        "workflow-028",
+        "workflow-029",
+        "workflow-030",
+        "workflow-031",
+        "workflow-032",
+        "workflow-033",
+        "workflow-034"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（1）各阶段业务流程\n业务阶段\n关键节点\n依赖数据方案成果\n依赖知识方案成果\n本方案建设机制\n数据准备\n多源数据接入与质控\n统一数据模型、质控规则库、质控通过数据集\n数据实体与业务对象关联\n质控闸门嵌入节点、整改工单联动\n静态研究\n小层对比、单砂体、裂缝、建模\n地质、地震、测井、岩心质控数据\n小层—砂体—裂缝—构造关系\n模型版本冻结与下游只读权限\n动态分析\n异常识别与初步诊断\n生产、压力、注采、试采质控数据\n历史异常模式、措施效果关系\n阈值检测触发流程、诊断会签联动\n方案编制\n方案初稿生成、依据链校验\n质控数据集、数据依据链\n历史方案、邻井案例、专业提示\n依据链校验节点、知识按节点推送\n多方案比选\n机理计算、经济评价、优选\n方案关联数据版本\n相似案例比选路径\n比选规则固化、任务分裂合并\n审核流转\n专业审核、会签、综合审定\n质控状态摘要、数据版本\n历史争议点、关联在途方案\n权限委托、审核路径动态求值\n执行反馈\n任务下达、执行跟踪\n执行数据回流质控\n同类方案执行偏差\n偏差预警触发再评估流程\n闭环\n效果评估与知识沉淀\n评估数据质控\n知识条目候选\n知识入库需质控确认、回流知识方案"
+    },
+    {
+      "page": 17,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "simulation-001",
+        "simulation-002",
+        "simulation-003",
+        "simulation-004",
+        "simulation-005",
+        "simulation-006",
+        "simulation-007",
+        "simulation-008",
+        "simulation-009",
+        "simulation-010",
+        "simulation-011",
+        "simulation-012",
+        "simulation-013",
+        "simulation-014",
+        "simulation-015",
+        "diagnosis-001",
+        "diagnosis-002",
+        "diagnosis-003",
+        "diagnosis-004",
+        "diagnosis-005",
+        "diagnosis-006",
+        "diagnosis-007",
+        "diagnosis-008",
+        "diagnosis-009",
+        "diagnosis-010",
+        "diagnosis-011",
+        "workflow-035"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（2）数据分析业务流程\n数据分析是方案编制的输入，也是闭环反馈的起点。\n数据接入\n静态地质研究\n动态分析\n异常识别\n初步诊断\n诊断会签\n异常清单输出\n节点一：数据接入与质控\n调用前序数据方案的质控服务，校验本次分析所需数据是否处于“质控通过”状态。未通过阻断级规则的数据集不能进入下游节点。\n节点二：静态地质研究\n完成小层对比、单砂体追踪、构造、储层、裂缝、地质建模。该节点消费知识方案中的“小层—砂体—裂缝—构造”关系，辅助一致性检查。模型版本冻结后下游节点只读。\n节点三：动态分析\n以单井、井组、区块为对象，分析生产、压力、注采数据，识别产量递减、含水上升、注采失衡等问题。分析过程调用机理模型校验，并查询知识图谱中该井/井组的历史异常模式。\n节点四：异常识别与初步诊断\n基于油藏生产态势感知智能体分析，输出异常井/井组清单及诊断意见。异常确认需地质角色会签。\n输出：异常清单与诊断意见，作为方案编制节点的输入，并自动触发方案编制任务联动。"
+    },
+    {
+      "page": 18,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "simulation-001",
+        "simulation-002",
+        "simulation-003",
+        "simulation-004",
+        "simulation-005",
+        "workflow-036",
+        "workflow-037",
+        "workflow-038",
+        "workflow-039",
+        "workflow-040",
+        "workflow-041",
+        "workflow-042",
+        "workflow-043",
+        "governance-007",
+        "governance-008",
+        "governance-009",
+        "governance-010",
+        "governance-011",
+        "governance-012",
+        "governance-013",
+        "governance-014",
+        "governance-015"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（3）方案编制业务流程\n方案编制是油藏开发业务的核心环节，也是多专业协同最密集的环节。\n诊断确认\n方案初稿生成\n依据链校验\n多方案比选\n推荐方案输出\n编制人确认\n提交审核\n节点一：方案初稿生成\n编制人基于质控通过的数据、已确认的诊断结论、知识推送包和历史方案库生成初稿。AI 智能体可辅助生成，但初稿必须附数据依据链，标明引用了哪些数据版本、哪些专业成果、哪些标准规范。\n节点二：依据链校验\n系统自动校验方案引用的数据是否处于质控通过状态（调用前序数据方案质控服务）、专业成果版本是否有效、工程约束参数是否完整。存在阻断级问题的方案不能进入比选环节。\n节点三：多方案比选\n对候选方案进行机理计算和经济评价，比选规则由业务规则引擎固化。比选过程调用数值模拟、递减分析、经济评价等机理模型和专业软件，并查询知识图谱中相似案例的比选路径作为参考。\n节点四：推荐方案输出\n输出推荐方案及比选说明，比选说明需包含机理计算结果、经济指标、风险提示和推荐理由。\n 权限约束：编制人只能基于质控通过的数据和已确认的诊断结论编制方案；方案进入审核状态后，编制人对该方案版本的写权限自动冻结。"
+    },
+    {
+      "page": 19,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "governance-007",
+        "governance-008",
+        "governance-009",
+        "governance-010",
+        "governance-011",
+        "governance-012",
+        "governance-013",
+        "governance-014",
+        "governance-015"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（4）审核流转业务流程\n审核流转是方案质量管控的关键环节，核心诉求是“可追溯”。\n提交审核\n专业审核\n会签汇总\n综合审定\n审定结论\n任务下达 / 退回修改\n节点一：专业审核\n各专业审核人分别审核本专业领域内容。审核人可查看方案依据链、数据质控摘要（来自前序数据方案）、历史同类方案常见争议点和退回原因（来自知识图谱）、关联在途方案。审核意见分为通过、有条件通过、退回三类。审核人仅对本人专业领域有否决权。\n节点二：会签汇总\n各专业审核意见汇总，存在跨专业分歧时触发会签协调流程。会签支持临时权限委托，委托关系与流程实例绑定，流程结束即失效。\n节点三：综合审定\n技术负责人或主管领导基于审核意见汇总做出审定结论。审定人可批准或驳回，但不可直接修改方案内容，保证编制与审定分离。\n节点四：任务下达或退回\n审定通过后自动生成执行任务单；审定驳回后自动回到编制节点，保留审核意见和版本差异。"
+    },
+    {
+      "page": 20,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "workflow-001",
+        "workflow-002",
+        "workflow-003",
+        "workflow-004",
+        "workflow-005",
+        "workflow-006",
+        "workflow-007",
+        "workflow-008",
+        "workflow-009",
+        "workflow-010",
+        "workflow-011",
+        "workflow-012",
+        "workflow-013",
+        "workflow-014",
+        "workflow-015",
+        "workflow-016",
+        "workflow-017",
+        "workflow-044",
+        "workflow-045",
+        "workflow-046"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n3.4 智能工作流引擎构建\n建适配多源数据接入的智能工作流引擎，设计流程节点、权限分工与任务联动机制。\n（1）多源数据接入机制\n接入适配的三类接口\n接口类型\n对接前序数据方案成果\n职责\n数据集查询接口\n质控通过的数据集、数据版本、数据依据链\n节点激活前查询数据依赖集状态\n质控状态接口\n阻断级 / 警示级规则执行结果\n节点准入判断、质控摘要生成\n整改工单接口\n质控不通过工单、整改状态\n流程挂起与恢复联动\n流程级接入适配规则\n每个流程节点在定义时声明其数据依赖集（哪些数据对象、处于什么质控状态）。\n阻断级问题触发质控整改子流程，整改完成后主流程自动恢复，无需人工重新发起。\n节点激活前，执行层调用前序质控状态接口快速校验。\n警示级问题不阻断流转，但在下游节点输入中附带“数据质量标签”，供审核角色行使专业判断。\n  前序数据方案的质控成果被“嵌入”到流程节点中，形成“数据就绪才流转”的机制。"
+    },
+    {
+      "page": 21,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "workflow-001",
+        "workflow-002",
+        "workflow-003",
+        "workflow-004",
+        "workflow-005",
+        "workflow-006",
+        "workflow-007",
+        "workflow-008",
+        "workflow-009",
+        "workflow-010",
+        "workflow-011",
+        "workflow-012",
+        "workflow-013",
+        "workflow-014",
+        "workflow-015",
+        "workflow-016",
+        "workflow-017"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（2）流程节点设计\n流程节点分为自动节点、人工节点和混合节点三类。每个节点声明数据依赖集、知识依赖集、执行技能、权限要求、输出物和流转条件。\n节点类型\n节点示例\n执行方式\n流转条件\n依赖底座\n自动节点\n数据质控扫描、依据链校验、阈值检测、格式转换\n执行层调用技能自动完成\n校验结果满足规则\n前序数据方案质控接口\n人工节点\n专业审核、综合审定、诊断确认、编制人确认\n权限引擎校验后由人工执行\n人工提交意见\n知识图谱推送\n混合节点\n方案初稿生成、多方案比选、异常诊断\nAI 辅助生成 + 人工确认\n人工确认后流转\n数据 + 知识 + 机理模型\n节点流转条件由语义层动态求值\n例如，“方案初审”节点是否跳过、哪些审核人需要被激活，取决于方案涉及的业务对象特征（新区块还是老区调整、常规措施还是高风险措施）和知识图谱中匹配到的相似案例的审核路径历史。\n任务分裂 / 合并机制\n当方案涉及多个井组时，可自动拆分为并行子任务分派至不同专业角色，完成后按规则合并。"
+    },
+    {
+      "page": 22,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "governance-016",
+        "governance-017",
+        "governance-018",
+        "governance-019",
+        "governance-020",
+        "governance-021"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（3）权限分工机制\n权限机制在编排层和执行层之间设立独立的权限引擎，采用动态权限求值而非静态角色映射。\n  权限求值模型：采用“角色—对象—动作—条件”四元组：谁（角色），对什么对象（油藏单元 / 井组 / 方案版本），在什么条件下（数据质控状   \n  态、前序节点完成情况、方案状态），可以执行什么动作。\n权限分工特征\n权限分工机制\n对象级权限继承\n权限不仅绑定“角色”，还绑定“业务对象”。一位油藏工程师在 A 区块拥有方案编制权，在 B 区块可能只有查看权；方案一旦进入“审核中”状态，编制人对该方案版本的写权限自动冻结，只有审核角色获得写权限用于填写审核意见。\n数据权限与流程权限联动\n当方案编制节点激活时，编制人的数据访问权限自动扩展至该方案关联油藏单元的全部质控通过数据集（通过前序数据方案的数据权限接口联动）；流程离开该节点后，扩展权限自动回收。\n跨域协同的权限委托\n当审核需要跨专业会签时，支持临时权限委托：主审核人可将特定子项的审核权限委托给指定专家，委托关系与流程实例绑定，流程结束即失效。"
+    },
+    {
+      "page": 23,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "governance-022",
+        "governance-023",
+        "governance-024",
+        "governance-025",
+        "governance-026",
+        "governance-027",
+        "governance-028",
+        "governance-029"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（4）任务联动机制\n任务联动是流程自动流转的核心。设计以下联动规则：\n1\n质控联动\n数据质控不通过 → 自动生成整改工单（调用前序派单接口）→ 主流程挂起 → 整改完成并复核通过后主流程自动恢复。\n2\n诊断联动\n异常诊断确认 → 自动创建方案编制任务并指派至对应编制人。\n3\n编制联动\n方案初稿完成且依据链校验通过 → 自动激活比选节点。\n4\n比选联动\n推荐方案确认 → 自动激活专业审核节点，按知识图谱推荐的审核路径分派任务。\n5\n审核联动\n专业审核退回 → 自动回到编制节点，保留意见和版本差异；会签出现分歧 → 自动触发协调流程。\n6\n审定联动\n综合审定通过 → 自动生成执行任务单并下达；审定驳回 → 自动回到编制节点。\n7\n执行联动\n执行偏差超阈值 → 自动触发再评估或方案调整流程。\n8\n闭环联动\n效果评估完成 → 自动生成知识条目候选，经质控确认后回写知识图谱。"
+    },
+    {
+      "page": 24,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "workflow-001",
+        "workflow-002",
+        "workflow-003",
+        "workflow-004",
+        "workflow-005"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n3.5 质控 · 图谱 · 推送融合\n融合数据质控、知识图谱与智能推送，实现油藏开发业务自动化流转、跨域协同与流程智能调度管控。\n（1）数据质控嵌入流程节点\n质控闭环机制\n节点声明依赖集\n调用前序质控接口\n阻断则挂起并派单\n整改完成\n复核通过\n主流程恢复\n级别\n判定条件\n流程行为\n责任归属\nL0 阻断\n关键字段缺失、逻辑矛盾、违反强约束\n节点不能激活；挂起主流程，触发整改子流程\n数据管理员 + 责任专业\nL1 警示\n数据异常但不致命、统计偏差超阈\n不阻断，节点激活时附\"数据质量标签\"\n专业岗自行判断\nL2 提示\n与历史趋势偏离、需要关注\n仅在项目空间提示，不打断当前流程\n油藏工程师等\nL3 通过\n全部规则通过\n正常流转，无附加标签\n—"
+    },
+    {
+      "page": 25,
+      "title": "（三）油藏开数据与业务协同智能工作流实现",
+      "feature_ids": [
+        "knowledge-001",
+        "knowledge-002",
+        "knowledge-003",
+        "knowledge-004",
+        "knowledge-005",
+        "knowledge-006",
+        "knowledge-007",
+        "knowledge-008",
+        "knowledge-009",
+        "knowledge-010",
+        "knowledge-011",
+        "knowledge-012",
+        "knowledge-013",
+        "knowledge-014",
+        "knowledge-015"
+      ],
+      "catalog_codes": [],
+      "source_text": "（三）油藏开数据与业务协同智能工作流实现\n（2）知识图谱与智能推送\n接口\n输入\n输出\n调用节点\n关系查询\n井 / 井组 / 区块 / 小层对象\n关联小层、砂体、裂缝、断层、历史方案、异常案例\n静态研究、异常诊断\n相似案例检索\n当前诊断 / 方案特征向量\n相似历史案例及处置结果\n异常诊断、方案编制\n规范标准查询\n业务对象类型、业务环节\n适用标准规范版本与条款\n方案编制、审核\n知识条目写入\n已评估结论、已沉淀经验\n知识条目入库，待质控确认后生效\n闭环反馈\n知识图谱四类接口\n智能推送机制\n节点\n推送内容\n推送对象\n编制节点激活时\n该油藏单元 / 井组的历史同类方案、邻井类似措施案例、裂缝预测多证据提示、可参考分析结论\n编制人\n审核节点激活时\n方案依据链中引用数据的质控状态摘要（前序数据方案）、历史审核常见争议点和退回原因、关联在途方案\n各专业审核人\n异常诊断节点激活时\n该井 / 井组历史异常模式、已采取措施及效果、当前异常与历史模式匹配度\n油藏工程师\n执行评估节点激活时\n同类方案执行偏差、试采效果对比、可复用知识条目\n生产管理岗、编制人\n  推送示例：“该案例与当前方案在油藏类型、开发阶段、含水水平三个维度上相似度为 0.87”。推送内容仅供参照，审核人可忽略并给出理由，     \n  理由本身成为图谱优化的反馈。"
+    }
+  ]
+}

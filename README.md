@@ -15,7 +15,7 @@ python -m uvicorn backend.dev:app --host 127.0.0.1 --port 8000
 
 数据包：dist/downloads/model-data/model_data_kit.zip；每模型五类JSONL，另附CSV、字段字典、来源、实际比例及SHA256。原ZIP76个完整文件的逐项用途见同目录 original_zip_model_mapping.csv / .md。
 
-源码/服务分发包包含运行所需静态数据与新版全部样例，不重复放入3个大型历史下载归档（public_training_data.zip/model_experiments.zip/physics_experiments.zip）；这些仍可从已有平台下载后放回dist/downloads/。仓库完整检出含这3个文件。
+源码/服务分发包包含运行所需静态数据与新版全部样例，不重复放入3个大型历史下载归档（public_training_data.zip/model_experiments.zip/physics_experiments.zip）；这些仍可从已有平台下载后放回dist/downloads/。GitHub仓库将两个大型归档分片保存在artifact-parts/；完整检出后运行 `python3 scripts/assemble-downloads.py` 校验并重组。GitHub Actions发布时自动执行，平台仍下载完整ZIP。
 
 ## 历史科研演示功能与基线
 

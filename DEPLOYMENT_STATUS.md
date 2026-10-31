@@ -1,9 +1,7 @@
-# Deployment preparation
+# GeoTwin 2.0 deployment
 
-This branch contains the GeoTwin 2.0 application source, Python calculation service, tests and GitHub Pages workflow. It is not yet a complete runnable public deployment.
+The owner explicitly approved publication of public-source datasets, generated examples, trained model weights and computed results to this public repository and enabling GitHub Pages. All runtime assets are included directly or as checksum-verified archive parts. The Pages workflow reconstructs full downloadable ZIP files before publication.
 
-Publication of dist/assets/, dist/downloads/ and the existing trained model assets is pending explicit approval after an automatic approval review rejected a trained weight upload to this public repository. No uploaded user data or trained weights have been published by this change. Do not merge or deploy this branch until the required runtime assets are approved and added.
+The static frontend uses GitHub Pages; Python training and simulation APIs run on an independent user-configured server. See backend/README.md.
 
-Prepared platform: 13 model interfaces, CSV/JSON/JSONL uploads, training/validation/test splits, inference and downloads. GitHub Pages serves the frontend only; the Python service must run independently.
-
-Checks completed locally before source import: 23 frontend tests and 13 backend tests. Existing production platform remains available separately.
+Local verification before source import: 23 frontend tests, 13 backend tests; all archive parts verified against original complete archives and ZIP CRC.

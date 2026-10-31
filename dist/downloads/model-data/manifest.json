@@ -1,0 +1,1662 @@
+{
+  "version": "2026-10-31",
+  "seed": 20261031,
+  "original_zip_complete_files": 76,
+  "original_zip_note": "上传ZIP尾部缺失，仅使用76个CRC与长度验证通过的完整文件；残缺预览PNG不入包。",
+  "models": [
+    {
+      "id": "isolation_forest",
+      "name": "Isolation Forest",
+      "nature": "FORCE公开观测转换；验证/测试每13条注入一次异常以提供受控标签",
+      "split_policy": "沿用原整井隔离；每分区最多600个完整特征记录",
+      "source": "01_well_logs/{train,validation,test}.csv",
+      "counts": {
+        "train": 600,
+        "validation": 600,
+        "test": 600
+      },
+      "record_ratios": {
+        "train": 0.333333,
+        "validation": 0.333333,
+        "test": 0.333333
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "GR",
+          "type": "number",
+          "required": true,
+          "unit": "API",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "RHOB",
+          "type": "number",
+          "required": true,
+          "unit": "g/cm³",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "DTC",
+          "type": "number",
+          "required": true,
+          "unit": "µs/ft",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "label",
+          "type": "integer",
+          "required": false,
+          "unit": "",
+          "description": "可选人工标签：0正常，1异常；验证/测试有标签才计算F1/AUC"
+        }
+      ],
+      "files": {
+        "train": "isolation_forest/train.jsonl",
+        "validation": "isolation_forest/validation.jsonl",
+        "test": "isolation_forest/test.jsonl",
+        "overall": "isolation_forest/overall.jsonl",
+        "infer": "isolation_forest/infer.jsonl"
+      }
+    },
+    {
+      "id": "grin",
+      "name": "GRIN精简结构复现",
+      "nature": "固定随机种子、解析信号生成数据；非现场观测",
+      "split_policy": "每井前70%日期训练/中15%验证/后15%测试；推理样例保留同一数据字典",
+      "source": "generate_sequences()",
+      "counts": {
+        "train": 1008,
+        "validation": 216,
+        "test": 216
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产油，缺失填null",
+          "nullable": true
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产液",
+          "nullable": true
+        },
+        {
+          "name": "water_cut",
+          "type": "number",
+          "required": true,
+          "unit": "fraction",
+          "description": "0到1",
+          "nullable": true
+        },
+        {
+          "name": "pressure",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "同一口径注水量",
+          "nullable": true
+        }
+      ],
+      "files": {
+        "train": "grin/train.jsonl",
+        "validation": "grin/validation.jsonl",
+        "test": "grin/test.jsonl",
+        "overall": "grin/overall.jsonl",
+        "infer": "grin/infer.jsonl"
+      }
+    },
+    {
+      "id": "anomaly_transformer",
+      "name": "Anomaly Transformer精简结构复现",
+      "nature": "固定随机种子、解析信号生成数据；非现场观测",
+      "split_policy": "每井前70%日期训练/中15%验证/后15%测试；推理样例保留同一数据字典",
+      "source": "generate_sequences()",
+      "counts": {
+        "train": 1008,
+        "validation": 216,
+        "test": 216
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产油，缺失填null",
+          "nullable": true
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产液",
+          "nullable": true
+        },
+        {
+          "name": "water_cut",
+          "type": "number",
+          "required": true,
+          "unit": "fraction",
+          "description": "0到1",
+          "nullable": true
+        },
+        {
+          "name": "pressure",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "同一口径注水量",
+          "nullable": true
+        },
+        {
+          "name": "label",
+          "type": "integer",
+          "required": false,
+          "unit": "",
+          "description": "可选专家标签0/1，仅有标签时计算分类评价"
+        }
+      ],
+      "files": {
+        "train": "anomaly_transformer/train.jsonl",
+        "validation": "anomaly_transformer/validation.jsonl",
+        "test": "anomaly_transformer/test.jsonl",
+        "overall": "anomaly_transformer/overall.jsonl",
+        "infer": "anomaly_transformer/infer.jsonl"
+      }
+    },
+    {
+      "id": "rules",
+      "name": "油藏专业规则联合质控",
+      "nature": "固定随机种子、解析信号生成数据；非现场观测",
+      "split_policy": "每井前70%日期训练/中15%验证/后15%测试；推理样例保留同一数据字典",
+      "source": "generate_sequences()",
+      "counts": {
+        "train": 1008,
+        "validation": 216,
+        "test": 216
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产油，缺失填null",
+          "nullable": true
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产液",
+          "nullable": true
+        },
+        {
+          "name": "water_cut",
+          "type": "number",
+          "required": true,
+          "unit": "fraction",
+          "description": "0到1",
+          "nullable": true
+        },
+        {
+          "name": "pressure",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "同一口径注水量",
+          "nullable": true
+        },
+        {
+          "name": "label",
+          "type": "number",
+          "required": false,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "files": {
+        "train": "rules/train.jsonl",
+        "validation": "rules/validation.jsonl",
+        "test": "rules/test.jsonl",
+        "overall": "rules/overall.jsonl",
+        "infer": "rules/infer.jsonl"
+      }
+    },
+    {
+      "id": "arps",
+      "name": "Arps递减模型",
+      "nature": "生成解析Arps曲线，qi=160,Di=0.008,b=0.6",
+      "split_policy": "按时间70/15/15，单井稳定制度理想基准",
+      "source": "解析式，不代表现场可预测性",
+      "counts": {
+        "train": 168,
+        "validation": 36,
+        "test": 36
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "t",
+          "type": "number",
+          "required": true,
+          "unit": "d",
+          "description": "从起始日累计天数"
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "",
+          "target": true
+        }
+      ],
+      "files": {
+        "train": "arps/train.jsonl",
+        "validation": "arps/validation.jsonl",
+        "test": "arps/test.jsonl",
+        "overall": "arps/overall.jsonl",
+        "infer": "arps/infer.jsonl"
+      }
+    },
+    {
+      "id": "crm",
+      "name": "CRM注采响应模型",
+      "nature": "生成已知CRM响应，tau=12d、权重0.65/0.25",
+      "split_policy": "按时间70/15/15；验证选择tau，测试只评价",
+      "source": "一阶解析离散机制，不代表真实井间连通",
+      "counts": {
+        "train": 168,
+        "validation": 36,
+        "test": 36
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "injector_1",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": ""
+        },
+        {
+          "name": "injector_2",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": ""
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "",
+          "target": true
+        }
+      ],
+      "files": {
+        "train": "crm/train.jsonl",
+        "validation": "crm/validation.jsonl",
+        "test": "crm/test.jsonl",
+        "overall": "crm/overall.jsonl",
+        "infer": "crm/infer.jsonl"
+      }
+    },
+    {
+      "id": "rotate",
+      "name": "RotatE",
+      "nature": "公开FORCE井层事实构建三元组",
+      "split_policy": "沿用原始三元组划分；训练实体与关系覆盖验证/测试",
+      "source": "04_graph/rotate_{split}.tsv",
+      "counts": {
+        "train": 444,
+        "validation": 73,
+        "test": 74
+      },
+      "record_ratios": {
+        "train": 0.751269,
+        "validation": 0.123519,
+        "test": 0.125212
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "head",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "relation",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "tail",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": "",
+          "target": true
+        }
+      ],
+      "files": {
+        "train": "rotate/train.jsonl",
+        "validation": "rotate/validation.jsonl",
+        "test": "rotate/test.jsonl",
+        "overall": "rotate/overall.jsonl",
+        "infer": "rotate/infer.jsonl"
+      }
+    },
+    {
+      "id": "uie",
+      "name": "UIE式精简抽取模型",
+      "nature": "Volve真实表格事实生成中文模板及精确跨度标注，非人工原报告",
+      "split_policy": "沿用按doc_id分组划分；训练24篇、验证/测试各5篇文档，每文档多个prompt",
+      "source": "03_extraction/{split}_prompt_spans.jsonl",
+      "counts": {
+        "train": 216,
+        "validation": 45,
+        "test": 45
+      },
+      "record_ratios": {
+        "train": 0.705882,
+        "validation": 0.147059,
+        "test": 0.147059
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line)",
+      "features": [
+        {
+          "name": "doc_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "spans",
+          "type": "array",
+          "required": true,
+          "unit": "",
+          "description": "训练/验证/测试必填，推理可省；[{start,end,text}]，Unicode字符索引左闭右开",
+          "target": true
+        }
+      ],
+      "files": {
+        "train": "uie/train.jsonl",
+        "validation": "uie/validation.jsonl",
+        "test": "uie/test.jsonl",
+        "overall": "uie/overall.jsonl",
+        "infer": "uie/infer.jsonl"
+      }
+    },
+    {
+      "id": "dfn",
+      "name": "DFN应力约束几何模型",
+      "nature": "公开PorePy二维几何＋生成应力/开度假设",
+      "split_policy": "12个完整工况8/2/2隔离；机理模型无需训练",
+      "source": "06_fractures/segments_2d.csv；应力与开度非现场实测",
+      "counts": {
+        "train": 504,
+        "validation": 126,
+        "test": 126
+      },
+      "record_ratios": {
+        "train": 0.666667,
+        "validation": 0.166667,
+        "test": 0.166667
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "case_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "x1",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "y1",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "x2",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "y2",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "aperture_mm",
+          "type": "number",
+          "required": true,
+          "unit": "mm",
+          "description": ""
+        },
+        {
+          "name": "stress_direction_deg",
+          "type": "number",
+          "required": true,
+          "unit": "°",
+          "description": ""
+        },
+        {
+          "name": "stress_ratio",
+          "type": "number",
+          "required": true,
+          "unit": "",
+          "description": "最小/最大应力比例0到1"
+        }
+      ],
+      "files": {
+        "train": "dfn/train.jsonl",
+        "validation": "dfn/validation.jsonl",
+        "test": "dfn/test.jsonl",
+        "overall": "dfn/overall.jsonl",
+        "infer": "dfn/infer.jsonl"
+      }
+    },
+    {
+      "id": "edfm",
+      "name": "EDFM油水两相求解模型",
+      "nature": "生成工况参数；底层使用公开基准几何",
+      "split_policy": "完整工况8/2/2；直接机理求解，无训练真值",
+      "source": "机理求解输入参数，不可作为神经网络监督目标",
+      "counts": {
+        "train": 8,
+        "validation": 2,
+        "test": 2
+      },
+      "record_ratios": {
+        "train": 0.666667,
+        "validation": 0.166667,
+        "test": 0.166667
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "case_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "aperture_mm",
+          "type": "number",
+          "required": true,
+          "unit": "mm",
+          "description": "0.1到2"
+        },
+        {
+          "name": "pressure_drop_mpa",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "0.1到10"
+        },
+        {
+          "name": "duration_days",
+          "type": "number",
+          "required": true,
+          "unit": "d",
+          "description": "1到365"
+        }
+      ],
+      "files": {
+        "train": "edfm/train.jsonl",
+        "validation": "edfm/validation.jsonl",
+        "test": "edfm/test.jsonl",
+        "overall": "edfm/overall.jsonl",
+        "infer": "edfm/infer.jsonl"
+      }
+    },
+    {
+      "id": "entity_align",
+      "name": "语义实体对齐字典基线",
+      "nature": "生成实体别名词典与同一实体的未见格式变体",
+      "split_policy": "别名记录4/1/1；canonical实体训练已见，不代表未知实体发现能力",
+      "source": "生成格式规范化测试",
+      "counts": {
+        "train": 120,
+        "validation": 30,
+        "test": 30
+      },
+      "record_ratios": {
+        "train": 0.666667,
+        "validation": 0.166667,
+        "test": 0.166667
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "entity_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "alias",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "canonical",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": "",
+          "target": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "files": {
+        "train": "entity_align/train.jsonl",
+        "validation": "entity_align/validation.jsonl",
+        "test": "entity_align/test.jsonl",
+        "overall": "entity_align/overall.jsonl",
+        "infer": "entity_align/infer.jsonl"
+      }
+    },
+    {
+      "id": "lag",
+      "name": "动态时滞关联分析",
+      "nature": "生成已知7日时滞信号",
+      "split_policy": "按时间70/15/15；训练估计时滞，测试外推评价（相关不等于因果连通）",
+      "source": "解析信号，不是实际注采响应",
+      "counts": {
+        "train": 168,
+        "validation": 36,
+        "test": 36
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "production",
+          "type": "number",
+          "required": true,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "files": {
+        "train": "lag/train.jsonl",
+        "validation": "lag/validation.jsonl",
+        "test": "lag/test.jsonl",
+        "overall": "lag/overall.jsonl",
+        "infer": "lag/infer.jsonl"
+      }
+    },
+    {
+      "id": "hierarchy",
+      "name": "井—层—井组—区块关联",
+      "nature": "完整生成井—层—井组—区块映射",
+      "split_policy": "按整井14/3/3划分，确定性建图无需模型训练",
+      "source": "不代表Volve真实地层/区块/注采边界",
+      "counts": {
+        "train": 28,
+        "validation": 6,
+        "test": 6
+      },
+      "record_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "recommended_ratio": [
+        70,
+        15,
+        15
+      ],
+      "format": "JSONL (one record per line) / CSV",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "layer_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "group_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "block_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "valid_from",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "valid_to",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "files": {
+        "train": "hierarchy/train.jsonl",
+        "validation": "hierarchy/validation.jsonl",
+        "test": "hierarchy/test.jsonl",
+        "overall": "hierarchy/overall.jsonl",
+        "infer": "hierarchy/infer.jsonl"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4346,
+      "sha256": "5fe27647c7032b6fcd3fb8e6342305cc7dfd542fd8f64ebf562ecbfd41bff4d2"
+    },
+    {
+      "path": "SOURCES.md",
+      "bytes": 3802,
+      "sha256": "fc3eb146f881cc8cae0b91477a248898bee07802bc88ca3916be5ded05644585"
+    },
+    {
+      "path": "anomaly_transformer/README.md",
+      "bytes": 1774,
+      "sha256": "0e77d47cd801931c0e2d37ffe74a38a5dfec4640121ba383b3f75eeaa04bc8b4"
+    },
+    {
+      "path": "anomaly_transformer/infer.csv",
+      "bytes": 14549,
+      "sha256": "b5a5554f597f909526bc3847c560dff65bde6207ab3e5c7331a93849e83c2d0c"
+    },
+    {
+      "path": "anomaly_transformer/infer.jsonl",
+      "bytes": 32852,
+      "sha256": "5e8e177f644066787c533a7674e14c8c74d5db3bbace7769cef7fc331d6bddba"
+    },
+    {
+      "path": "anomaly_transformer/overall.csv",
+      "bytes": 100266,
+      "sha256": "ca6d2e8abd1a426d74384a2d524f95dcbaac37b86dcd5bcb187a8c14a62b9b88"
+    },
+    {
+      "path": "anomaly_transformer/overall.jsonl",
+      "bytes": 237003,
+      "sha256": "8f66d3008344ca3e056b486d89a5377e03a2ebadd7f59cf146d66b39e52b3aac"
+    },
+    {
+      "path": "anomaly_transformer/test.csv",
+      "bytes": 14987,
+      "sha256": "e79c15ce1d34c8d2b3a38ea313c2772cc217cae56305ee29c839ba08bbe00c4b"
+    },
+    {
+      "path": "anomaly_transformer/test.jsonl",
+      "bytes": 35444,
+      "sha256": "4061988e24088b9d31a43a17f43e9643abf01489b3211446ac205f51f0c7dbb6"
+    },
+    {
+      "path": "anomaly_transformer/train.csv",
+      "bytes": 70350,
+      "sha256": "93b5d4e2e1965f36351ca665693d4a906a30030434cf9f03a0bc493d17418861"
+    },
+    {
+      "path": "anomaly_transformer/train.jsonl",
+      "bytes": 166047,
+      "sha256": "3306f1fb595b0b594b845898ae9ae6858a80c699077abae2a2150aeaad1d37c5"
+    },
+    {
+      "path": "anomaly_transformer/validation.csv",
+      "bytes": 15055,
+      "sha256": "76a861f57248de1bc1e0552c29da3a2c3f4453e5c4d881fef2a4dd5108d6e583"
+    },
+    {
+      "path": "anomaly_transformer/validation.jsonl",
+      "bytes": 35512,
+      "sha256": "c2551a263f9e0b064cc4e114577b72333e3f7157b0a50291bc385cddb9458ae5"
+    },
+    {
+      "path": "arps/README.md",
+      "bytes": 1254,
+      "sha256": "07fa98d9479bf175e838b2b3612c0c0d1df7291282bd4ac9dfa788e4ee0048e9"
+    },
+    {
+      "path": "arps/infer.csv",
+      "bytes": 1423,
+      "sha256": "4dc1271b250da3fbf4e17cee0a0360d8981255baf8086573431b4717cb58f0bb"
+    },
+    {
+      "path": "arps/infer.jsonl",
+      "bytes": 2804,
+      "sha256": "05ae6883f20433f340d549d555542fdbf502d20b0cf6c00b171ffb1a0b0305bc"
+    },
+    {
+      "path": "arps/overall.csv",
+      "bytes": 9314,
+      "sha256": "484506949caee4ae9f9b5b9127a78c6c40b9365af9e3ec2320c1bb0f7eee06b8"
+    },
+    {
+      "path": "arps/overall.jsonl",
+      "bytes": 18651,
+      "sha256": "0f68a74481ef5e75f33af663231fe34aef9e8fb01d2d05bd07638db429d90676"
+    },
+    {
+      "path": "arps/test.csv",
+      "bytes": 1423,
+      "sha256": "4dc1271b250da3fbf4e17cee0a0360d8981255baf8086573431b4717cb58f0bb"
+    },
+    {
+      "path": "arps/test.jsonl",
+      "bytes": 2804,
+      "sha256": "05ae6883f20433f340d549d555542fdbf502d20b0cf6c00b171ffb1a0b0305bc"
+    },
+    {
+      "path": "arps/train.csv",
+      "bytes": 6515,
+      "sha256": "cbbd18db2c47d193d43332f72ced765d3403fc072db71a630f5ae4b04ebb3910"
+    },
+    {
+      "path": "arps/train.jsonl",
+      "bytes": 13044,
+      "sha256": "15d47d9efe29371cb91cb975906ff683367af32658191d406e44328f8ad51ac4"
+    },
+    {
+      "path": "arps/validation.csv",
+      "bytes": 1422,
+      "sha256": "2151e4aa90b38845740669a4e9e55d5a1347954af666de8a95ce5b733c6ad05f"
+    },
+    {
+      "path": "arps/validation.jsonl",
+      "bytes": 2803,
+      "sha256": "97c2b2e3b92a6aa9be251e393546b5f0e47a2691af169a3ced872a82457aa354"
+    },
+    {
+      "path": "crm/README.md",
+      "bytes": 1317,
+      "sha256": "380047d46359b9761f79d33aea9407f73b25fe907a0aa3651f75218a17833a8f"
+    },
+    {
+      "path": "crm/infer.csv",
+      "bytes": 1453,
+      "sha256": "9e52277cbab9d5fb240bf904eab4d546440246a36732561922bef6cae4e3c136"
+    },
+    {
+      "path": "crm/infer.jsonl",
+      "bytes": 3287,
+      "sha256": "3565a62b1f41ce2a8a18ace4557dffad7cbd60f4076150198c477c8b9c958390"
+    },
+    {
+      "path": "crm/overall.csv",
+      "bytes": 9510,
+      "sha256": "fc13b29baf42478ce9fec8026c4bd228e1a0fbe1e6b300cfeacae1c0ca7a8cbe"
+    },
+    {
+      "path": "crm/overall.jsonl",
+      "bytes": 21952,
+      "sha256": "65867eddc57a28d4806b6b86cd6a7a08f8190a7fca3881d80731fc562757aba4"
+    },
+    {
+      "path": "crm/test.csv",
+      "bytes": 1453,
+      "sha256": "9e52277cbab9d5fb240bf904eab4d546440246a36732561922bef6cae4e3c136"
+    },
+    {
+      "path": "crm/test.jsonl",
+      "bytes": 3287,
+      "sha256": "3565a62b1f41ce2a8a18ace4557dffad7cbd60f4076150198c477c8b9c958390"
+    },
+    {
+      "path": "crm/train.csv",
+      "bytes": 6671,
+      "sha256": "0c8257ea859ab98d8eec20678e6611d9f3f91fde917820d31ee2f914ff663e5d"
+    },
+    {
+      "path": "crm/train.jsonl",
+      "bytes": 15369,
+      "sha256": "4f30e9733004fcc7acad1a96a65115ad855d75dfd28dc8f281b8324e709234ac"
+    },
+    {
+      "path": "crm/validation.csv",
+      "bytes": 1462,
+      "sha256": "ebbd2953042eb5ba74496d064f6bb60804178ceaa43a7dea625493f90b5a2486"
+    },
+    {
+      "path": "crm/validation.jsonl",
+      "bytes": 3296,
+      "sha256": "8819f27ee7e544b233919ad59798ec3fe3ea12e970341834b46962a9fb47e5fd"
+    },
+    {
+      "path": "dbcl-10.txt",
+      "bytes": 2374,
+      "sha256": "3cbfa990f26df856c6a7d3fff3d1f236e3b0165b1e8257ca0d00f15758754f81"
+    },
+    {
+      "path": "dfn/README.md",
+      "bytes": 1665,
+      "sha256": "fd30d6fa4683062e7d0e83552df7f58a837a866e2776aa5be722c5364fa6d126"
+    },
+    {
+      "path": "dfn/infer.csv",
+      "bytes": 4346,
+      "sha256": "3bff1f7a84672a336d608c853d8cfa2a438ae5ba8934c13ad5adfc3c02c8194d"
+    },
+    {
+      "path": "dfn/infer.jsonl",
+      "bytes": 10576,
+      "sha256": "dd015d0390b552622dc5e576e519a34b71fe3134808abaad097868feffbcce61"
+    },
+    {
+      "path": "dfn/overall.csv",
+      "bytes": 50563,
+      "sha256": "aad683d2ba1fc55b384afecfe080ee483b282a78965323355cb4d5f0ba64b72a"
+    },
+    {
+      "path": "dfn/overall.jsonl",
+      "bytes": 126093,
+      "sha256": "1c529095086ca5c6e331f54cf974e2d8dee45853bdee25ca0b66dae825563d6d"
+    },
+    {
+      "path": "dfn/test.csv",
+      "bytes": 8496,
+      "sha256": "0e20639d2799637abb908c45067c62f24edeb60cf8d839e8c0d1f322037d5e71"
+    },
+    {
+      "path": "dfn/test.jsonl",
+      "bytes": 21026,
+      "sha256": "e54fec6a87ec79e7d9fc24aaf2a328999253697220191d9d00f16a7237aeed98"
+    },
+    {
+      "path": "dfn/train.csv",
+      "bytes": 33648,
+      "sha256": "a5d213217309de1bee6db4e5e3512a47f4d164fe0310f9ba57ac1add36602373"
+    },
+    {
+      "path": "dfn/train.jsonl",
+      "bytes": 83978,
+      "sha256": "8eef7458b17578b7f41600d46fe1ce17e28da26929b65c4d69aec369ac8aa612"
+    },
+    {
+      "path": "dfn/validation.csv",
+      "bytes": 8559,
+      "sha256": "b083fc4e49b489a8996c0e41fd4e11ae18da90bdc04c233aaf4117d092acda04"
+    },
+    {
+      "path": "dfn/validation.jsonl",
+      "bytes": 21089,
+      "sha256": "7964572de0ee78c1929ddff28700fcdbc31c866be0f11e628c0406fe7a43ed13"
+    },
+    {
+      "path": "edfm/README.md",
+      "bytes": 1371,
+      "sha256": "1e3c3d42b5cee9dbc3bbfe33a1e1d922addff1c02a84ccfe6a6e19a65a872166"
+    },
+    {
+      "path": "edfm/infer.csv",
+      "bytes": 82,
+      "sha256": "82260e431898794d595daecbc08af78f4e02865a6746a813b420463030867a85"
+    },
+    {
+      "path": "edfm/infer.jsonl",
+      "bytes": 96,
+      "sha256": "d7b4b33193663c911355da9c6b9ca4692ab9fc33a9bdbaff2c97142d67ea1011"
+    },
+    {
+      "path": "edfm/overall.csv",
+      "bytes": 362,
+      "sha256": "db1158d6f7efcd41f1ae4a99e18a181c7206dc9ef6f3fb60857762ad14152a9b"
+    },
+    {
+      "path": "edfm/overall.jsonl",
+      "bytes": 1146,
+      "sha256": "61239ce50bf8f0abd3067aacedd6216e24bf9acd7c9122c5bf64c2164cc9a710"
+    },
+    {
+      "path": "edfm/test.csv",
+      "bytes": 108,
+      "sha256": "28a466204204454b7e9083d608158d7fc4807d920cf3584f1179af167d6eb2e8"
+    },
+    {
+      "path": "edfm/test.jsonl",
+      "bytes": 192,
+      "sha256": "5a83cdb22e1fe93365a09728e5d8fd73d2f28fced55074c38bf7476ac2c72328"
+    },
+    {
+      "path": "edfm/train.csv",
+      "bytes": 260,
+      "sha256": "17578734f8122304900a93bfcea03179b922be5ac934abbe767c2a195dc6ac16"
+    },
+    {
+      "path": "edfm/train.jsonl",
+      "bytes": 764,
+      "sha256": "6e8e5ea80fafdf646d01e74fdea1b88c35ed13ca0027eb84dbf2afcf2c39078a"
+    },
+    {
+      "path": "edfm/validation.csv",
+      "bytes": 106,
+      "sha256": "65079846b87e6036a51bd1b4ae063186124cc314dbdcc6f9ce581bac7f29f3a1"
+    },
+    {
+      "path": "edfm/validation.jsonl",
+      "bytes": 190,
+      "sha256": "904c97db0ad0992718421a6ac7f52f780a4ea8dc67f20970673290b1666893a8"
+    },
+    {
+      "path": "entity_align/README.md",
+      "bytes": 1331,
+      "sha256": "1ea2238de26ae867b42eec7d8bb664ad35c6202d2aacd6479e43a47d770deb06"
+    },
+    {
+      "path": "entity_align/infer.csv",
+      "bytes": 1295,
+      "sha256": "1d35e0492564b16c77686d9a8fb44f0dddf1e08b676d0e7649484f1ca1780a45"
+    },
+    {
+      "path": "entity_align/infer.jsonl",
+      "bytes": 2910,
+      "sha256": "b639af81e0b79cb09b24bab2ef509838c4eb6cbb451dcc799364f3f392b7e9ff"
+    },
+    {
+      "path": "entity_align/overall.csv",
+      "bytes": 7655,
+      "sha256": "a6134c5f9a5453267e1346c59f9e188fa80e64ea0f6a75d56cbd5a56234d3ef6"
+    },
+    {
+      "path": "entity_align/overall.jsonl",
+      "bytes": 17520,
+      "sha256": "c970521338371b2b5ef36e15c4b1d74fd1ab442739eb1d4619bd0672216192b4"
+    },
+    {
+      "path": "entity_align/test.csv",
+      "bytes": 1295,
+      "sha256": "1d35e0492564b16c77686d9a8fb44f0dddf1e08b676d0e7649484f1ca1780a45"
+    },
+    {
+      "path": "entity_align/test.jsonl",
+      "bytes": 2910,
+      "sha256": "b639af81e0b79cb09b24bab2ef509838c4eb6cbb451dcc799364f3f392b7e9ff"
+    },
+    {
+      "path": "entity_align/train.csv",
+      "bytes": 5075,
+      "sha256": "33b4edbad29179dc8121ba9707103e117f0d8148e1411b5e47be526a1f1694dd"
+    },
+    {
+      "path": "entity_align/train.jsonl",
+      "bytes": 11640,
+      "sha256": "8d7ef03435a6e3160fdbd2c6a07e9170d0945aa63e0de368e50d6f0c932ea6b6"
+    },
+    {
+      "path": "entity_align/validation.csv",
+      "bytes": 1355,
+      "sha256": "d98aa4e02b0d6033ede6e6c58363e9c3a3747b9117936d76000d7ac83d8b1897"
+    },
+    {
+      "path": "entity_align/validation.jsonl",
+      "bytes": 2970,
+      "sha256": "c7f26a08a61db41c3f0051ac0ef2f3c35a2420dfe29ebf3ba4f8fda9ae3b48f0"
+    },
+    {
+      "path": "generate_data_kit.py",
+      "bytes": 22821,
+      "sha256": "de72a3ab3f4acb92bd9458e8911d33b12da15e6ea9faf0d4c44f4666bb01dcdd"
+    },
+    {
+      "path": "grin/README.md",
+      "bytes": 1635,
+      "sha256": "a339ae6de8fc0c01416dfe211e17e4f20b2f9a840b807085c07d20f0c5ad8781"
+    },
+    {
+      "path": "grin/infer.csv",
+      "bytes": 14449,
+      "sha256": "a7310b36de4b551d2a0a8d5d9ae1ae6197c390147ac9c2a32606cd5b6c33d72b"
+    },
+    {
+      "path": "grin/infer.jsonl",
+      "bytes": 32804,
+      "sha256": "c2659ae5fa54fd2e6a56546a36c3ba5e21d0b177155de7ba2e512b83c1e7ae4c"
+    },
+    {
+      "path": "grin/overall.csv",
+      "bytes": 96690,
+      "sha256": "b825703293fae5b8c34926bc5ebf3fe57bf80a8a13b00b0a105e7578bc562eb7"
+    },
+    {
+      "path": "grin/overall.jsonl",
+      "bytes": 219373,
+      "sha256": "6ec4a9a484932403d1cf22f03c06be91fd410dd7228bb9bc83b76a492fc3cd3c"
+    },
+    {
+      "path": "grin/test.csv",
+      "bytes": 14449,
+      "sha256": "a7310b36de4b551d2a0a8d5d9ae1ae6197c390147ac9c2a32606cd5b6c33d72b"
+    },
+    {
+      "path": "grin/test.jsonl",
+      "bytes": 32804,
+      "sha256": "c2659ae5fa54fd2e6a56546a36c3ba5e21d0b177155de7ba2e512b83c1e7ae4c"
+    },
+    {
+      "path": "grin/train.csv",
+      "bytes": 67838,
+      "sha256": "4f0c658764b3cd6bcb92f3787e5f606a2a6f2292052d7e6471d1bf7743419ceb"
+    },
+    {
+      "path": "grin/train.jsonl",
+      "bytes": 153697,
+      "sha256": "204c0db5cabcf38945f468f7c5d5d87dc83abd2dafb0daca56ab9ceb72891907"
+    },
+    {
+      "path": "grin/validation.csv",
+      "bytes": 14517,
+      "sha256": "e60514df8ad3046abca7436ec06eb106c31d1c4518ef3a020b5d9b4895bc898b"
+    },
+    {
+      "path": "grin/validation.jsonl",
+      "bytes": 32872,
+      "sha256": "d9be572d7ee99a95c55f080f28370ef5e55f1def00dcea6f5f00ea435813b6a3"
+    },
+    {
+      "path": "hierarchy/README.md",
+      "bytes": 1499,
+      "sha256": "e483031eed11792eefb837092af49a1e3112fa3e10c56af28a75b56dd9e0baef"
+    },
+    {
+      "path": "hierarchy/infer.csv",
+      "bytes": 413,
+      "sha256": "9e814122cd452880e444749dc45ab06b86e7e75fe627824639dbe312e77de6ba"
+    },
+    {
+      "path": "hierarchy/infer.jsonl",
+      "bytes": 900,
+      "sha256": "f2cd504c35da1344033a2a969b52f39f4e56c2f4bce85fbf49305f9dc4b7cdd6"
+    },
+    {
+      "path": "hierarchy/overall.csv",
+      "bytes": 2419,
+      "sha256": "9552a00d8a2b49ed29719bfa4d654b035d05f309b5b8260b2524f1c8316eba14"
+    },
+    {
+      "path": "hierarchy/overall.jsonl",
+      "bytes": 6000,
+      "sha256": "2b4bca2bc446ace480e4e3098bb8ce9f42e63f32e8685d2779119d93fa44d11f"
+    },
+    {
+      "path": "hierarchy/test.csv",
+      "bytes": 413,
+      "sha256": "9e814122cd452880e444749dc45ab06b86e7e75fe627824639dbe312e77de6ba"
+    },
+    {
+      "path": "hierarchy/test.jsonl",
+      "bytes": 900,
+      "sha256": "f2cd504c35da1344033a2a969b52f39f4e56c2f4bce85fbf49305f9dc4b7cdd6"
+    },
+    {
+      "path": "hierarchy/train.csv",
+      "bytes": 1711,
+      "sha256": "a81ef417a48a495be237a8a246ba9eda38ea6a748dba19e469c2ff608ac9da2a"
+    },
+    {
+      "path": "hierarchy/train.jsonl",
+      "bytes": 4200,
+      "sha256": "b823425ef7cdbd026aea6febd819a1c8382b37b833692b080f7f00b9cb068b37"
+    },
+    {
+      "path": "hierarchy/validation.csv",
+      "bytes": 413,
+      "sha256": "1387cb0b808f09c7627eae412a2cc59c26656cd0c9117d3b837f944fade06b53"
+    },
+    {
+      "path": "hierarchy/validation.jsonl",
+      "bytes": 900,
+      "sha256": "19244051785a9b6ce2f14bec9f5e35d19af3adef242456c4151978d074964ec4"
+    },
+    {
+      "path": "isolation_forest/README.md",
+      "bytes": 1508,
+      "sha256": "3863a503422a5e04498542054906ca657db49aee6d7542f679d716d250fac4c1"
+    },
+    {
+      "path": "isolation_forest/infer.csv",
+      "bytes": 33511,
+      "sha256": "97e6a1996cb5e7c049056580882568303c21e72e822be9a4ad950246c9cde556"
+    },
+    {
+      "path": "isolation_forest/infer.jsonl",
+      "bytes": 62281,
+      "sha256": "eec439be8f3faa55b49e62f75f4fab9e19930545376596979df64bb39e7dbebc"
+    },
+    {
+      "path": "isolation_forest/overall.csv",
+      "bytes": 105201,
+      "sha256": "ac0d63e8e96e2f6fe251a75674bc38d362de434f29717c0e50ea7c2310c40984"
+    },
+    {
+      "path": "isolation_forest/overall.jsonl",
+      "bytes": 202965,
+      "sha256": "6928c06b65d0b14ef5646de98e7b266f737b18439d14b142504dc5261b1ee227"
+    },
+    {
+      "path": "isolation_forest/test.csv",
+      "bytes": 34717,
+      "sha256": "663b2ae4d142b813b48215a5a94f0451793f8ee4371f3d5ad7495ceb1dbddbad"
+    },
+    {
+      "path": "isolation_forest/test.jsonl",
+      "bytes": 69481,
+      "sha256": "4bb02575be8ab612dad43ce70b24563bb2b7755add2c2b55cd4b804c8190e87a"
+    },
+    {
+      "path": "isolation_forest/train.csv",
+      "bytes": 33314,
+      "sha256": "47cc7e6ffd9ce40cde78d1ccc97cf5cd0ca304bb0614c4810858603ad907fffa"
+    },
+    {
+      "path": "isolation_forest/train.jsonl",
+      "bytes": 62084,
+      "sha256": "cc1c2685925d7386a02c2ad3108a665a706d30ac9db6720bb3c6ae9f4ca959e1"
+    },
+    {
+      "path": "isolation_forest/validation.csv",
+      "bytes": 36636,
+      "sha256": "5484614871d3a23bf8dc5607597b81ceb9685d659110178fba91406e387c7004"
+    },
+    {
+      "path": "isolation_forest/validation.jsonl",
+      "bytes": 71400,
+      "sha256": "2504317cad10e1c06c8c776d903d46865a8ba5efaf6e46905455af8929158579"
+    },
+    {
+      "path": "lag/README.md",
+      "bytes": 1214,
+      "sha256": "a6eef4e1c46c36ceb1a443d1cfcad138d7f6497eb0f246d750b1ca7c491724a3"
+    },
+    {
+      "path": "lag/infer.csv",
+      "bytes": 1225,
+      "sha256": "87f39593517fa4f470a1ff7c7c594c54a52165d78e14fdd1bb6054ec31802b27"
+    },
+    {
+      "path": "lag/infer.jsonl",
+      "bytes": 2635,
+      "sha256": "1dc9c2daaefae0ff6b58e35fc80cd064b4c02265e52359f2ca3860c284779288"
+    },
+    {
+      "path": "lag/overall.csv",
+      "bytes": 7982,
+      "sha256": "347deb595ca63991fdf2ba7c96e3b042b99c7cfc674d11ada40943130035393f"
+    },
+    {
+      "path": "lag/overall.jsonl",
+      "bytes": 17552,
+      "sha256": "b85e6c5ed4c80ad22f4a6bb2e6a67c81f8909925662a3b04a71303170bb57fed"
+    },
+    {
+      "path": "lag/test.csv",
+      "bytes": 1225,
+      "sha256": "87f39593517fa4f470a1ff7c7c594c54a52165d78e14fdd1bb6054ec31802b27"
+    },
+    {
+      "path": "lag/test.jsonl",
+      "bytes": 2635,
+      "sha256": "1dc9c2daaefae0ff6b58e35fc80cd064b4c02265e52359f2ca3860c284779288"
+    },
+    {
+      "path": "lag/train.csv",
+      "bytes": 5571,
+      "sha256": "e693f0f31e315568d1100e69606daa35c06b85c20ca29c68230cb336ac38050f"
+    },
+    {
+      "path": "lag/train.jsonl",
+      "bytes": 12261,
+      "sha256": "9fe3e8efd0b07c8d9eeb5a41b7de02088440d335c1e8f9007370420f7b00822d"
+    },
+    {
+      "path": "lag/validation.csv",
+      "bytes": 1246,
+      "sha256": "996b43b78208e7805172b1c88f805b82f88bd3095eba184444e3a1f5b2ac45b0"
+    },
+    {
+      "path": "lag/validation.jsonl",
+      "bytes": 2656,
+      "sha256": "5ea0bd98beb9a6d6c343fdc091406077d44901cff23cb2d39eaf6959f8bb3828"
+    },
+    {
+      "path": "odbl-10.txt",
+      "bytes": 25279,
+      "sha256": "1d553feead201a7619788171b43cca12675e82d70b197aa45795986bb8603e72"
+    },
+    {
+      "path": "original_zip_model_mapping.csv",
+      "bytes": 23512,
+      "sha256": "30f33dc2d023e7da9358fb6947ab968826b7ce5b965d5912c1536adf4d9bb9bf"
+    },
+    {
+      "path": "original_zip_model_mapping.md",
+      "bytes": 15099,
+      "sha256": "6cf60c41044482aa72e663004709c125b2feac5821ea95af6aef125d2df3743b"
+    },
+    {
+      "path": "porepy_LICENSE.md",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "rotate/README.md",
+      "bytes": 1271,
+      "sha256": "f367014913ce59079aac148c5149767122f616edd862f70ee980e96f5fcb9834"
+    },
+    {
+      "path": "rotate/infer.csv",
+      "bytes": 5390,
+      "sha256": "2af6bcea0ed75b3e6e094193f4254ca7e3974e0a786cd2840ca1597e6e03078e"
+    },
+    {
+      "path": "rotate/infer.jsonl",
+      "bytes": 8105,
+      "sha256": "d3bbe29ca4ed2362411a050252c21baad37c20cca8e329a1bef6e8c697c24b78"
+    },
+    {
+      "path": "rotate/overall.csv",
+      "bytes": 41742,
+      "sha256": "2c15a866d783828bed690a9909961e87aa0b20fab1283a64fa92bd951bf20606"
+    },
+    {
+      "path": "rotate/overall.jsonl",
+      "bytes": 63586,
+      "sha256": "8d0b14afb30be624a2caee090b0da609c7c4c6b4314b488d2b7355f2a7df76c8"
+    },
+    {
+      "path": "rotate/test.csv",
+      "bytes": 5390,
+      "sha256": "2af6bcea0ed75b3e6e094193f4254ca7e3974e0a786cd2840ca1597e6e03078e"
+    },
+    {
+      "path": "rotate/test.jsonl",
+      "bytes": 8105,
+      "sha256": "d3bbe29ca4ed2362411a050252c21baad37c20cca8e329a1bef6e8c697c24b78"
+    },
+    {
+      "path": "rotate/train.csv",
+      "bytes": 31279,
+      "sha256": "3be7f39ed4f773e50a9fdc6bb34f038c6a4e5fb84055c3bf119cc43b17d65c94"
+    },
+    {
+      "path": "rotate/train.jsonl",
+      "bytes": 47684,
+      "sha256": "8dacf47e1e3b54bafa80b46e0ec71907ccab9b8ac04d646e6c6d9ee6570ecda6"
+    },
+    {
+      "path": "rotate/validation.csv",
+      "bytes": 5119,
+      "sha256": "095474edfa44e5c6e7a00daf803819f1be4d8af2bac452b5c8c290fe4b860357"
+    },
+    {
+      "path": "rotate/validation.jsonl",
+      "bytes": 7797,
+      "sha256": "2148181987020eed5973b5950fd1181cca94865edb599e957531896794d511b0"
+    },
+    {
+      "path": "rules/README.md",
+      "bytes": 1709,
+      "sha256": "4ce873c90fcb4100956b2360a91e943a504b8cbe216dab7ce95a516c631db809"
+    },
+    {
+      "path": "rules/infer.csv",
+      "bytes": 14549,
+      "sha256": "b5a5554f597f909526bc3847c560dff65bde6207ab3e5c7331a93849e83c2d0c"
+    },
+    {
+      "path": "rules/infer.jsonl",
+      "bytes": 32852,
+      "sha256": "5e8e177f644066787c533a7674e14c8c74d5db3bbace7769cef7fc331d6bddba"
+    },
+    {
+      "path": "rules/overall.csv",
+      "bytes": 100266,
+      "sha256": "ca6d2e8abd1a426d74384a2d524f95dcbaac37b86dcd5bcb187a8c14a62b9b88"
+    },
+    {
+      "path": "rules/overall.jsonl",
+      "bytes": 237003,
+      "sha256": "8f66d3008344ca3e056b486d89a5377e03a2ebadd7f59cf146d66b39e52b3aac"
+    },
+    {
+      "path": "rules/test.csv",
+      "bytes": 14987,
+      "sha256": "e79c15ce1d34c8d2b3a38ea313c2772cc217cae56305ee29c839ba08bbe00c4b"
+    },
+    {
+      "path": "rules/test.jsonl",
+      "bytes": 35444,
+      "sha256": "4061988e24088b9d31a43a17f43e9643abf01489b3211446ac205f51f0c7dbb6"
+    },
+    {
+      "path": "rules/train.csv",
+      "bytes": 70350,
+      "sha256": "93b5d4e2e1965f36351ca665693d4a906a30030434cf9f03a0bc493d17418861"
+    },
+    {
+      "path": "rules/train.jsonl",
+      "bytes": 166047,
+      "sha256": "3306f1fb595b0b594b845898ae9ae6858a80c699077abae2a2150aeaad1d37c5"
+    },
+    {
+      "path": "rules/validation.csv",
+      "bytes": 15055,
+      "sha256": "76a861f57248de1bc1e0552c29da3a2c3f4453e5c4d881fef2a4dd5108d6e583"
+    },
+    {
+      "path": "rules/validation.jsonl",
+      "bytes": 35512,
+      "sha256": "c2551a263f9e0b064cc4e114577b72333e3f7157b0a50291bc385cddb9458ae5"
+    },
+    {
+      "path": "uie/README.md",
+      "bytes": 1840,
+      "sha256": "da5755ae310fd138f2827e419d9794150ae3ff8da28592806f2c762b9d5511cf"
+    },
+    {
+      "path": "uie/infer.jsonl",
+      "bytes": 8073,
+      "sha256": "12ee98b7d8cdfad76988cc33d53e27e62490395a5ea63a0b040613227d92d97b"
+    },
+    {
+      "path": "uie/overall.jsonl",
+      "bytes": 75357,
+      "sha256": "212ffad45b73d47f16491a46555b5bb890dab00c75a783d2eff2fb98b240e769"
+    },
+    {
+      "path": "uie/test.jsonl",
+      "bytes": 10592,
+      "sha256": "d364eba5869250796d813b8524515104a17666e01ba8679dfedd80072514a5aa"
+    },
+    {
+      "path": "uie/train.jsonl",
+      "bytes": 54662,
+      "sha256": "00a2c82243d95cd87632a63505269df8dc8c75e2c3eeb8a47ffed87947050c53"
+    },
+    {
+      "path": "uie/validation.jsonl",
+      "bytes": 10103,
+      "sha256": "40cd10da105c98077425e960bbee46589edd82c3b04567d09707d8edc06033ec"
+    }
+  ]
+}

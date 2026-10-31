@@ -1,0 +1,3 @@
+﻿case_id,aperture_mm,pressure_drop_mpa,duration_days
+DEMO:EDFM:02,0.35,2.3,20
+DEMO:EDFM:06,0.55,3.5,40

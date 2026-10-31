@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Reassemble verified download archives
+        run: python3 scripts/assemble-downloads.py
       - run: npm test
       - run: npm run check
       - uses: actions/configure-pages@v5

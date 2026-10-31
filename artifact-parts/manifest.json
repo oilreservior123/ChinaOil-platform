@@ -1,0 +1,48 @@
+{
+  "archives": [
+    {
+      "target": "dist/downloads/model_experiments.zip",
+      "size": 15791304,
+      "sha256": "5cebbdc4a704d097f362f3383e71064579472ec6ffbace506e043fa9d04fbe3e",
+      "parts": [
+        {
+          "path": "artifact-parts/model_experiments.zip.part001",
+          "size": 6291456,
+          "sha256": "689d631272b88ef75bf26968858b78e6aa0363c4c5c8c8e555c4da19b6e382ea"
+        },
+        {
+          "path": "artifact-parts/model_experiments.zip.part002",
+          "size": 6291456,
+          "sha256": "081ef5f8b9d10fce6114441bb435811475ec1dd33d508fb1f872b61972fd5c37"
+        },
+        {
+          "path": "artifact-parts/model_experiments.zip.part003",
+          "size": 3208392,
+          "sha256": "7c441c855c6c565069c7852ac0d8fd6768714450aad1420972085dcfa089a982"
+        }
+      ]
+    },
+    {
+      "target": "dist/downloads/public_training_data.zip",
+      "size": 13748035,
+      "sha256": "25a5fc1d584c7b1b1fca2c349097b85f6dab65e78be339ec4c42518e2dc1cf4a",
+      "parts": [
+        {
+          "path": "artifact-parts/public_training_data.zip.part001",
+          "size": 6291456,
+          "sha256": "950ca292bad970aec7f95dc1f1329197abeade0ec5ab72bdaf89d18c7960f89f"
+        },
+        {
+          "path": "artifact-parts/public_training_data.zip.part002",
+          "size": 6291456,
+          "sha256": "8ead59acf62be18a6417dd2bf0a15616ced2f22f029692f145a7ad9903264688"
+        },
+        {
+          "path": "artifact-parts/public_training_data.zip.part003",
+          "size": 1165123,
+          "sha256": "9726d61d1bcb1b7bf5e805605f2977613a4fadfedecb0db171bc1e96bfbf3d70"
+        }
+      ]
+    }
+  ]
+}

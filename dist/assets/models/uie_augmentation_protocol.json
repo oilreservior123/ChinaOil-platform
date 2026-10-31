@@ -1,0 +1,1 @@
+{"original_train_prompts":1287,"augmented_train_prompts":11583,"augmentation":"8 shuffled field-order lexical variants per source TRAIN document, exact programmatic spans; no validation/test facts used"}

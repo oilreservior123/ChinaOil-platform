@@ -1,0 +1,73 @@
+{"head": "FORCE:16/2-16", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Blodoeks Fm."}
+{"head": "FORCE:16/2-6", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:15/9-13", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:16/4-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Vaale Fm."}
+{"head": "FORCE:16/10-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Blodoeks Fm."}
+{"head": "FORCE:FORMATION:Tuxen Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:CROMER KNOLL GP."}
+{"head": "FORCE:16/10-5", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Bryne Fm."}
+{"head": "FORCE:16/7-5", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Lista Fm."}
+{"head": "FORCE:25/11-19 S", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hermod Mb."}
+{"head": "FORCE:16/4-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Balder Fm."}
+{"head": "FORCE:15/9-17", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Heimdal Fm."}
+{"head": "FORCE:25/2-13 T4", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Svarte Fm."}
+{"head": "FORCE:16/7-4", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HEGRE GP."}
+{"head": "FORCE:25/11-5", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:16/10-5", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Blodoeks Fm."}
+{"head": "FORCE:17/11-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Egersund Fm."}
+{"head": "FORCE:16/10-1", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:CROMER KNOLL GP."}
+{"head": "FORCE:16/7-4", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:25/2-13 T4", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Heather Fm."}
+{"head": "FORCE:16/2-6", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:VIKING GP."}
+{"head": "FORCE:25/3-1", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HORDALAND GP."}
+{"head": "FORCE:16/10-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Balder Fm."}
+{"head": "FORCE:16/10-3", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Svarte Fm."}
+{"head": "FORCE:16/7-5", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hod Fm."}
+{"head": "FORCE:FORMATION:Smith Bank Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:BOKNFJORD GP."}
+{"head": "FORCE:16/7-4", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Balder Fm."}
+{"head": "FORCE:25/4-5", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Roedby Fm."}
+{"head": "FORCE:16/2-6", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HORDALAND GP."}
+{"head": "FORCE:15/9-17", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:CROMER KNOLL GP."}
+{"head": "FORCE:17/11-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Smith Bank Fm."}
+{"head": "FORCE:FORMATION:Frigg Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HORDALAND GP."}
+{"head": "FORCE:16/4-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Lista Fm."}
+{"head": "FORCE:15/9-17", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Utsira Fm."}
+{"head": "FORCE:16/10-3", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HORDALAND GP."}
+{"head": "FORCE:16/10-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hod Fm."}
+{"head": "FORCE:15/9-17", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hod Fm."}
+{"head": "FORCE:25/11-15", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:25/2-13 T4", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Draupne Fm."}
+{"head": "FORCE:15/9-13", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Heather Fm."}
+{"head": "FORCE:16/11-1 ST3", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:VESTLAND GP."}
+{"head": "FORCE:16/11-1 ST3", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Balder Fm."}
+{"head": "FORCE:15/9-17", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Draupne Fm."}
+{"head": "FORCE:16/5-3", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Svarte Fm."}
+{"head": "FORCE:FORMATION:Vaale Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:16/1-2", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:VIKING GP."}
+{"head": "FORCE:FORMATION:Roedby Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:CROMER KNOLL GP."}
+{"head": "FORCE:FORMATION:Ty Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:ROGALAND GP."}
+{"head": "FORCE:16/2-16", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Vaale Fm."}
+{"head": "FORCE:16/2-16", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Intra Draupne Fm. Sst."}
+{"head": "FORCE:15/9-13", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Utsira Fm."}
+{"head": "FORCE:16/10-2", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Sola Fm."}
+{"head": "FORCE:25/11-15", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HORDALAND GP."}
+{"head": "FORCE:17/11-1", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:BOKNFJORD GP."}
+{"head": "FORCE:16/5-3", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:CROMER KNOLL GP."}
+{"head": "FORCE:16/2-6", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Sola Fm."}
+{"head": "FORCE:25/11-5", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Intra Balder Fm. Sst."}
+{"head": "FORCE:25/2-13 T4", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Blodoeks Fm."}
+{"head": "FORCE:25/3-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Sleipner Fm."}
+{"head": "FORCE:FORMATION:Flekkefjord Fm.", "relation": "PART_OF_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:BOKNFJORD GP."}
+{"head": "FORCE:16/10-2", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Skagerrak Fm."}
+{"head": "FORCE:25/11-15", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Sele Fm."}
+{"head": "FORCE:16/4-1", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:SHETLAND GP."}
+{"head": "FORCE:25/3-1", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Vaale Fm."}
+{"head": "FORCE:25/3-1", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:NORDLAND GP."}
+{"head": "FORCE:16/1-6 A", "relation": "INTERSECTS_STRATIGRAPHIC_GROUP", "tail": "FORCE:STRAT_GROUP:HORDALAND GP."}
+{"head": "FORCE:25/11-15", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hidra Fm."}
+{"head": "FORCE:16/5-3", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Roedby Fm."}
+{"head": "FORCE:16/7-4", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hod Fm."}
+{"head": "FORCE:25/2-14", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Vaale Fm."}
+{"head": "FORCE:15/9-13", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Balder Fm."}
+{"head": "FORCE:16/11-1 ST3", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Tau Fm."}
+{"head": "FORCE:16/2-16", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Hod Fm."}
+{"head": "FORCE:16/2-6", "relation": "INTERSECTS_FORMATION", "tail": "FORCE:FORMATION:Blodoeks Fm."}

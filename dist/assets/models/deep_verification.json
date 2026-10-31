@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "model": "grin",
+      "frozen_trace_max_abs_error": 0.0012420229613780975,
+      "status": "passed"
+    },
+    {
+      "model": "uie",
+      "reloaded_test_predictions_matched": 720,
+      "status": "passed"
+    },
+    {
+      "model": "anomaly_transformer",
+      "frozen_trace_max_abs_score_error": 0.0,
+      "status": "passed",
+      "verified_windows": 18,
+      "covered_well_ids": [
+        "VOLVE:5351",
+        "VOLVE:5599",
+        "VOLVE:5769",
+        "VOLVE:7078",
+        "VOLVE:7289",
+        "VOLVE:7405"
+      ]
+    }
+  ]
+}

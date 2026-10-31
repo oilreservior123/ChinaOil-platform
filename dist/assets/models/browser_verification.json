@@ -1,0 +1,7 @@
+{
+  "isolation_max_abs_score_error": 1.1102230246251565e-16,
+  "rotate_max_abs_score_error": 9.78210211499686e-7,
+  "isolation_examples": 16,
+  "rotate_queries": 8,
+  "status": "passed"
+}

@@ -1,0 +1,336 @@
+{
+  "description": "Actual integration smoke run on supplied model-data. One epoch only, not baseline pretrained validation. Timing is machine-specific CPU wall time.",
+  "tests_passed": 12,
+  "test_leakage_regression": "Changing test data leaves all four neural artifacts, history, threshold, and validation selection unchanged. RotatE validation filtering uses train+validation only.",
+  "crm_time_regression": "Actual calendar state crosses split boundaries; 100-day gap decay and retrospective replay tests passed.",
+  "runs": [
+    {
+      "model_id": "isolation_forest",
+      "status": 200,
+      "training_seconds": 0.09864270499974737,
+      "compute_seconds": 0.009599829999842768,
+      "elapsed_seconds": 0.10870232699971893,
+      "result_records": 600,
+      "metrics": {
+        "validation": {
+          "Precision": 0.9787234042553191,
+          "Recall": 0.9787234042553191,
+          "F1": 0.9787234042553191,
+          "ROC_AUC": 0.9999615251433188,
+          "PR_AUC": 0.9995567375886524,
+          "labeled_samples": 600,
+          "threshold": 0.2552781983948564
+        },
+        "test": {
+          "Precision": 1.0,
+          "Recall": 1.0,
+          "F1": 1.0,
+          "ROC_AUC": 1.0,
+          "PR_AUC": 1.0,
+          "labeled_samples": 600,
+          "threshold": 0.2552781983948564
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "rotate",
+      "status": 200,
+      "training_seconds": 0.049941107999984524,
+      "compute_seconds": 0.08166280599971287,
+      "elapsed_seconds": 2.1156183759999294,
+      "result_records": 74,
+      "metrics": {
+        "validation": {
+          "filtered_MRR": 0.07307500632138535,
+          "Hits@1": 0.02054794520547945,
+          "Hits@10": 0.13013698630136986,
+          "ranking_queries": 146
+        },
+        "test": {
+          "filtered_MRR": 0.06944920336094153,
+          "Hits@1": 0.02027027027027027,
+          "Hits@10": 0.13513513513513514,
+          "ranking_queries": 148
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "grin",
+      "status": 200,
+      "training_seconds": 0.17532659199969203,
+      "compute_seconds": 0.043973896999887074,
+      "elapsed_seconds": 0.22574943700010408,
+      "result_records": 216,
+      "metrics": {
+        "validation": {
+          "normalized_MAE": 1.2764937058326442,
+          "normalized_RMSE": 1.4486027062112972,
+          "heldout_cells": 217
+        },
+        "test": {
+          "normalized_MAE": 1.5416373033826503,
+          "normalized_RMSE": 1.761583291207714,
+          "heldout_cells": 202
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "uie",
+      "status": 200,
+      "training_seconds": 1.3644854149997627,
+      "compute_seconds": 0.16293207200033066,
+      "elapsed_seconds": 1.5423338059999878,
+      "result_records": 45,
+      "metrics": {
+        "validation": {
+          "exact_span_precision": 0.0,
+          "exact_span_recall": 0.0,
+          "exact_span_F1": 0.0,
+          "labeled_samples": 45,
+          "cross_entropy": 7.989236116409302
+        },
+        "test": {
+          "exact_span_precision": 0.0,
+          "exact_span_recall": 0.0,
+          "exact_span_F1": 0.0,
+          "labeled_samples": 45,
+          "cross_entropy": 8.286474227905273
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "anomaly_transformer",
+      "status": 200,
+      "training_seconds": 0.10223693800026012,
+      "compute_seconds": 0.07715571300013835,
+      "elapsed_seconds": 0.1848902030001227,
+      "result_records": 216,
+      "metrics": {
+        "validation": {
+          "reconstruction_MSE": 0.6620824375724489,
+          "samples": 216,
+          "threshold": 1.3564072847366333,
+          "precision": 0.2727272727272727,
+          "recall": 0.3333333333333333,
+          "F1": 0.3,
+          "ROC_AUC": 0.5353535353535352
+        },
+        "test": {
+          "reconstruction_MSE": 1.036828335305607,
+          "samples": 216,
+          "threshold": 1.3564072847366333,
+          "precision": 0.0,
+          "recall": 0.0,
+          "F1": 0.0
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "arps",
+      "status": 200,
+      "training_seconds": 0.011392644000352448,
+      "compute_seconds": 0.0005672150000464171,
+      "elapsed_seconds": 0.014270896000198263,
+      "result_records": 36,
+      "metrics": {
+        "validation": {
+          "MAE": 0.5922998647537836,
+          "RMSE": 0.5990132800209349,
+          "R2": 0.9397279911510952,
+          "samples": 36
+        },
+        "test": {
+          "MAE": 0.8760360156182954,
+          "RMSE": 0.8791794566739238,
+          "R2": 0.7928179505914297,
+          "samples": 36
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "crm",
+      "status": 200,
+      "training_seconds": 0.0070316360001925204,
+      "compute_seconds": 0.001128523000261339,
+      "elapsed_seconds": 0.008198366000215174,
+      "result_records": 36,
+      "metrics": {
+        "validation": {
+          "MAE": 0.6216768118629467,
+          "RMSE": 0.6744475020956889,
+          "R2": 0.9909875698601017,
+          "samples": 36
+        },
+        "test": {
+          "MAE": 0.26678548722685846,
+          "RMSE": 0.32143167613044255,
+          "R2": 0.9970000066035654,
+          "samples": 36
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "dfn",
+      "status": 200,
+      "training_seconds": null,
+      "compute_seconds": 0.006948210000246036,
+      "elapsed_seconds": 0.006955973000003723,
+      "result_records": 63,
+      "metrics": {
+        "calculation": {
+          "fracture_count": 63,
+          "intersection_count": 85,
+          "total_length_m": 9992.318853220771
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "edfm",
+      "status": 200,
+      "training_seconds": null,
+      "compute_seconds": 0.25026826000021174,
+      "elapsed_seconds": 0.2502849249999599,
+      "result_records": 1,
+      "metrics": {
+        "cases": [
+          {
+            "case_id": "DEMO:EDFM:02",
+            "pressure_relative_residual_max": 1.2399369256108727e-10,
+            "water_mass_balance_relative_error": 1.395812923977664e-13,
+            "water_mass_balance_absolute_m3": 2.2396307031158358e-10,
+            "cumulative_injected_water_m3": 1604.535009414825,
+            "cumulative_produced_water_m3": 4.153239891495273,
+            "domain_water_storage_change_m3": 1600.3817695235537,
+            "transport_residual_max_m3_s": 3.028068671051239e-17,
+            "pressure_CG_iterations_max": 163,
+            "accepted_time_steps": 6
+          }
+        ]
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "entity_align",
+      "status": 200,
+      "training_seconds": null,
+      "compute_seconds": 0.03271719899976233,
+      "elapsed_seconds": 0.0327275350000491,
+      "result_records": 30,
+      "metrics": {
+        "evaluation": {
+          "accuracy": 1.0,
+          "labeled_samples": 30,
+          "dictionary_entries": 120
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "lag",
+      "status": 200,
+      "training_seconds": null,
+      "compute_seconds": 0.0028654419998019875,
+      "elapsed_seconds": 0.0028696690001197567,
+      "result_records": 31,
+      "metrics": {
+        "calculation": {
+          "max_absolute_correlation_lag_days": 7,
+          "correlation": 0.999999999999999
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "hierarchy",
+      "status": 200,
+      "training_seconds": null,
+      "compute_seconds": 2.5538000045344234e-05,
+      "elapsed_seconds": 3.0125000193947926e-05,
+      "result_records": 6,
+      "metrics": {
+        "calculation": {
+          "records": 6,
+          "unique_wells": 3,
+          "conflicts": 0
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    },
+    {
+      "model_id": "rules",
+      "status": 200,
+      "training_seconds": null,
+      "compute_seconds": 0.00033511599986013607,
+      "elapsed_seconds": 0.00033950199986065854,
+      "result_records": 216,
+      "metrics": {
+        "calculation": {
+          "records": 216,
+          "flagged": 0,
+          "L0_blocked": 0
+        }
+      },
+      "parameters": {
+        "epochs": 1,
+        "trees": 16,
+        "time_steps": 6
+      }
+    }
+  ]
+}

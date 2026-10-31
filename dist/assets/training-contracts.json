@@ -1,0 +1,1296 @@
+{
+  "version": "2026-10-31",
+  "models": [
+    {
+      "id": "isolation_forest",
+      "name": "Isolation Forest",
+      "kind": "trainable",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "depth",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "GR",
+          "type": "number",
+          "required": true,
+          "unit": "API",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "RHOB",
+          "type": "number",
+          "required": true,
+          "unit": "g/cm³",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "DTC",
+          "type": "number",
+          "required": true,
+          "unit": "µs/ft",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "label",
+          "type": "integer",
+          "required": false,
+          "unit": "",
+          "description": "可选人工标签：0正常，1异常；验证/测试有标签才计算F1/AUC"
+        }
+      ],
+      "sample": [
+        {
+          "well_id": "DEMO:W01",
+          "depth": 2100,
+          "GR": 75,
+          "RHOB": 2.45,
+          "DTC": 85,
+          "label": 0
+        },
+        {
+          "well_id": "DEMO:W02",
+          "depth": 2110,
+          "GR": 420,
+          "RHOB": 1.2,
+          "DTC": 210,
+          "label": 1
+        }
+      ],
+      "architecture": [
+        "GR/RHOB/DTC",
+        "训练集缺失中位数与稳健标准化",
+        "随机分割孤立树 ×64",
+        "路径长度与异常分数",
+        "阈值与专业规则复核"
+      ],
+      "split_policy": "group:well_id",
+      "metrics": [
+        "Precision",
+        "Recall",
+        "F1",
+        "ROC-AUC",
+        "PR-AUC"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "实际运行后记录；历史实验未记录时不估造。"
+    },
+    {
+      "id": "rotate",
+      "name": "RotatE",
+      "kind": "trainable",
+      "features": [
+        {
+          "name": "head",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "relation",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "tail",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": "",
+          "target": true
+        }
+      ],
+      "sample": [
+        {
+          "head": "井A",
+          "relation": "穿过",
+          "tail": "层S1"
+        },
+        {
+          "head": "井B",
+          "relation": "穿过",
+          "tail": "层S1"
+        },
+        {
+          "head": "井A",
+          "relation": "属于",
+          "tail": "井组G1"
+        }
+      ],
+      "architecture": [
+        "头实体与尾实体编码",
+        "12维复数实体嵌入",
+        "关系相位旋转",
+        "训练期负采样优化",
+        "验证选权重与尾实体评分"
+      ],
+      "split_policy": "triples;训练必须覆盖验证与测试的实体/关系词表",
+      "metrics": [
+        "Filtered MRR",
+        "Hits@1",
+        "Hits@3",
+        "Hits@10"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "实际运行后记录；历史实验未记录时不估造。",
+      "input_constraints": "所有验证/测试/预测实体及关系须在训练词表出现。"
+    },
+    {
+      "id": "grin",
+      "name": "GRIN精简结构复现",
+      "kind": "trainable",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产油，缺失填null",
+          "nullable": true
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产液",
+          "nullable": true
+        },
+        {
+          "name": "water_cut",
+          "type": "number",
+          "required": true,
+          "unit": "fraction",
+          "description": "0到1",
+          "nullable": true
+        },
+        {
+          "name": "pressure",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "同一口径注水量",
+          "nullable": true
+        }
+      ],
+      "sample": [
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-01",
+          "oil": 80,
+          "liquid": 120,
+          "water_cut": 0.3333,
+          "pressure": 24.0,
+          "injection": 150
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-02",
+          "oil": 79,
+          "liquid": 121,
+          "water_cut": 0.3471,
+          "pressure": 23.9,
+          "injection": 151
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-03",
+          "oil": 78,
+          "liquid": 122,
+          "water_cut": 0.3607,
+          "pressure": 23.8,
+          "injection": 152
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-04",
+          "oil": 77,
+          "liquid": 123,
+          "water_cut": 0.374,
+          "pressure": 23.7,
+          "injection": 153
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-05",
+          "oil": 76,
+          "liquid": 124,
+          "water_cut": 0.3871,
+          "pressure": 23.6,
+          "injection": 154
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-06",
+          "oil": 75,
+          "liquid": 125,
+          "water_cut": 0.4,
+          "pressure": 23.5,
+          "injection": 155
+        }
+      ],
+      "architecture": [
+        "多井时间序列与观测掩码",
+        "仅训练期相关性统计邻接",
+        "双向图消息GRU",
+        "重建融合",
+        "缺失补全与遮蔽误差"
+      ],
+      "split_policy": "time:date;同日跨井记录成组；按日期顺序推荐，随机仅作实验",
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "masked_cells"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "实际运行后记录；历史实验未记录时不估造。",
+      "input_constraints": "验证/测试/输入井必须属于训练井网络；日期为YYYY-MM-DD；未知值填null。"
+    },
+    {
+      "id": "uie",
+      "name": "UIE式精简抽取模型",
+      "kind": "trainable",
+      "features": [
+        {
+          "name": "doc_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "spans",
+          "type": "array",
+          "required": true,
+          "unit": "",
+          "description": "训练/验证/测试必填，推理可省；[{start,end,text}]，Unicode字符索引左闭右开",
+          "target": true
+        }
+      ],
+      "sample": [
+        {
+          "doc_id": "DEMO:D01",
+          "content": "井A日产油80立方米。",
+          "prompt": "井号",
+          "spans": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "井A"
+            }
+          ]
+        },
+        {
+          "doc_id": "DEMO:D02",
+          "content": "井B日产油65立方米。",
+          "prompt": "井号",
+          "spans": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "井B"
+            }
+          ]
+        }
+      ],
+      "architecture": [
+        "任务提示词＋正文",
+        "训练集字符词表与位置嵌入",
+        "1层Transformer编码器（32维/4头）",
+        "起止位置预测头",
+        "原文Span与人工复核"
+      ],
+      "split_policy": "group:doc_id;同一文档所有提示归同一分区",
+      "metrics": [
+        "Exact-span Precision",
+        "Exact-span Recall",
+        "Exact-span F1"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "实际运行后记录；历史实验未记录时不估造。",
+      "input_constraints": "每个prompt仅一个非空span；prompt与正文总长≤255 Unicode字符。"
+    },
+    {
+      "id": "anomaly_transformer",
+      "name": "Anomaly Transformer精简结构复现",
+      "kind": "trainable",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产油，缺失填null",
+          "nullable": true
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产液",
+          "nullable": true
+        },
+        {
+          "name": "water_cut",
+          "type": "number",
+          "required": true,
+          "unit": "fraction",
+          "description": "0到1",
+          "nullable": true
+        },
+        {
+          "name": "pressure",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "同一口径注水量",
+          "nullable": true
+        },
+        {
+          "name": "label",
+          "type": "integer",
+          "required": false,
+          "unit": "",
+          "description": "可选专家标签0/1，仅有标签时计算分类评价"
+        }
+      ],
+      "sample": [
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-01",
+          "oil": 80,
+          "liquid": 120,
+          "water_cut": 0.3333,
+          "pressure": 24.0,
+          "injection": 150
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-02",
+          "oil": 79,
+          "liquid": 121,
+          "water_cut": 0.3471,
+          "pressure": 23.9,
+          "injection": 151
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-03",
+          "oil": 78,
+          "liquid": 122,
+          "water_cut": 0.3607,
+          "pressure": 23.8,
+          "injection": 152
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-04",
+          "oil": 77,
+          "liquid": 123,
+          "water_cut": 0.374,
+          "pressure": 23.7,
+          "injection": 153
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-05",
+          "oil": 76,
+          "liquid": 124,
+          "water_cut": 0.3871,
+          "pressure": 23.6,
+          "injection": 154
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-06",
+          "oil": 75,
+          "liquid": 125,
+          "water_cut": 0.4,
+          "pressure": 23.5,
+          "injection": 155
+        }
+      ],
+      "architecture": [
+        "五变量生产动态序列",
+        "训练集标准化与最长32记录窗口",
+        "1层关联注意力（24维/2头）＋高斯先验",
+        "关联差异与重建误差",
+        "验证阈值与异常复核"
+      ],
+      "split_policy": "time:date;每井排序构窗，避免随机行打散时序",
+      "metrics": [
+        "reconstruction_MSE",
+        "Precision",
+        "Recall",
+        "F1",
+        "ROC-AUC"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "实际运行后记录；历史实验未记录时不估造。"
+    },
+    {
+      "id": "arps",
+      "name": "Arps递减模型",
+      "kind": "calibration",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "t",
+          "type": "number",
+          "required": true,
+          "unit": "d",
+          "description": "从起始日累计天数"
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "",
+          "target": true
+        }
+      ],
+      "sample": [
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-01",
+          "t": 0,
+          "oil": 100.0
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-02",
+          "t": 1,
+          "oil": 98.0296
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-03",
+          "t": 2,
+          "oil": 96.1169
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-04",
+          "t": 3,
+          "oil": 94.2596
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-05",
+          "t": 4,
+          "oil": 92.4556
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-06",
+          "t": 5,
+          "oil": 90.7029
+        }
+      ],
+      "architecture": [
+        "稳定生产窗口",
+        "双曲/指数递减方程",
+        "训练拟合qi/Di/b",
+        "验证集选择参数",
+        "测试外推与误差"
+      ],
+      "split_policy": "time:date;单井分别拟合，禁止跨井拼接递减",
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "R2",
+        "MAPE"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "非神经训练：记录参数校准/求解实测耗时。",
+      "input_constraints": "一次运行只允许一口井，至少6条正产油训练记录；t为真实累计天数。"
+    },
+    {
+      "id": "crm",
+      "name": "CRM注采响应模型",
+      "kind": "calibration",
+      "features": [
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "injector_1",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": ""
+        },
+        {
+          "name": "injector_2",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": ""
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "",
+          "target": true
+        }
+      ],
+      "sample": [
+        {
+          "date": "2025-01-01",
+          "injector_1": 100,
+          "injector_2": 80,
+          "liquid": 70
+        },
+        {
+          "date": "2025-01-02",
+          "injector_1": 110,
+          "injector_2": 85,
+          "liquid": 74
+        },
+        {
+          "date": "2025-01-03",
+          "injector_1": 120,
+          "injector_2": 90,
+          "liquid": 78
+        },
+        {
+          "date": "2025-01-04",
+          "injector_1": 130,
+          "injector_2": 95,
+          "liquid": 82
+        },
+        {
+          "date": "2025-01-05",
+          "injector_1": 140,
+          "injector_2": 100,
+          "liquid": 86
+        },
+        {
+          "date": "2025-01-06",
+          "injector_1": 150,
+          "injector_2": 105,
+          "liquid": 90
+        }
+      ],
+      "architecture": [
+        "两注水信号及单生产响应",
+        "一阶响应滤波τ",
+        "非负连接权重拟合",
+        "验证期选择τ",
+        "测试响应与工程校验"
+      ],
+      "split_policy": "time:date;按时间顺序；同一注采对象与同口径单位",
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "R2"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "非神经训练：记录参数校准/求解实测耗时。",
+      "input_constraints": "至少8条训练记录，日历日期递增且唯一；保持同口径时间和体积单位。"
+    },
+    {
+      "id": "dfn",
+      "name": "DFN应力约束几何模型",
+      "kind": "simulation",
+      "features": [
+        {
+          "name": "case_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "x1",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "y1",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "x2",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "y2",
+          "type": "number",
+          "required": true,
+          "unit": "m",
+          "description": ""
+        },
+        {
+          "name": "aperture_mm",
+          "type": "number",
+          "required": true,
+          "unit": "mm",
+          "description": ""
+        },
+        {
+          "name": "stress_direction_deg",
+          "type": "number",
+          "required": true,
+          "unit": "°",
+          "description": ""
+        },
+        {
+          "name": "stress_ratio",
+          "type": "number",
+          "required": true,
+          "unit": "",
+          "description": "最小/最大应力比例0到1"
+        }
+      ],
+      "sample": [
+        {
+          "case_id": "DEMO:C01",
+          "x1": 0,
+          "y1": 0,
+          "x2": 100,
+          "y2": 80,
+          "aperture_mm": 0.6,
+          "stress_direction_deg": 30,
+          "stress_ratio": 0.7
+        },
+        {
+          "case_id": "DEMO:C02",
+          "x1": 30,
+          "y1": 50,
+          "x2": 90,
+          "y2": 110,
+          "aperture_mm": 0.8,
+          "stress_direction_deg": 45,
+          "stress_ratio": 0.8
+        }
+      ],
+      "architecture": [
+        "二维裂缝端点与开度",
+        "裂缝方向与应力夹角",
+        "应力方向权重假设",
+        "有效开度及交点几何",
+        "几何指标与求解输入"
+      ],
+      "split_policy": "group:case_id;工况分区仅用于算例比较，模拟器无需训练",
+      "metrics": [
+        "fracture_count",
+        "intersection_count",
+        "total_length_m"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "非神经训练：记录参数校准/求解实测耗时。"
+    },
+    {
+      "id": "edfm",
+      "name": "EDFM油水两相求解模型",
+      "kind": "simulation",
+      "features": [
+        {
+          "name": "case_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "aperture_mm",
+          "type": "number",
+          "required": true,
+          "unit": "mm",
+          "description": "0.1到2"
+        },
+        {
+          "name": "pressure_drop_mpa",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "0.1到10"
+        },
+        {
+          "name": "duration_days",
+          "type": "number",
+          "required": true,
+          "unit": "d",
+          "description": "1到365"
+        }
+      ],
+      "sample": [
+        {
+          "case_id": "DEMO:C01",
+          "aperture_mm": 0.5,
+          "pressure_drop_mpa": 5,
+          "duration_days": 30
+        },
+        {
+          "case_id": "DEMO:C02",
+          "aperture_mm": 0.8,
+          "pressure_drop_mpa": 4,
+          "duration_days": 60
+        }
+      ],
+      "architecture": [
+        "公开基准矩阵及裂缝几何",
+        "120基质＋276裂缝未知量",
+        "离散压力PCG求解",
+        "保守隐式油水输运",
+        "产能曲线及残差守恒"
+      ],
+      "split_policy": "group:case_id;工况分区；机理求解无需训练，不得用算例分区冒充训练",
+      "metrics": [
+        "pressure_relative_residual_max",
+        "water_mass_balance_relative_error"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "非神经训练：记录参数校准/求解实测耗时。"
+    },
+    {
+      "id": "entity_align",
+      "name": "语义实体对齐字典基线",
+      "kind": "dictionary",
+      "features": [
+        {
+          "name": "entity_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "alias",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "canonical",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": "",
+          "target": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "sample": [
+        {
+          "entity_id": "W001",
+          "alias": "井Ａ",
+          "canonical": "井A",
+          "type": "井"
+        },
+        {
+          "entity_id": "W002",
+          "alias": "井B",
+          "canonical": "井B",
+          "type": "井"
+        }
+      ],
+      "architecture": [
+        "领域实体字典",
+        "规范化别名",
+        "类型过滤与字符串相似度",
+        "阈值匹配",
+        "规范编码与待复核"
+      ],
+      "split_policy": "alias:distinct;不同分区别名互斥，canonical实体可重合，训练字典覆盖已知实体",
+      "metrics": [
+        "accuracy",
+        "dictionary_entries"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "确定性计算，无需训练，展示实际计算耗时。"
+    },
+    {
+      "id": "lag",
+      "name": "动态时滞关联分析",
+      "kind": "statistics",
+      "features": [
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "production",
+          "type": "number",
+          "required": true,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "sample": [
+        {
+          "date": "2025-01-01",
+          "injection": 100,
+          "production": 80
+        },
+        {
+          "date": "2025-01-02",
+          "injection": 120,
+          "production": 90
+        }
+      ],
+      "architecture": [
+        "日期及同口径注采量",
+        "日历时滞对齐",
+        "逐时滞Pearson相关",
+        "有效样本数检查",
+        "关联候选与工程复核"
+      ],
+      "split_policy": "time:date;描述统计无需训练；历史窗口与未来测试分开",
+      "metrics": [
+        "Pearson_r",
+        "aligned_pairs"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "确定性计算，无需训练，展示实际计算耗时。"
+    },
+    {
+      "id": "hierarchy",
+      "name": "井—层—井组—区块关联",
+      "kind": "rules",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "layer_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "group_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "block_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "valid_from",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "valid_to",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "sample": [
+        {
+          "well_id": "井A",
+          "layer_id": "层S1",
+          "group_id": "G1",
+          "block_id": "B1",
+          "valid_from": "2025-01-01",
+          "valid_to": "2025-12-31"
+        }
+      ],
+      "architecture": [
+        "井唯一编码",
+        "井层有效时间",
+        "井组主数据映射",
+        "区块归属",
+        "冲突检查与多级路径"
+      ],
+      "split_policy": "group:well_id;确定性主数据关联无需训练",
+      "metrics": [
+        "unique_wells",
+        "conflicts"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "确定性计算，无需训练，展示实际计算耗时。"
+    },
+    {
+      "id": "rules",
+      "name": "油藏专业规则联合质控",
+      "kind": "rules",
+      "features": [
+        {
+          "name": "well_id",
+          "type": "string",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "unit": "",
+          "description": ""
+        },
+        {
+          "name": "oil",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产油，缺失填null",
+          "nullable": true
+        },
+        {
+          "name": "liquid",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "日均产液",
+          "nullable": true
+        },
+        {
+          "name": "water_cut",
+          "type": "number",
+          "required": true,
+          "unit": "fraction",
+          "description": "0到1",
+          "nullable": true
+        },
+        {
+          "name": "pressure",
+          "type": "number",
+          "required": true,
+          "unit": "MPa",
+          "description": "",
+          "nullable": true
+        },
+        {
+          "name": "injection",
+          "type": "number",
+          "required": true,
+          "unit": "Sm³/d",
+          "description": "同一口径注水量",
+          "nullable": true
+        },
+        {
+          "name": "label",
+          "type": "number",
+          "required": false,
+          "unit": "",
+          "description": ""
+        }
+      ],
+      "sample": [
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-01",
+          "oil": 80,
+          "liquid": 120,
+          "water_cut": 0.3333,
+          "pressure": 24.0,
+          "injection": 150
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-02",
+          "oil": 79,
+          "liquid": 121,
+          "water_cut": 0.3471,
+          "pressure": 23.9,
+          "injection": 151
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-03",
+          "oil": 78,
+          "liquid": 122,
+          "water_cut": 0.3607,
+          "pressure": 23.8,
+          "injection": 152
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-04",
+          "oil": 77,
+          "liquid": 123,
+          "water_cut": 0.374,
+          "pressure": 23.7,
+          "injection": 153
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-05",
+          "oil": 76,
+          "liquid": 124,
+          "water_cut": 0.3871,
+          "pressure": 23.6,
+          "injection": 154
+        },
+        {
+          "well_id": "DEMO:P01",
+          "date": "2025-01-06",
+          "oil": 75,
+          "liquid": 125,
+          "water_cut": 0.4,
+          "pressure": 23.5,
+          "injection": 155
+        }
+      ],
+      "architecture": [
+        "生产压力注采输入",
+        "单位与非负范围",
+        "油液含水一致性",
+        "L0/L1问题分级",
+        "问题清单与阻断"
+      ],
+      "split_policy": "time:date;规则无需训练，按时间分区作独立质控比较",
+      "metrics": [
+        "flagged",
+        "L0_blocked"
+      ],
+      "recommended_split": [
+        70,
+        15,
+        15
+      ],
+      "formats": [
+        "CSV",
+        "JSON",
+        "JSONL"
+      ],
+      "training_time_note": "确定性计算，无需训练，展示实际计算耗时。"
+    }
+  ]
+}

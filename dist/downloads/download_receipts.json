@@ -1,0 +1,137 @@
+[
+  {
+    "download_name": "volve_production.xlsx",
+    "download_url": "https://raw.githubusercontent.com/yohanesnuwara/MLGeo/main/Volve%20production%20data.xlsx",
+    "retrieved_on": "2026-10-31",
+    "bytes": 2343007,
+    "sha256": "39aabef8ccfc71a797ecd0a49848ad7fe79ecd4563560e9318e42519bd324dfe",
+    "description": "Volve public observations; mirror bytes; original Equinor terms apply",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "force_train.csv",
+    "download_url": "https://raw.githubusercontent.com/bolgebrygg/Force-2020-Machine-Learning-competition/master/lithology_competition/code/GIR/train.csv",
+    "retrieved_on": "2026-10-31",
+    "bytes": 85983232,
+    "sha256": "7afd32c21917d7acbc9fe89dab4228af1e25eb35caa69b4b539ca89309ac656a",
+    "description": "FORCE contributor 28-well subset; original well data NLOD 2.0 per Zenodo",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "fractures_2d.csv",
+    "download_url": "https://raw.githubusercontent.com/pmgbergen/porepy/develop/src/porepy/applications/md_grids/gmsh_file_library/benchmark_2d_case_4/fracture_network_benchmark_2d_case_4.csv",
+    "retrieved_on": "2026-10-31",
+    "bytes": 2928,
+    "sha256": "a9184b0ca9563b41ea67d31b683bbbd5c19996024161bbab13248ea4c33cacfb",
+    "description": "PorePy public numerical benchmark geometry; GPL-3.0 repository",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "fractures_3d.csv",
+    "download_url": "https://raw.githubusercontent.com/pmgbergen/porepy/develop/src/porepy/applications/md_grids/gmsh_file_library/benchmark_3d_case_2/fracture_network.csv",
+    "retrieved_on": "2026-10-31",
+    "bytes": 456,
+    "sha256": "00eb7a5fedb5b7b2ac203130acd1ab0816e9776cc5f2ebab112f61f7595bf8e1",
+    "description": "PorePy public numerical benchmark geometry; GPL-3.0 repository",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "porepy_LICENSE.md",
+    "download_url": "https://raw.githubusercontent.com/pmgbergen/porepy/develop/LICENSE.md",
+    "retrieved_on": "2026-10-31",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "description": "PorePy GPL-3.0 license text",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "SPE1CASE1.DATA",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe1/SPE1CASE1.DATA",
+    "retrieved_on": "2026-10-31",
+    "bytes": 11927,
+    "sha256": "e26f11a6438ecd97fc56ccd456a463c74680a912e3d9f71b33682bd7c0531b3f",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "SPE1CASE2.DATA",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe1/SPE1CASE2.DATA",
+    "retrieved_on": "2026-10-31",
+    "bytes": 11907,
+    "sha256": "29d9c02659031026ffbab9f62d6400642a61bf2bfaf8c0ac0c7b82f147f4bd29",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "SPE9.DATA",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe9/SPE9.DATA",
+    "retrieved_on": "2026-10-31",
+    "bytes": 15927,
+    "sha256": "358bbc47699a857c939eab48700018e3deeeb8478c5c0bc85c1eb5842e361f45",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "SPE9_CP_GROUP.DATA",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe9/SPE9_CP_GROUP.DATA",
+    "retrieved_on": "2026-10-31",
+    "bytes": 16661,
+    "sha256": "98ad3e86e6d6b41308bcba09d379a10ddf0cf3d82a237f3fb346b747234b6bab",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "SPE9.GRDECL",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe9/SPE9.GRDECL",
+    "retrieved_on": "2026-10-31",
+    "bytes": 805951,
+    "sha256": "20a5840737d9f8e67f4c0bb21a5aa53f1f956750339e171d81c624ab81415e31",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "PERMVALUES.DATA",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe9/PERMVALUES.DATA",
+    "retrieved_on": "2026-10-31",
+    "bytes": 142483,
+    "sha256": "355dfe63d2ee7bd8f420701319a1dc55ff4a9c472700687dfb0551fa3b77e381",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "TOPSVALUES.DATA",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe9/TOPSVALUES.DATA",
+    "retrieved_on": "2026-10-31",
+    "bytes": 10996,
+    "sha256": "5b3b5ee93b4bda37f8f2a21534ac9e5c393f058740f3c113ccc7368962edef6c",
+    "description": "OPM deck ODbL 1.0 / DbCL 1.0",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "SPE9_README.txt",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/spe9/README",
+    "retrieved_on": "2026-10-31",
+    "bytes": 593,
+    "sha256": "7118ca7b0a5f1d76f2456354c62b3632fd7f171a8be5df83b4b4d772cf1e578f",
+    "description": "OPM README",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "odbl-10.txt",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/odbl-10.txt",
+    "retrieved_on": "2026-10-31",
+    "bytes": 25279,
+    "sha256": "1d553feead201a7619788171b43cca12675e82d70b197aa45795986bb8603e72",
+    "description": "Original license text",
+    "download_validation": "parsed or original license/deck text inspected"
+  },
+  {
+    "download_name": "dbcl-10.txt",
+    "download_url": "https://raw.githubusercontent.com/OPM/opm-data/master/dbcl-10.txt",
+    "retrieved_on": "2026-10-31",
+    "bytes": 2374,
+    "sha256": "3cbfa990f26df856c6a7d3fff3d1f236e3b0165b1e8257ca0d00f15758754f81",
+    "description": "Original license text",
+    "download_validation": "parsed or original license/deck text inspected"
+  }
+]

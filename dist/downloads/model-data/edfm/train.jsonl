@@ -1,0 +1,8 @@
+{"case_id": "DEMO:EDFM:01", "aperture_mm": 0.3, "pressure_drop_mpa": 2.0, "duration_days": 15}
+{"case_id": "DEMO:EDFM:04", "aperture_mm": 0.45, "pressure_drop_mpa": 2.9, "duration_days": 30}
+{"case_id": "DEMO:EDFM:07", "aperture_mm": 0.6, "pressure_drop_mpa": 3.8, "duration_days": 45}
+{"case_id": "DEMO:EDFM:08", "aperture_mm": 0.65, "pressure_drop_mpa": 4.1, "duration_days": 50}
+{"case_id": "DEMO:EDFM:09", "aperture_mm": 0.7, "pressure_drop_mpa": 4.4, "duration_days": 55}
+{"case_id": "DEMO:EDFM:10", "aperture_mm": 0.75, "pressure_drop_mpa": 4.7, "duration_days": 60}
+{"case_id": "DEMO:EDFM:11", "aperture_mm": 0.8, "pressure_drop_mpa": 5.0, "duration_days": 65}
+{"case_id": "DEMO:EDFM:12", "aperture_mm": 0.85, "pressure_drop_mpa": 5.3, "duration_days": 70}
