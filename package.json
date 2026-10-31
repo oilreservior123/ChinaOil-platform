@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check dist/app.js && node --check dist/algorithms.mjs && node --check dist/visuals.mjs && node --check dist/training-studio.mjs && node --check dist/training-data.mjs"
+    "check": "node --check dist/app.js && node --check dist/algorithms.mjs && node --check dist/visuals.mjs && node --check dist/training-studio.mjs && node --check dist/training-data.mjs && node --check dist/model-theory.mjs && node --check dist/unit-notes.mjs"
   }
 }
