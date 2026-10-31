@@ -22,3 +22,18 @@ export function switchWellState(state,well){return{...state,well,qualityResult:n
 export function newWorkflowState(state,runId,token){return{...state,workflowRunId:runId,workflowToken:token,workflowOutput:null,workflowStatus:{},workflowLogs:[],workflowRunning:true,workflowPaused:false};}
 export function isActiveRun(state,token){return state.workflowToken===token&&state.workflowRunning===true;}
 export function normalizeField(values,nx,ny){const flat=Array.from(values??[]).flat(Infinity).map(Number);if(flat.length!==nx*ny||flat.some(v=>!Number.isFinite(v)))throw Error('Scientific field shape or finite-value mismatch');return flat;}
+
+export const RELATION_LABELS={BELONGS_TO_FIELD:'属于油田',BELONGS_TO_SIMULATION_GROUP:'属于模拟控制组',HAS_MONTHLY_SUMMARY:'具有月度生产记录',INTERSECTS_FORMATION:'穿过地层',INTERSECTS_STRATIGRAPHIC_GROUP:'穿过地层群',PART_OF_MODEL:'隶属模型',PART_OF_STRATIGRAPHIC_GROUP:'隶属地层群'};
+export function entityRelations(graph,nodeId){const nodes=new Map(graph.nodes.map(n=>[n.id,n]));return graph.edges.map((e,index)=>({...e,index,source:nodes.get(e.source_id),target:nodes.get(e.target_id),direction:e.source_id===nodeId?'outgoing':'incoming',relation_label:RELATION_LABELS[e.relation]??e.relation})).filter(e=>(e.source_id===nodeId||e.target_id===nodeId)&&e.source&&e.target);}
+export function grinCompletion(ex,wellId,feature=0,{maxGap=3}={}){
+ const j=ex.well_ids.indexOf(wellId);if(j<0)throw Error('所选井不在GRIN窗口中');if(!ex.feature_names[feature])throw Error('GRIN变量不存在');
+ const observed=ex.input.map(t=>t[j][feature]),supported=observed.some(finite);let filled=0,pending=0,heldout=0;
+ const rows=ex.dates.map((date,t)=>{const value=observed[t],missing=!finite(value),holdout=Boolean(ex.holdout_mask[t][j][feature]);if(holdout)heldout++;
+  let gap=0;if(missing){gap=1;for(let b=t-1;b>=0&&!finite(observed[b]);b--)gap++;for(let b=t+1;b<observed.length&&!finite(observed[b]);b++)gap++;}
+  const raw=ex.prediction[t][j][feature],prediction=missing&&supported&&finite(raw)?Number(raw):null;
+  const accepted=missing&&prediction!==null&&prediction>=0&&gap<=maxGap;let status='原观测保留';
+  if(missing){if(accepted){filled++;status='已补全候选 · 待审核'}else{pending++;status=!supported?'整段无观测／不适用 · 不补全':prediction===null?'无有效预测 · 待核查':prediction<0?'负预测 · 不接纳':'连续缺口超过3记录 · 不接纳';}}
+  return{date,well_id:wellId,feature:ex.feature_names[feature],input_value:finite(value)?Number(value):null,prediction,target:holdout&&finite(ex.target_observed[t][j][feature])?ex.target_observed[t][j][feature]:null,holdout,missing_kind:missing?(holdout?'受控遮蔽':'自然缺失'):'原始观测',gap_length:gap,output_value:accepted?prediction:finite(value)?Number(value):null,filled:accepted,status};
+ });
+ const evaluated=rows.filter(r=>r.holdout&&finite(r.prediction)&&finite(r.target));return{window_id:ex.window_id,well_id:wellId,feature:ex.feature_names[feature],rows,input:rows.map(r=>r.input_value),prediction:rows.map(r=>r.prediction),target:rows.map(r=>r.target),output:rows.map(r=>r.output_value),missing:rows.filter(r=>r.input_value===null).length,heldout,filled,pending,rejected:pending,metrics:regressionMetrics(evaluated.map(r=>r.target),evaluated.map(r=>r.prediction)),source:'已训练GRIN冻结窗口真实预测；补全为待审核候选，不覆盖原始数据'};
+}
