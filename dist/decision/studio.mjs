@@ -1,11 +1,11 @@
-import {comparisonView,detailView,formatMetric} from './evaluation-view.mjs';
-import {evaluateAll} from './evaluation-runner.mjs';
-import {summarize,exportRows,ROLE_NAMES} from './evaluation.mjs';
-import {forecast,FORECAST_IDS,FORECAST_ASSUMPTION,canChangeForecastSelection,applyForecastSelection} from './forecast.mjs';
+import {comparisonView,detailView,formatMetric} from './evaluation-view.mjs?v=20261101-eval1';
+import {evaluateAll} from './evaluation-runner.mjs?v=20261101-eval1';
+import {summarize,exportRows,ROLE_NAMES} from './evaluation.mjs?v=20261101-eval1';
+import {forecast,FORECAST_IDS,FORECAST_ASSUMPTION,canChangeForecastSelection,applyForecastSelection} from './forecast.mjs?v=20261101-eval1';
 import {MODELS,DATASETS,METHOD_CARDS} from './catalog.mjs';
 import {fieldInfo,validateRows,selectUsableRows,finite} from '../agent/core.mjs';
 import {partition,assertDisjoint,assertExperimentWritable} from './engine.mjs';
-import * as trainer from './training.mjs';
+import * as trainer from './training.mjs?v=20261101-eval1';
 import {esc,num,panel,chart,table,flow,field,readFile,download,downloadRows} from './ui.mjs';
 const experiments=new Map();let modelId='boost',tab='data';
 const state=()=>{if(!experiments.has(modelId))experiments.set(modelId,{dataset:MODELS.find(m=>m.id===modelId).dataset,sets:[[],[],[]],all:[],results:[],busy:false,origin:'尚未载入',fit:null,summaries:{},evaluationErrors:{},detailRole:'test',detailWell:null,history:[],ratio:[70,15,15],method:'well-time',status:'等待数据',metrics:null});return experiments.get(modelId);};

@@ -1,5 +1,5 @@
 import {esc,num,panel,chart,table} from './ui.mjs';
-import {summarize,histogram,perWellMetrics,ROLE_NAMES,METRIC_INFO,PERCENT_METRICS} from './evaluation.mjs';
+import {summarize,histogram,perWellMetrics,ROLE_NAMES,METRIC_INFO,PERCENT_METRICS} from './evaluation.mjs?v=20261101-eval1';
 import {finite} from '../agent/core.mjs';
 export const ROLE_COLORS={train:'#a92b38',validation:'#b58e51',test:'#4a80ac'};
 export function formatMetric(key,value){if(value===null||value===undefined||!Number.isFinite(Number(value)))return '—';return PERCENT_METRICS.has(key)?num(value*100,2)+'%':num(value,['N','LabelN','MAPE_N'].includes(key)?0:4)+(key==='MAPE'||key==='sMAPE'?'%':'');}

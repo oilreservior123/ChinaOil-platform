@@ -1,4 +1,4 @@
-import {predict as modelPredict} from './training.mjs';
+import {predict as modelPredict} from './training.mjs?v=20261101-eval1';
 import {finite} from '../agent/core.mjs';
 export const FORECAST_IDS=new Set(['arps','crm','tcn','lstm','boost','forest','xgboost']);
 export const FORECAST_ASSUMPTION='固定已训练模型；未来注入量、压力及含水率保持最新观测水平，产油递归预测，油水量按恒定含水率换算；不代表已实施调控效果。';

@@ -1,3 +1,3 @@
-import {predict} from './training.mjs';
-import {summarize,ROLE_NAMES} from './evaluation.mjs';
+import {predict} from './training.mjs?v=20261101-eval1';
+import {summarize,ROLE_NAMES} from './evaluation.mjs?v=20261101-eval1';
 export async function evaluateAll(m,fit,sets,remote,{predictor=predict,progress=()=>{}}={}){const summaries={},errors={},start=performance.now();for(const [i,role] of ['train','validation','test'].entries()){progress('正在计算'+ROLE_NAMES[role]+'预测与评价…');try{if(!sets[i]?.length)throw Error('数据集为空');const rows=await predictor(m,fit,sets[i],sets.slice(0,i).flat(),remote);summaries[role]=summarize(m,rows,sets[i].length);}catch(e){errors[role]=e.message;}}return {summaries,errors,duration:(performance.now()-start)/1000};}

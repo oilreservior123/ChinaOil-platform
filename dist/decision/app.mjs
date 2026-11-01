@@ -1,8 +1,8 @@
 import {esc,num,panel,chart,table,flow,field,download,downloadRows,readFile} from './ui.mjs';
 import {avg,balance,layerSplit,lagCorrelation,allocate,measureEffect,reserves,evolve,mpc,differenceInDifferences,toolEvidence} from './engine.mjs';
-import {renderStudio,studioAction,studioUpload,studioSelection,currentExperiment} from './studio.mjs';
+import {renderStudio,studioAction,studioUpload,studioSelection,currentExperiment} from './studio.mjs?v=20261101-eval1';
 import {DATASETS,PAGE_MAP,METHOD_CARDS} from './catalog.mjs';
-import {api} from './training.mjs';
+import {api} from './training.mjs?v=20261101-eval1';
 const nav=[['overview','◈','生产决策总览'],['connectivity','⌘','井间连通性'],['layers','▤','分层注采劈分'],['control','⇄','注采调控方案'],['measures','◎','措施推荐与评价'],['evolution','∿','油藏时序演化'],['reserves','▥','储量偏差管理'],['studio','◇','模型训练工作台'],['copilot','✧','大模型分析助手'],['sources','▦','数据与技术依据']];
 const state={page:location.hash.slice(1)||'overview',source:'production',well:'all',remote:{url:'',token:''},report:'',service:'未连接',data:{},results:{},messages:[],lastReport:null};
 let toastTimer;
