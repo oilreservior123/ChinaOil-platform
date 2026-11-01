@@ -1,0 +1,112 @@
+[
+  {
+    "id": "volve",
+    "title": "Volve 真实生产日报",
+    "description": "Equinor Volve 逐井生产日报；无现场确诊故障标签。注水量为全油田每日合计，不代表井对分配。",
+    "available": true,
+    "path": "./data/volve.json",
+    "count": 9161,
+    "unit_notes": "产油/水/液 m³/d；气量 Sm³/d；压力 MPa；含水率 %。",
+    "source_url": "https://www.equinor.com/energy/volve-data-sharing",
+    "download_url": "./data/samples/volve.csv",
+    "models": [
+      "rules",
+      "arps",
+      "crm",
+      "tcn",
+      "stgnn",
+      "gdn",
+      "diagnosis",
+      "pinn"
+    ],
+    "limitations": "diagnosis 缺少确诊 root_cause；PINN 缺少真实空间 x 与归一化 t；须上传补齐，不能直接训练这两个模型。",
+    "raw_download_url": "https://www.equinor.com/energy/volve-data-sharing",
+    "sample_path": "./data/samples/volve.json",
+    "sample_count": 720,
+    "sample_kb": 142.4,
+    "selection": "各井最长完整连续日段取前180天，至少120天；保留真实日期与多井关系；仅用于快速流程验证，非全油田代表性评价。",
+    "source_count": 9161,
+    "sample_csv": "./data/samples/volve.csv"
+  },
+  {
+    "id": "threew",
+    "title": "3W 真实井事件摘要",
+    "description": "全部 1119 个 WELL 实测文件各形成一个事件摘要；不含模拟/手绘文件，也不是完整原始时序。保留真实井号、事件文件名和观测标签。 当前内置轻量实测子集；完整资料见原始来源。",
+    "available": true,
+    "path": "./data/samples/threew.json",
+    "count": 167,
+    "unit_notes": "p_mean/p_std/p_delta MPa；t_mean/t_std/t_delta °C；std 为总体标准差；delta 为末个减首个有限测量。",
+    "source_url": "https://github.com/petrobras/3W",
+    "download_url": "./data/samples/threew.csv",
+    "raw_download_url": "https://github.com/petrobras/3W/tree/8aaa303f9b9d6ced690d136218d141624b10558d/dataset",
+    "models": [
+      "event3w"
+    ],
+    "limitations": "缺测摘要为 null 并标记；优先 P-PDG/T-TPT，缺测才用文档列明的实际传感器。事件级摘要仅支持事件分类，不能替代时序预测。",
+    "sample_path": "./data/samples/threew.json",
+    "sample_count": 167,
+    "sample_kb": 117.3,
+    "selection": "按真实event_code类别均匀间隔抽取，每类最多24条；保留事件/样本标识；小样本及随机划分只用于快速验证。",
+    "source_count": 1119,
+    "sample_csv": "./data/samples/threew.csv"
+  },
+  {
+    "id": "dst",
+    "title": "Sweetwater DST 真实压力恢复",
+    "description": "338 个 DST_Data 文件的原始压力恢复记录；排除 Overview 与 Analysis 汇总文件。 当前内置轻量实测子集；完整资料见原始来源。",
+    "available": true,
+    "path": "./data/samples/dst.json",
+    "count": 240,
+    "unit_notes": "pressure MPa（原 psi × 0.006894757）；time_min 分钟；log_horner 直接保留原 Log time，即 log10(H)。",
+    "source_url": "https://data.mendeley.com/datasets/px455bwjg2/2",
+    "download_url": "./data/samples/dst.csv",
+    "raw_download_url": "https://data.mendeley.com/public-api/zip/px455bwjg2/download/2",
+    "models": [
+      "horner",
+      "pinn"
+    ],
+    "limitations": "Horner 使用 log_horner；PINN 缺少实测空间坐标 x，且需用户明确归一化 t，当前内置数据不能直接训练 PINN。",
+    "sample_path": "./data/samples/dst.json",
+    "sample_count": 240,
+    "sample_kb": 66.5,
+    "selection": "选择观测数最多的4段测试，每段均匀抽取最多60个原始观测；径向流解释段仍需人工筛选。",
+    "source_count": 16936,
+    "sample_csv": "./data/samples/dst.csv"
+  },
+  {
+    "id": "esp",
+    "title": "ESPset 真实振动特征",
+    "description": "完整 6032 行原始特征；保留 ESP 编号、样本编号与原始故障标签；无虚构日期。 当前内置轻量实测子集；完整资料见原始来源。",
+    "available": true,
+    "path": "./data/samples/esp.json",
+    "count": 180,
+    "unit_notes": "保留源特征数值尺度；f_low=median(8,13), f_rms=rms(98,102), f_near=median(98,102), f_1x=peak1x, f_2x=peak2x, f_a=a, f_b=b；源 CSV 未逐列声明物理单位。",
+    "source_url": "https://data.mendeley.com/datasets/m268jsw339/3",
+    "download_url": "./data/samples/esp.csv",
+    "raw_download_url": "https://data.mendeley.com/public-api/zip/m268jsw339/download/3",
+    "models": [
+      "esp"
+    ],
+    "sample_path": "./data/samples/esp.json",
+    "sample_count": 180,
+    "sample_kb": 37.1,
+    "selection": "按真实fault类别均匀间隔抽取，每类最多36条；保留事件/样本标识；小样本及随机划分只用于快速验证。",
+    "source_count": 6032,
+    "sample_csv": "./data/samples/esp.csv"
+  },
+  {
+    "id": "tracer",
+    "title": "Spraberry 示踪剂（待上传）",
+    "description": "来源网站安全验证阻断下载，未取得数据。仅提供用户上传入口，不生成或替代真实测量。",
+    "available": false,
+    "path": null,
+    "count": 0,
+    "unit_notes": "上传时指定真实浓度、时间与单位。",
+    "source_url": "https://oaktrust.library.tamu.edu/items/3eb9a1e3-2dba-486c-9c04-d25a2e95d270/full",
+    "download_url": null,
+    "raw_download_url": "https://oaktrust.library.tamu.edu/items/3eb9a1e3-2dba-486c-9c04-d25a2e95d270/full",
+    "models": [
+      "tracer"
+    ]
+  }
+]

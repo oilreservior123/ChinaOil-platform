@@ -1,0 +1,38 @@
+[
+  {
+    "id": "volve",
+    "file": "samples/volve.json",
+    "count": 720,
+    "source_count": 9161,
+    "bytes": 145830,
+    "source_sha256": "9174635c7ea3b139dbcdee9d0b27054fb22071c1f0e6a28a040f160f9204b414",
+    "selection": "各井最长完整连续日段取前180天，至少120天；保留真实日期与多井关系；仅用于快速流程验证，非全油田代表性评价。"
+  },
+  {
+    "id": "threew",
+    "file": "samples/threew.json",
+    "count": 167,
+    "source_count": 1119,
+    "bytes": 120132,
+    "source_sha256": "bb1fa3346bb38c12b8d7260b432364f2697c6e694926c0916835a5e54f881e65",
+    "selection": "按真实event_code类别均匀间隔抽取，每类最多24条；保留事件/样本标识；小样本及随机划分只用于快速验证。"
+  },
+  {
+    "id": "esp",
+    "file": "samples/esp.json",
+    "count": 180,
+    "source_count": 6032,
+    "bytes": 37991,
+    "source_sha256": "d92f7ddf2e063ce033a812a2119341cef0f05b5a03f87fdc3eb1476852a37831",
+    "selection": "按真实fault类别均匀间隔抽取，每类最多36条；保留事件/样本标识；小样本及随机划分只用于快速验证。"
+  },
+  {
+    "id": "dst",
+    "file": "samples/dst.json",
+    "count": 240,
+    "source_count": 16936,
+    "bytes": 68076,
+    "source_sha256": "f82624c499f5c9c111a832c5d936b267f56ebcda14c7b27946ce9627687d7851",
+    "selection": "选择观测数最多的4段测试，每段均匀抽取最多60个原始观测；径向流解释段仍需人工筛选。"
+  }
+]
