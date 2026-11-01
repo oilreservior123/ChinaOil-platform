@@ -1,5 +1,5 @@
-import {mean,finite,esc,csv,parseCSV,normalizeRows,validateRows,selectUsableRows,splitData,ruleScan,classifyWell,fieldInfo,features,regressionMetrics} from './core.mjs';
-import {MODELS,trainModel,predictModel,evaluate,exportFit,inferenceRequired} from './models.mjs';
+import {mean,finite,esc,csv,parseCSV,normalizeRows,validateRows,selectUsableRows,splitData,ruleScan,classifyWell,fieldInfo,features,regressionMetrics} from './core.mjs?v=20261101-3';
+import {MODELS,trainModel,predictModel,evaluate,exportFit,inferenceRequired} from './models.mjs?v=20261101-3';
 const $=s=>document.querySelector(s), root=$('#app');
 const states=Object.fromEntries(MODELS.map(m=>[m.id,{data:{train:[],val:[],test:[],all:[],calc:[]},fit:null,results:[],metrics:{},history:[],busy:false,tab:'data',role:'test'}]));
 let page='overview',modelId='stgnn',data=[],well='all',experiments=[],alerts=[],answer='',source='Volve公开实测生产资料',overlay=false;

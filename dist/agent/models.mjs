@@ -1,4 +1,4 @@
-import {mean,finite,features,validateRows,normalizeRows,regressionMetrics,classificationMetrics,ruleScan,quantile} from './core.mjs';
+import {mean,finite,features,validateRows,normalizeRows,regressionMetrics,classificationMetrics,ruleScan,quantile} from './core.mjs?v=20261101-3';
 export const MODELS=[
 {id:'rules',name:'专家规则与CUSUM',en:'Rules + CUSUM',tag:'可解释预警',required:['oil','water','pressure'],target:'label',structure:['逐井时间排序','持续性 / 越限规则','残差累积 CUSUM','红黄蓝预警'],formula:'Sₜ = max(0, Sₜ₋₁ + zₜ − k)；连续3天产油低于前期基准15%',note:'规则阈值为PPT研究设定；仅形成待核实预警，不等于故障确诊。校准用训练集压力波动统计量。'},
 {id:'arps',name:'Arps产量递减模型',en:'Arps DCA',tag:'数理基线',required:['oil'],target:'oil',structure:['单井产油 / 开井段','双曲 / 指数递减','网格最小二乘拟合','产油趋势与残差'],formula:'q(t) = qᵢ / (1 + bDᵢt)¹⁄ᵇ；b→0 时 q=qᵢexp(−Dᵢt)',note:'逐井拟合；只适用于相对稳定的递减阶段。关井和增产措施应分段分析。'},
