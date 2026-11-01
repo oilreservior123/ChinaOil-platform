@@ -1,0 +1,238 @@
+{
+  "runtime": "Node CPU TensorFlow.js, one-epoch smoke checks; not field model benchmarks",
+  "report": [
+    {
+      "id": "boost",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 108,
+      "duration": 0.05608677799999998,
+      "metrics": {
+        "MAE": 214.01209521868532,
+        "RMSE": 246.83700939314312,
+        "R2": 0.2893098147973342,
+        "MAPE": 64.15462022274953,
+        "N": 108
+      }
+    },
+    {
+      "id": "forest",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 108,
+      "duration": 0.03251232299999998,
+      "metrics": {
+        "MAE": 85.090639337621,
+        "RMSE": 109.73683966787794,
+        "R2": 0.8595361191697498,
+        "MAPE": 32.99947307078852,
+        "N": 108
+      }
+    },
+    {
+      "id": "isolation",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 108,
+      "duration": 0.007900823000000003,
+      "metrics": null
+    },
+    {
+      "id": "lstm",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 108,
+      "duration": 0.6675562709999999,
+      "metrics": {
+        "MAE": 239.62787716732322,
+        "RMSE": 267.8300167355322,
+        "R2": 0.16328363607586505,
+        "MAPE": 73.853788880016,
+        "N": 108
+      }
+    },
+    {
+      "id": "profile",
+      "status": "ok",
+      "trained": 126,
+      "predictions": 27,
+      "duration": 0.0020225940000000264,
+      "metrics": {
+        "MAE": 0.01947136098298858,
+        "RMSE": 0.023970323185268552,
+        "R2": 0.8650905170635212,
+        "MAPE": 5.519723567896002,
+        "N": 27
+      }
+    },
+    {
+      "id": "effect",
+      "status": "ok",
+      "trained": 63,
+      "predictions": 14,
+      "duration": 0.0016116749999998774,
+      "metrics": {
+        "MAE": 4.045883527334339,
+        "RMSE": 5.867389892175015,
+        "R2": 0.32893243780192516,
+        "MAPE": 12.241960327840387,
+        "N": 14
+      }
+    },
+    {
+      "id": "arps",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 108,
+      "duration": 0.09659109899999999,
+      "metrics": {
+        "MAE": 154.54154450770352,
+        "RMSE": 255.36933977568162,
+        "R2": 0.2393282753580228,
+        "MAPE": 30.309449693447753,
+        "N": 108
+      }
+    },
+    {
+      "id": "crm",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 108,
+      "duration": 0.01776926000000003,
+      "metrics": {
+        "MAE": 273.28072650564627,
+        "RMSE": 420.58546771548697,
+        "R2": 0.865535642182896,
+        "MAPE": 17.895928566535275,
+        "N": 108
+      }
+    },
+    {
+      "id": "event3w",
+      "status": "ok",
+      "trained": 116,
+      "predictions": 26,
+      "duration": 0.021409546999999977,
+      "metrics": {
+        "Accuracy": 0.11538461538461539,
+        "Precision": 0.045,
+        "Recall": 0.11666666666666665,
+        "F1": 0.0590909090909091,
+        "N": 26,
+        "UnknownTrueCount": 0
+      }
+    },
+    {
+      "id": "esp",
+      "status": "ok",
+      "trained": 126,
+      "predictions": 27,
+      "duration": 0.019642409000000045,
+      "metrics": {
+        "Accuracy": 0.25925925925925924,
+        "Precision": 0.05185185185185185,
+        "Recall": 0.2,
+        "F1": 0.08235294117647059,
+        "N": 27,
+        "UnknownTrueCount": 0
+      }
+    },
+    {
+      "id": "horner",
+      "status": "ok",
+      "trained": 168,
+      "predictions": 36,
+      "duration": 0.0013426820000001954,
+      "metrics": {
+        "MAE": 2.2006114917866557,
+        "RMSE": 2.9191956109285644,
+        "R2": 0.9672517621569979,
+        "MAPE": 9.22965392379508,
+        "N": 36
+      }
+    },
+    {
+      "id": "tracer",
+      "status": "ok",
+      "trained": 70,
+      "predictions": 15,
+      "duration": 0.07101234,
+      "metrics": {
+        "MAE": 2.744097063485113e-8,
+        "RMSE": 3.910258846111117e-8,
+        "R2": 0.9999890448521329,
+        "MAPE": 0.28772243738139763,
+        "N": 15
+      }
+    },
+    {
+      "id": "tcn",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 76,
+      "duration": 0.21631251700000007,
+      "metrics": {
+        "MAE": 237.06588132979996,
+        "RMSE": 277.54874674480106,
+        "R2": 0.04041601039928322,
+        "MAPE": 69.92509461405903,
+        "N": 76
+      }
+    },
+    {
+      "id": "diagnosis",
+      "status": "ok",
+      "trained": 378,
+      "predictions": 81,
+      "duration": 0.037471677,
+      "metrics": {
+        "Accuracy": 0.9444444444444444,
+        "Precision": 1,
+        "Recall": 0.8888888888888888,
+        "F1": 0.9411764705882353,
+        "FPR": 0,
+        "TP": 72,
+        "TN": 81,
+        "FP": 0,
+        "FN": 9,
+        "N": 162
+      }
+    },
+    {
+      "id": "pinn",
+      "status": "ok",
+      "trained": 378,
+      "predictions": 81,
+      "duration": 0.03494399300000009,
+      "metrics": {
+        "MAE": 0.501561469752038,
+        "RMSE": 0.5766206520425418,
+        "R2": -2.0704874355518377,
+        "MAPE": 2.3301835737295784,
+        "N": 81
+      }
+    },
+    {
+      "id": "stgnn",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 76,
+      "duration": 0.26078253599999995,
+      "metrics": {
+        "MAE": 947.3348088659379,
+        "RMSE": 1165.0504144014526,
+        "R2": 0.054710429144721684,
+        "MAPE": 202.73486129485133,
+        "N": 76
+      }
+    },
+    {
+      "id": "gdn",
+      "status": "ok",
+      "trained": 504,
+      "predictions": 104,
+      "duration": 0.0502803700000004,
+      "metrics": null
+    }
+  ]
+}

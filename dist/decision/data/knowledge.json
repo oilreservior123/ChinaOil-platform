@@ -1,0 +1,47 @@
+[
+  {
+    "id": "K01",
+    "anomaly": "产油下降且压力下降",
+    "cause": "能量不足候选",
+    "measure": "复核压力与注采资料，按层补充注水",
+    "condition": "排除停井、计量变化；地下体积注采比偏低",
+    "evidence": "PPT35、39、41页",
+    "success": null
+  },
+  {
+    "id": "K02",
+    "anomaly": "含水上升且注采响应强",
+    "cause": "水窜候选",
+    "measure": "示踪剂与剖面验证后评估堵水或调剖",
+    "condition": "优势通道有独立证据，满足施工与地层条件",
+    "evidence": "PPT33、37、40页",
+    "success": null
+  },
+  {
+    "id": "K03",
+    "anomaly": "注入压力上升且吸水能力下降",
+    "cause": "近井堵塞候选",
+    "measure": "复核水质、洗井，评估解堵或酸化",
+    "condition": "排除仪表故障；具备配伍性和伤害诊断",
+    "evidence": "PPT32–34页",
+    "success": null
+  },
+  {
+    "id": "K04",
+    "anomaly": "高含水层产液强度偏高",
+    "cause": "无效水循环候选",
+    "measure": "在产油、设备及地面处理约束内调整分层产液",
+    "condition": "具备分层产液与含水测试",
+    "evidence": "PPT38–40页",
+    "success": null
+  },
+  {
+    "id": "K05",
+    "anomaly": "预测与实际持续偏离",
+    "cause": "参数或工况漂移候选",
+    "measure": "复核当前阶段物性并触发重训审核",
+    "condition": "措施偏差>25%；劈分偏差>15%；注采响应偏差>20%",
+    "evidence": "PPT34、38、39、45–47页",
+    "success": null
+  }
+]
