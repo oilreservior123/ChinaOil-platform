@@ -411,7 +411,7 @@
         "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
         "data_path": "../agent/data/samples/volve.json",
         "commonFeatures": 3,
-        "distance": 0.34954459210470595
+        "distance": 0.2351806840237186
       },
       {
         "id": "VOLVE-15/9-F-11",
@@ -426,7 +426,7 @@
         "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
         "data_path": "../agent/data/samples/volve.json",
         "commonFeatures": 4,
-        "distance": 0.5283374014383211
+        "distance": 0.644268896715348
       },
       {
         "id": "VOLVE-15/9-F-15 D",
@@ -441,11 +441,12 @@
         "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
         "data_path": "../agent/data/samples/volve.json",
         "commonFeatures": 4,
-        "distance": 0.6516867077462374
+        "distance": 0.6985133797439682
       }
     ],
     "features": {
-      "oil_change_pct": -26.853381742848406,
+      "baseline_deviation_pct": -26.853381742848406,
+      "oil_change_pct": -32.9641287994357,
       "water_cut_delta_pp": 8.772910059934532,
       "pressure_delta_mpa": -1.759999999999998,
       "availability_change_pct": -6.999999999999995

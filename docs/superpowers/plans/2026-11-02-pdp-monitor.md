@@ -13,8 +13,10 @@ Expert: local evidence rules from well availability, water cut and pressure chan
 Checks: RED→GREEN tests for calendar normalization, frozen baseline invariance, no future leakage, CI vs PI, externally supplied baseline, invalid and missing data, positive/negative warnings, source-labelled cases, and exports. Run full existing tests, browser flows, then publish to the existing GitHub Pages route.
 
 ## Verification ledger
-- 13 new regression tests observed RED then GREEN, including frozen baseline invariance, no future leakage, month/well normalization, CI vs PI, multi-year issued plans, preserved plans on actuals upload, zero-well restoration gain, and standalone SVG legends.
+- 14 new regression tests observed RED then GREEN, including frozen baseline invariance, no future leakage, month/well normalization, CI vs PI, multi-year issued plans, preserved plans on actuals upload, zero-well restoration gain, and standalone SVG legends.
 - Independent review: fixed zero-well scenario gain omission and embedded full titles/series/band legends in SVG exports.
 - Generated demonstration smoke check: 46 months, 24 frozen fit months, 6 updated fit months, 12 forecast months, all interval endpoints finite; 4 expert action candidates and 4 public Volve trend cases available.
 - Original uploaded images are reference-only and are not published. Unrelated workspace temporary download file remains untouched.
 - Remote source was re-read; concurrent monitoring-inbox code and remote documentation/styles preserved.
+
+- Trend retrieval uses observed calendar-day oil-rate changes, separately from frozen-plan forecast error; regression test verifies this distinction.

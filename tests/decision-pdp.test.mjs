@@ -43,3 +43,6 @@ test('uploading new actuals preserves an explicitly uploaded frozen original pla
  const w=await import('../dist/decision/pdp-workbench.mjs'),rows=sample(),plan=Array.from({length:12},(_,i)=>({month:'2026-'+String(i+1).padStart(2,'0'),forecast_oil_tonnes:123456-i*1000,issued_on:'2025-12-31'})),file=(name,a)=>({name,size:100,text:async()=>JSON.stringify(a)}),ctx={render:()=>{},notify:()=>{}};
  w.initializePdp(rows,[]);await w.pdpUpload('original',file('plan.json',plan),ctx);assert.equal(w.pdpSummary().baselineSource,'原始年末计划上传');await w.pdpUpload('monthly',file('new-monthly.json',rows.map(r=>r.month>'2025-12'?{...r,oil_tonnes:r.oil_tonnes*.9}:r)),ctx);assert.equal(w.pdpSummary().baselineSource,'原始年末计划上传');assert.equal(w.pdpSummary().current[0].prediction,123456);
 });
+test('historical trend matching uses observed calendar-day rate changes, not a forecast error',async()=>{
+ const {assessPdp}=await import('../dist/decision/pdp-expert.mjs'),r=m.analyzePdp(sample(),opts),e=assessPdp(r,[]),expected=100*((r.latest.oil_tonnes/m.monthDays(r.latest.month))/(r.December.oil_tonnes/m.monthDays(r.December.month))-1);assert.ok(Math.abs(e.features.oil_change_pct-expected)<1e-10);
+});
