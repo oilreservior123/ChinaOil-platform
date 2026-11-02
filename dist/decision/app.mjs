@@ -1,4 +1,4 @@
-import {initializePdp,renderPdpWorkbench,pdpAction,pdpUpload} from './pdp-workbench.mjs?v=20261102-pdp2';
+import {initializePdp,renderPdpWorkbench,pdpAction,pdpUpload} from './pdp-workbench.mjs?v=20261102-pdp3';
 import {renderInbox,installInboxHandlers} from '../shared/decision-inbox.mjs?v=20261102-expert1';
 import {groupProductionRows,productionCurvePanels} from './production-curves.mjs?v=20261102-fluids1';
 import {esc,num,panel,chart,table,flow,field,download,downloadRows,readFile} from './ui.mjs';
