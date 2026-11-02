@@ -1,0 +1,21 @@
+// Rates at standard conditions (m3/d), pressure MPa, time d, energy kWh.
+export const defaults={p:28,sw:.38,phi:.22,volume:5e7,ct:.001,swc:.2,sor:.2,Bo:1.15,Bw:1.02,muo:3,muw:.6,J:32,injJ:100,gor:120,depth:2400,eta:.68,fracture:36,minP:18,maxP:34,maxPower:650,oilPrice:3200,waterCost:18,electricity:.7,discount:.08};
+export const baseControl={injection:300,pwf:18,frequency:45,network:1.5,temperature:40,blend:.1,gain:1,waterFactor:1,cost:0};
+export function ratio(a,b){return a===null||b===null||a===undefined||b===undefined||!Number.isFinite(+a)||!Number.isFinite(+b)||+b<=0?null:+a/+b;}
+export function validateControl(p,c={}){c={...baseControl,...c};const e=[];for(const [k,v] of Object.entries({...p,...c}))if(typeof v==='number'&&!Number.isFinite(v))e.push(`${k}非有限数`);for(const [k,lo,hi] of [['injection',0,900],['pwf',8,30],['frequency',30,60],['network',.5,4],['temperature',25,65],['blend',.05,.3],['gain',.2,3],['waterFactor',.1,2]])if(c[k]<lo||c[k]>hi)e.push(`${k}超出范围[${lo},${hi}]`);if(p.swc>=1-p.sor||p.sw<p.swc||p.sw>1-p.sor)e.push('饱和度边界错误');for(const k of ['volume','phi','ct','Bo','Bw','muo','muw','J','injJ','eta','fracture','maxPower'])if(!(p[k]>0))e.push(`${k}必须大于零`);for(const k of ['gor','depth','oilPrice','waterCost','electricity','swc','sor'])if(!(p[k]>=0))e.push(`${k}不得为负`);if(p.swc>=1||p.sor>=1)e.push('残余饱和度须小于1');if(!(p.discount>=0&&p.discount<=1))e.push('年折现率须在0—1之间');if(c.cost<0)e.push('措施投资不得为负');if(p.minP>p.maxP)e.push('压力上下限颠倒');if(p.phi>=1||p.eta>1)e.push('孔隙度/效率超出物理范围');if(p.p<p.minP||p.p>p.maxP)e.push('初始压力越界');if(p.p+c.injection/p.injJ>p.fracture)e.push('注入压力超过破裂压力');return e;}
+export function simulate(params={},control={},days=60,dt=1){const p={...defaults,...params},c={...baseControl,...control};const err=validateControl(p,c);if(err.length)throw Error(err.join('；'));if(!Number.isInteger(days)||days<1||days>365||![1,.5,.25].includes(dt))throw Error('模拟范围1–365天，步长1/0.5/0.25天');let pressure=p.p,sw=p.sw;const pv=p.phi*p.volume,storage=pv*p.ct;let balance=0,oil=0,water=0,gas=0,energy=0,npv=-c.cost;const rows=[],violations=new Set();if(!Number.isFinite(pv)||!Number.isFinite(storage)||storage<=0)throw Error('储集系数超出数值范围');
+ for(let d=1;d<=days;d++){let a={day:d,oil:0,water:0,gas:0,energy:0};for(let step=0;step<1/dt;step++){
+  const se=Math.max(0,Math.min(1,(sw-p.swc)/(1-p.swc-p.sor))),lw=se**2/p.muw*c.waterFactor,lo=(1-se)**2/p.muo,fw=lw/(lw+lo);
+  const effectivePwf=c.pwf+(45-c.frequency)*.08+(c.network-1.5)*.25;
+  const qr=p.J*c.gain*Math.max(0,pressure-effectivePwf),qo=qr*(1-fw)/p.Bo,qw=qr*fw/p.Bw,qg=qo*p.gor;
+  const ip=pressure+c.injection/p.injJ,head=Math.max(0,1000*9.80665*p.depth/1e6+c.network-effectivePwf),liquid=qo+qw;
+  const e=liquid*head/(3.6*p.eta)+c.injection*ip/(3.6*p.eta)+liquid*(1+c.blend)*4.18*(c.temperature-20)/3.6;
+  if(![qr,qo,qw,qg,ip,e].every(Number.isFinite))throw Error('模型中间结果超出数值范围');if(ip>p.fracture+1e-9)violations.add('注入压力超过破裂压力');if(e/24>p.maxPower)violations.add('系统等效功率超过上限');
+  const dp=(c.injection*p.Bw-qr)*dt/storage;balance+=storage*dp-(c.injection*p.Bw-qr)*dt;
+  sw+=(c.injection*p.Bw-qw*p.Bw-sw*storage*dp/dt)*dt/pv;pressure+=dp;
+  if(pressure<p.minP||pressure>p.maxP)violations.add('油藏压力超过允许区间');if(sw<p.swc||sw>1-p.sor)violations.add('饱和度超过允许区间');
+  a.oil+=qo*dt;a.water+=qw*dt;a.gas+=qg*dt;a.energy+=e*dt;a.injectionPressure=ip;a.bottomhole=effectivePwf;
+ }a.pressure=pressure;a.sw=sw;a.owr=ratio(a.oil,a.water);a.watercut=100*a.water/(a.oil+a.water);rows.push(a);oil+=a.oil;water+=a.water;gas+=a.gas;energy+=a.energy;npv+=(a.oil*p.oilPrice-a.water*p.waterCost-a.energy*p.electricity)/(1+p.discount)**(d/365);}
+ return {rows,oil,water,gas,energy,npv,balance,feasible:!violations.size,violations:[...violations],control:c,watercut:100*water/(oil+water),specificEnergy:oil>0?energy/(oil*.85):null,peakPower:Math.max(...rows.map(r=>r.energy/24))};
+}
+export const schemes=[{id:'base',name:'基线 · 维持现状',gain:1,waterFactor:1,cost:0,risk:'低'},{id:'fracture',name:'压裂 · 等效增导流',gain:1.35,waterFactor:1.05,cost:650000,risk:'高'},{id:'acid',name:'酸化 · 等效解除污染',gain:1.18,waterFactor:1,cost:220000,risk:'高'},{id:'water',name:'调剖堵水 · 降低水相流度',gain:.95,waterFactor:.65,cost:300000,risk:'高'},{id:'injection',name:'配注调整 · 压力补充',gain:1,waterFactor:1,injection:400,cost:50000,risk:'中'}];
