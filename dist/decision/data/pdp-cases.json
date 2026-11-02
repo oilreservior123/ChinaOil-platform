@@ -1,0 +1,54 @@
+[
+  {
+    "id": "VOLVE-15/9-F-11",
+    "well": "15/9-F-11",
+    "start": "2014-08-25",
+    "end": "2015-02-20",
+    "source": "Volve公开实测抽样：各井首末30日趋势对照",
+    "oil_change_pct": -12.111651217270825,
+    "water_cut_delta_pp": 15.979449914514522,
+    "pressure_delta_mpa": -2.1665726666666636,
+    "availability_change_pct": -4.755220123404758,
+    "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
+    "data_path": "../agent/data/samples/volve.json"
+  },
+  {
+    "id": "VOLVE-15/9-F-12",
+    "well": "15/9-F-12",
+    "start": "2015-08-31",
+    "end": "2016-02-26",
+    "source": "Volve公开实测抽样：各井首末30日趋势对照",
+    "oil_change_pct": -36.47470870817997,
+    "water_cut_delta_pp": 7.949150667984696,
+    "pressure_delta_mpa": null,
+    "availability_change_pct": 0.16473694747098921,
+    "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
+    "data_path": "../agent/data/samples/volve.json"
+  },
+  {
+    "id": "VOLVE-15/9-F-14",
+    "well": "15/9-F-14",
+    "start": "2014-08-25",
+    "end": "2015-02-20",
+    "source": "Volve公开实测抽样：各井首末30日趋势对照",
+    "oil_change_pct": -23.206190284857986,
+    "water_cut_delta_pp": 1.5647914994569305,
+    "pressure_delta_mpa": 0.8361506666666649,
+    "availability_change_pct": -3.8880810087890794,
+    "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
+    "data_path": "../agent/data/samples/volve.json"
+  },
+  {
+    "id": "VOLVE-15/9-F-15 D",
+    "well": "15/9-F-15 D",
+    "start": "2014-02-08",
+    "end": "2014-08-06",
+    "source": "Volve公开实测抽样：各井首末30日趋势对照",
+    "oil_change_pct": -21.63148559622655,
+    "water_cut_delta_pp": 0.0,
+    "pressure_delta_mpa": -0.2395619999999994,
+    "availability_change_pct": 3.6402880532296678,
+    "conclusion": "仅证明观测趋势相似；原样本未提供本研究措施因果效果或成功率。",
+    "data_path": "../agent/data/samples/volve.json"
+  }
+]

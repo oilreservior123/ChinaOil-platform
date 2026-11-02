@@ -1,0 +1,462 @@
+[
+  {
+    "month": "2023-01",
+    "oil_tonnes": 147786.008,
+    "active_wells": 100,
+    "water_m3": 200000,
+    "pressure_mpa": 24.0,
+    "injection_m3": 420000,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-02",
+    "oil_tonnes": 132609.937,
+    "active_wells": 100,
+    "water_m3": 204500,
+    "pressure_mpa": 23.97,
+    "injection_m3": 418700,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-03",
+    "oil_tonnes": 145600.692,
+    "active_wells": 100,
+    "water_m3": 209000,
+    "pressure_mpa": 23.94,
+    "injection_m3": 417400,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-04",
+    "oil_tonnes": 144427.586,
+    "active_wells": 100,
+    "water_m3": 213500,
+    "pressure_mpa": 23.91,
+    "injection_m3": 416100,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-05",
+    "oil_tonnes": 147379.678,
+    "active_wells": 100,
+    "water_m3": 218000,
+    "pressure_mpa": 23.88,
+    "injection_m3": 414800,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-06",
+    "oil_tonnes": 140700.949,
+    "active_wells": 100,
+    "water_m3": 222500,
+    "pressure_mpa": 23.85,
+    "injection_m3": 413500,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-07",
+    "oil_tonnes": 143775.273,
+    "active_wells": 100,
+    "water_m3": 227000,
+    "pressure_mpa": 23.82,
+    "injection_m3": 412200,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-08",
+    "oil_tonnes": 139585.088,
+    "active_wells": 100,
+    "water_m3": 231500,
+    "pressure_mpa": 23.79,
+    "injection_m3": 410900,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-09",
+    "oil_tonnes": 141231.53,
+    "active_wells": 100,
+    "water_m3": 236000,
+    "pressure_mpa": 23.76,
+    "injection_m3": 409600,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-10",
+    "oil_tonnes": 136340.815,
+    "active_wells": 100,
+    "water_m3": 240500,
+    "pressure_mpa": 23.73,
+    "injection_m3": 408300,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-11",
+    "oil_tonnes": 125584.164,
+    "active_wells": 100,
+    "water_m3": 245000,
+    "pressure_mpa": 23.7,
+    "injection_m3": 407000,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2023-12",
+    "oil_tonnes": 126617.309,
+    "active_wells": 100,
+    "water_m3": 249500,
+    "pressure_mpa": 23.67,
+    "injection_m3": 405700,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-01",
+    "oil_tonnes": 129935.867,
+    "active_wells": 100,
+    "water_m3": 254000,
+    "pressure_mpa": 23.64,
+    "injection_m3": 404400,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-02",
+    "oil_tonnes": 116095.002,
+    "active_wells": 100,
+    "water_m3": 258500,
+    "pressure_mpa": 23.61,
+    "injection_m3": 403100,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-03",
+    "oil_tonnes": 122538.552,
+    "active_wells": 100,
+    "water_m3": 263000,
+    "pressure_mpa": 23.58,
+    "injection_m3": 401800,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-04",
+    "oil_tonnes": 117773.134,
+    "active_wells": 100,
+    "water_m3": 267500,
+    "pressure_mpa": 23.55,
+    "injection_m3": 400500,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-05",
+    "oil_tonnes": 119072.72,
+    "active_wells": 100,
+    "water_m3": 272000,
+    "pressure_mpa": 23.52,
+    "injection_m3": 399200,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-06",
+    "oil_tonnes": 118446.739,
+    "active_wells": 100,
+    "water_m3": 276500,
+    "pressure_mpa": 23.49,
+    "injection_m3": 397900,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-07",
+    "oil_tonnes": 117340.567,
+    "active_wells": 100,
+    "water_m3": 281000,
+    "pressure_mpa": 23.46,
+    "injection_m3": 396600,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-08",
+    "oil_tonnes": 115482.487,
+    "active_wells": 100,
+    "water_m3": 285500,
+    "pressure_mpa": 23.43,
+    "injection_m3": 395300,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-09",
+    "oil_tonnes": 105687.514,
+    "active_wells": 100,
+    "water_m3": 290000,
+    "pressure_mpa": 23.4,
+    "injection_m3": 394000,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-10",
+    "oil_tonnes": 110359.948,
+    "active_wells": 100,
+    "water_m3": 294500,
+    "pressure_mpa": 23.37,
+    "injection_m3": 392700,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-11",
+    "oil_tonnes": 109022.833,
+    "active_wells": 100,
+    "water_m3": 299000,
+    "pressure_mpa": 23.34,
+    "injection_m3": 391400,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2024-12",
+    "oil_tonnes": 112122.622,
+    "active_wells": 100,
+    "water_m3": 303500,
+    "pressure_mpa": 23.31,
+    "injection_m3": 390100,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-01",
+    "oil_tonnes": 111239.357,
+    "active_wells": 100,
+    "water_m3": 308000,
+    "pressure_mpa": 23.28,
+    "injection_m3": 388800,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-02",
+    "oil_tonnes": 98334.73,
+    "active_wells": 100,
+    "water_m3": 312500,
+    "pressure_mpa": 23.25,
+    "injection_m3": 387500,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-03",
+    "oil_tonnes": 107912.904,
+    "active_wells": 100,
+    "water_m3": 317000,
+    "pressure_mpa": 23.22,
+    "injection_m3": 386200,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-04",
+    "oil_tonnes": 100596.079,
+    "active_wells": 100,
+    "water_m3": 321500,
+    "pressure_mpa": 23.19,
+    "injection_m3": 384900,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-05",
+    "oil_tonnes": 104211.92,
+    "active_wells": 100,
+    "water_m3": 326000,
+    "pressure_mpa": 23.16,
+    "injection_m3": 383600,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-06",
+    "oil_tonnes": 99726.076,
+    "active_wells": 100,
+    "water_m3": 330500,
+    "pressure_mpa": 23.13,
+    "injection_m3": 382300,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-07",
+    "oil_tonnes": 100259.917,
+    "active_wells": 100,
+    "water_m3": 335000,
+    "pressure_mpa": 23.1,
+    "injection_m3": 381000,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-08",
+    "oil_tonnes": 101613.262,
+    "active_wells": 100,
+    "water_m3": 339500,
+    "pressure_mpa": 23.07,
+    "injection_m3": 379700,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-09",
+    "oil_tonnes": 99372.603,
+    "active_wells": 100,
+    "water_m3": 344000,
+    "pressure_mpa": 23.04,
+    "injection_m3": 378400,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-10",
+    "oil_tonnes": 100555.732,
+    "active_wells": 100,
+    "water_m3": 348500,
+    "pressure_mpa": 23.01,
+    "injection_m3": 377100,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-11",
+    "oil_tonnes": 93872.353,
+    "active_wells": 100,
+    "water_m3": 353000,
+    "pressure_mpa": 22.98,
+    "injection_m3": 375800,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2025-12",
+    "oil_tonnes": 92978.544,
+    "active_wells": 100,
+    "water_m3": 357500,
+    "pressure_mpa": 22.95,
+    "injection_m3": 374500,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-01",
+    "oil_tonnes": 93725.118,
+    "active_wells": 100,
+    "water_m3": 362000,
+    "pressure_mpa": 22.92,
+    "injection_m3": 373200,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-02",
+    "oil_tonnes": 84162.173,
+    "active_wells": 100,
+    "water_m3": 366500,
+    "pressure_mpa": 22.89,
+    "injection_m3": 371900,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-03",
+    "oil_tonnes": 88513.533,
+    "active_wells": 100,
+    "water_m3": 371000,
+    "pressure_mpa": 22.86,
+    "injection_m3": 370600,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-04",
+    "oil_tonnes": 67083.135,
+    "active_wells": 93,
+    "water_m3": 379000,
+    "pressure_mpa": 21.73,
+    "injection_m3": 347300,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-05",
+    "oil_tonnes": 70290.523,
+    "active_wells": 93,
+    "water_m3": 387000,
+    "pressure_mpa": 21.64,
+    "injection_m3": 346000,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-06",
+    "oil_tonnes": 66858.996,
+    "active_wells": 93,
+    "water_m3": 395000,
+    "pressure_mpa": 21.55,
+    "injection_m3": 344700,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-07",
+    "oil_tonnes": 64926.833,
+    "active_wells": 93,
+    "water_m3": 403000,
+    "pressure_mpa": 21.46,
+    "injection_m3": 343400,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-08",
+    "oil_tonnes": 63468.262,
+    "active_wells": 93,
+    "water_m3": 411000,
+    "pressure_mpa": 21.37,
+    "injection_m3": 342100,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-09",
+    "oil_tonnes": 61268.009,
+    "active_wells": 93,
+    "water_m3": 419000,
+    "pressure_mpa": 21.28,
+    "injection_m3": 340800,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  },
+  {
+    "month": "2026-10",
+    "oil_tonnes": 62328.977,
+    "active_wells": 93,
+    "water_m3": 427000,
+    "pressure_mpa": 21.19,
+    "injection_m3": 339500,
+    "density_t_per_m3": 0.85,
+    "source": "A区块生成月度场景，非新疆现场实测"
+  }
+]
